@@ -1,0 +1,57 @@
+{
+  "alvo": "parte_atingida_classe",
+  "id": "id_registro",
+  "entradas": {
+    "Completa": [
+      "agente",
+      "tipo",
+      "cnae",
+      "cbo"
+    ],
+    "Tipo e agente": [
+      "tipo",
+      "agente"
+    ],
+    "Tipo, agente e divisão": [
+      "tipo",
+      "agente",
+      "cnae_divisao"
+    ],
+    "Com família CBO": [
+      "tipo",
+      "agente",
+      "cnae_divisao",
+      "cbo_familia"
+    ],
+    "Sem agente": [
+      "tipo",
+      "cnae_divisao"
+    ],
+    "Informação mútua": [
+      "agente",
+      "tipo",
+      "cnae",
+      "cbo"
+    ],
+    "PCA 95%": [
+      "agente",
+      "tipo",
+      "cnae",
+      "cbo"
+    ]
+  },
+  "categoria_ausente": "[desconhecido]",
+  "normalizacao": "espaços internos e externos padronizados, caixa uniforme; preservar categorias truncadas e múltiplas",
+  "avaliacao": "meses 3, 4, 5 para validação; mês 6 para teste reservado",
+  "versoes": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "pyarrow": "26.0.1",
+    "matplotlib": "3.11.2",
+    "threadpoolctl": "3.8.0"
+  },
+  "python": "3.12.14",
+  "preparacao": "atividades.representacoes.representacao(nome); ajustar em cada treino"
+}

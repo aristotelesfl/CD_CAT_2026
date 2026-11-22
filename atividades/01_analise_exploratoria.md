@@ -14,7 +14,7 @@ Investigar padrões nos registros de CAT cuja UF do acidente está registrada co
 
 ## Entregas
 
-- Notebook executável, organizado e comentado, com ingestão, diagnóstico e análises.
+- Notebook com células de código para ingestão, diagnóstico, análises e exibição das tabelas e dos gráficos.
 - Relatório analítico curto com problema e recorte, evidências, 3 a 5 achados, limitações e próximos passos.
 
 ## Critérios de aceitação
@@ -25,4 +25,4 @@ Investigar padrões nos registros de CAT cuja UF do acidente está registrada co
 - [ ] Cada análise contribui para responder às perguntas e informa medidas, denominadores e tamanho dos grupos.
 - [ ] De 3 a 5 conclusões relevantes estão apoiadas por evidências quantitativas ou visuais verificáveis.
 - [ ] Limitações, possíveis vieses, interpretações alternativas e questões abertas estão explícitos; contagens não são apresentadas como taxas nem associações como causas.
-- [ ] Notebook executa do início ao fim com instruções e relatório é claro e conciso.
+- [ ] O notebook executa do início ao fim seguindo as instruções do relatório. O relatório apresenta as interpretações de forma clara e concisa.

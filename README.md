@@ -32,15 +32,16 @@ Os CSVs de CAT usam ponto e vírgula e são compatíveis com leitura `latin-1`; 
 2. Examinar cabeçalhos repetidos, consistência das datas, valores ausentes e não classificados e possíveis repetições entre arquivos. Comparar resultados antes e depois de qualquer tratamento de linhas idênticas e documentar as decisões.
 3. Associar códigos aos dicionários para recuperar rótulos completos, preservando as descrições originais e verificando cobertura, ambiguidades e quantidade de linhas antes e depois das junções.
 4. Responder às seis perguntas com tabelas, gráficos e interpretações fundamentadas, identificando limitações e questões em aberto.
-5. Seguir os roteiros de [análise exploratória](atividades/01_analise_exploratoria.md), [pré-processamento e redução de dimensionalidade](atividades/02_pre_processamento_reducao.md) e [modelos supervisionados](atividades/03_modelos_supervisionados.md), conforme as exigências da disciplina. A definição de um alvo válido de modelagem ainda depende de avaliação de viabilidade.
+5. Prever a categoria registrada em **Parte Corpo Atingida** para cada CAT. A atividade 02 examina quais campos do primeiro relato ajudam a distinguir as classes e compara formas de reduzir as entradas. A atividade 03 compara classificadores e avalia as classes nos acidentes de junho. [Preparação dos dados](atividades/02_pre_processamento_reducao.md) e [avaliação dos modelos](atividades/03_modelos_supervisionados.md).
 
 ## Notebooks e organização
 
+- [Pré-processamento e redução de dimensionalidade](02_pre_processamento_reducao.ipynb) prepara a classificação de parte do corpo atingida. O [relatório da atividade 02](relatorio_pre_processamento_reducao.md) explica a escolha das entradas e compara as reduções.
 - [`CAT2026.ipynb`](CAT2026.ipynb): análise exploratória iniciada, incluindo conferência dos arquivos, localização, período, repetições e algumas distribuições.
 - [`main.ipynb`](main.ipynb): exploração anterior; aponta para uma pasta removida, omite maio e usa outro recorte geográfico. Precisa ser adaptado antes de ser reutilizado.
 - [`atividades/README.md`](atividades/README.md): plano detalhado, decisões de dados e critérios compartilhados das atividades.
 
-Os notebooks existentes usam caminhos do Google Colab/Google Drive. Ajuste o caminho de leitura para o ambiente em que serão executados; instruções completas de ambiente e dependências ainda precisam ser documentadas e verificadas.
+As atividades 01 e 02 usam caminhos relativos à raiz do projeto. Os respectivos relatórios descrevem o ambiente de execução. Os notebooks exploratórios anteriores incluem caminhos do Google Colab/Google Drive.
 
 ## Limites de interpretação
 

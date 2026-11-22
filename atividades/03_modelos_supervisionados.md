@@ -1,36 +1,18 @@
-# Atividade 3 — Modelos supervisionados e avaliação
+# Atividade 3 — Modelos supervisionados para a parte do corpo atingida
 
-## Problema e viabilidade
+Treinar classificadores para responder **qual categoria será registrada em `Parte Corpo Atingida`?** Cada CAT recebe uma das classes do campo. Uma previsão de “Joelho” para uma CAT registrada como “Ombro”, por exemplo, conta como um erro entre essas duas classes. Usar a resposta `parte_atingida_classe`, as entradas e as partições entregues pela [atividade 02](02_pre_processamento_reducao.md).
 
-Definir uma tarefa supervisionada de classificação pertinente aos registros de CAT, especificando alvo, classe positiva, unidade de análise, momento da previsão, horizonte e uso pretendido. Uma hipótese a investigar é classificar `Indica Óbito Acidente`, **somente se** a disponibilidade temporal dos atributos, a qualidade dos rótulos e a quantidade de casos positivos permitirem uma avaliação válida. Não presumir que o campo seja um desfecho futuro ou que os demais campos estejam disponíveis antes dele. Outra tarefa pode ser escolhida e justificada.
+## Como treinar e avaliar
 
-Antes de treinar, verificar distribuição do alvo, valores desconhecidos, quantidade de eventos por período e classe, disponibilidade e momento de cada preditor, e possíveis repetições entre conjuntos. Se não houver alvo e preditores temporalmente válidos, registrar a inviabilidade e a informação adicional necessária; não apresentar um experimento com vazamento como modelo utilizável.
+1. **Conferir os dados.** Usar uma linha por combinação distinta dos 27 campos brutos, a lista de entradas de cada versão e as mesmas CATs para comparar as configurações. Informar as quantidades por classe e os alvos ausentes. Preservar como respostas as categorias raras e múltiplas. A lista permitida de entradas deixa de fora o próprio alvo, suas derivações, datas, atributos calculados de datas, diagnóstico e campos posteriores ao primeiro relato.
+2. **Respeitar a ordem dos meses.** Validar em março, abril e maio. O treino de cada rodada contém acidentes de meses anteriores cuja CAT foi emitida antes do mês avaliado. Reajustar as transformações da atividade 02 dentro de cada treino. Reservar junho para uma única avaliação do modelo escolhido. Nesse ajuste final, exigir emissão anterior a 1º de junho. Para avaliar os acidentes de junho, considerar inclusive as emissões posteriores presentes nos arquivos.
+3. **Comparar os classificadores.** Avaliar KNN (vizinhos mais próximos), árvore de decisão, Random Forest (conjunto de árvores) e MLP (rede neural). Como referência, prever sempre a classe mais frequente do treino e usar as proporções de cada classe no treino como probabilidades constantes. Comparar as representações detalhada, agrupada, com colunas selecionadas e com PCA. Registrar os parâmetros testados, sementes, configurações escolhidas e dificuldades de convergência.
+4. **Medir acertos e erros por classe.** Usar a classe de maior pontuação como previsão. Apresentar acurácia e, para cada classe, número de registros, precisão, recall e F1. Incluir as médias entre classes com o mesmo peso (macro) e a variação entre meses. Uma classe presente no mês que nunca foi prevista tem recall e F1 iguais a zero. Registrar quando a precisão não puder ser calculada por falta de previsões. Para tornar a média de precisão reproduzível, usar zero para esses casos e indicar quantos foram. Calcular as médias macro sobre as classes presentes na avaliação. Manter no total as classes que aparecerem pela primeira vez na avaliação e informar quantas CATs pertencem a elas.
+5. **Ver as confusões.** Construir a matriz de confusão com uma linha por classe registrada e uma coluna por classe prevista. Mostrar as contagens, as proporções por linha e as confusões mais comuns. Para interpretar VP, FP, VN e FN, escolher uma classe de exemplo e confrontá-la com o conjunto das demais. Calcular ROC-AUC e curvas ROC para cada classe contra as demais usando as pontuações contínuas. Informar quais classes têm exemplos dos dois lados e pontuação disponível para esse cálculo, e tirar a média apenas das classes avaliáveis.
+6. **Escolher no desenvolvimento e testar em junho.** Priorizar o F1 macro médio para que classes frequentes não dominem a escolha. Conferir a acurácia, o desempenho das classes raras e a estabilidade entre meses. Quando as diferenças forem pequenas, preferir a configuração mais simples. Relatar separadamente o cenário de primeiro relato em que o agente está disponível e a comparação nas mesmas CATs com essa entrada omitida. Fixar a configuração antes do teste de junho.
 
-## Instruções
+## Entregas e conferências
 
-Aplicar o recorte principal de registros cuja UF do acidente está registrada como Ceará, conforme a análise exploratória, e documentar a incerteza sobre a qualidade desse campo. A localização do empregador não restringe a população. Reproduzir e aproveitar as etapas pertinentes dos notebooks existentes, sem usar o filtro de UF não classificada de `main.ipynb` como sinônimo de Ceará.
-
-1. Usar o [plano compartilhado](README.md) e as decisões da etapa 2. Descrever população, recorte, rótulo, classe positiva e custos relativos de falsos positivos e falsos negativos. Excluir alvo desconhecido da avaliação supervisionada e quantificar exclusões, sem tratá-lo como negativo.
-2. Definir holdout antes de qualquer ajuste. Preferir divisão temporal quando coerente com o uso pretendido, com datas efetivas verificadas em vez de confiar no sufixo do arquivo. Considerar grupos de registros potencialmente relacionados quando identificáveis; se não houver chave confiável, registrar o risco de sobreposição. Justificar alternativa estratificada ou temporal conforme dados, e verificar representação de classes. Não usar o teste para escolher variáveis, limiar, modelos ou hiperparâmetros.
-3. Aplicar k-fold cross-validation apenas no treino, estratificada quando adequada; para previsão temporal, usar validação cronológica apropriada e evitar informação futura. Ajustar imputação, codificação, escalonamento e redução dentro de cada dobra por pipelines. Garantir comparação nas mesmas partições e métricas, com transformações adequadas a cada algoritmo.
-4. Construir e ajustar as quatro famílias exigidas: KNN, árvore de decisão, ensemble de árvores (Random Forest e/ou boosting) e MLP. Registrar grades de hiperparâmetros, configurações escolhidas, sementes, custo e eventuais problemas de convergência. Adicionar baseline simples para contextualizar o resultado.
-5. No desenvolvimento, comparar acurácia, precisão, recall/sensibilidade, F1 e ROC-AUC, com dispersão entre dobras quando possível. Usar probabilidades ou escores contínuos para ROC/AUC; definir limiar e classe positiva no treino. Se classes raras ou ausentes tornarem uma métrica indefinida, explicitar isso e ajustar a estratégia sem inventar resultado. Considerar curva precisão–recall como complemento para desbalanceamento.
-6. Escolher modelo, parâmetros e eventual limiar com base na validação e nos custos dos erros. Avaliar os modelos selecionados uma vez no teste reservado; não fazer nova escolha guiada por ele. Apresentar tabela com as métricas exigidas, matrizes de confusão do final e principais comparados, curvas ROC e interpretação de VP, FP, VN e FN. Comparar desenvolvimento e teste e discutir possível sobreajuste.
-7. Justificar a escolha considerando desempenho, erros, interpretabilidade, limitações de cobertura, rótulos, subnotificação e generalização. Não interpretar a predição como causalidade ou promessa de aplicação operacional.
-
-## Entregas
-
-- Notebook executável com preparação final, treino, ajuste, validação e avaliação.
-- Relatório curto com alvo, recorte, divisão, modelos, comparação, escolha e limitações.
-- Tabela com acurácia, precisão, recall, F1 e AUC; matrizes de confusão do final e principais comparados; curvas ROC dos selecionados; registro dos hiperparâmetros avaliados e escolhidos.
-
-## Critérios de aceitação
-
-- [ ] Alvo, classe positiva, ponto de previsão e disponibilidade temporal dos preditores são definidos e validados; viabilidade e exclusões são documentadas.
-- [ ] Holdout e k-fold são adequados ao uso e às classes; teste fica reservado e pré-processamento/seleção são ajustados dentro das dobras de treino.
-- [ ] KNN, árvore, ensemble e MLP são ajustados e comparados nas mesmas partições; hiperparâmetros e baseline são registrados.
-- [ ] Tabela contém as cinco métricas, matrizes e curvas exigidas; métricas indefinidas são explicadas.
-- [ ] Escolha é baseada na validação, interpreta tipos de erro e trade-off precisão–recall e é confrontada com teste sem reajuste.
-- [ ] Notebook e relatório são reproduzíveis, claros e reconhecem limitações de dados, vazamento residual e generalização.
-
-Caso a viabilidade falhe, entregar o diagnóstico e as limitações em vez de declarar concluídos os critérios de treinamento e avaliação; indicar dados ou definições necessários para retomá-los.
+- Notebook executável e relatório com a população avaliada, as configurações comparadas, o modelo escolhido e os resultados de validação e teste.
+- Tabela de métricas, resultados por classe com seus denominadores, matrizes de confusão dos principais modelos no desenvolvimento e do escolhido no teste, e curvas ROC com as limitações das classes raras.
+- Conferir as listas de entradas, as datas de corte e a exclusividade dos IDs entre treino e avaliação em cada rodada. Comparar desenvolvimento e junho e discutir erros, cobertura da base, hipótese de disponibilidade das entradas e limitações para generalizar os resultados.

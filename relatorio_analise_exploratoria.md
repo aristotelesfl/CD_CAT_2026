@@ -4,16 +4,24 @@
 
 Dos 620.163 registros nos seis arquivos mensais, 10.295 informam Ceará na **UF do acidente**. Nesse grupo, antes do corte por data, 9.545 (92,71%) indicam Distrito Federal na UF do empregador e apenas 13 indicam Ceará nos dois campos. A localização do empregador, portanto, mudaria a população estudada. O único município disponível é o do empregador.
 
-Entre os registros com UF do acidente Ceará, **8.849 têm data do acidente entre 1º de janeiro e 30 de junho de 2026**. Esse é o total usado para os percentuais da próxima seção. Cada linha representa um registro de Comunicação de Acidente de Trabalho (CAT). Uma mesma ocorrência pode aparecer mais de uma vez.
+Entre os registros com UF do acidente Ceará, **8.849 têm data do acidente entre 1º de janeiro e 30 de junho de 2026**. Cada linha representa um registro de Comunicação de Acidente de Trabalho (CAT). Uma mesma ocorrência pode aparecer mais de uma vez.
 
 ## O que mostram as comunicações do semestre?
 
 | Aspecto | Resultado entre os registros do semestre |
 | --- | --- |
 | Idade e sexo | A idade mediana na data do acidente foi de 37 anos. O campo de sexo registra 4.713 casos como masculinos, 4.125 como femininos e 11 sem informação. |
-| Tipo de acidente e parte do corpo | A categoria “Típico” foi a mais frequente, com 6.045 registros (68,31%). O dedo foi a parte do corpo mais citada, em 1.687 registros (19,06%), dos quais 1.608 eram de acidentes típicos. |
+| Tipo de acidente e parte do corpo | A categoria “Típico” foi a mais frequente, com 6.045 registros (68,31%). O dedo foi a parte do corpo mais citada, em 1.687 registros (19,06%). Entre as CATs de acidentes típicos, 26,60% citam o dedo (1.608 de 6.045). Nas de trajeto, essa proporção é de 3,39% (71 de 2.097). |
 | Atividade e ocupação | As duas atividades mais frequentes dos empregadores foram apoio à gestão de saúde (CNAE 8660) e atendimento hospitalar (CNAE 8610). Juntas, somaram 1.845 registros (20,85%). Técnico de enfermagem foi a ocupação mais frequente, com 1.102 (12,45%). |
 | Prazo de emissão | A mediana entre o acidente e a emissão da CAT foi de cinco dias corridos. Em 714 registros (8,07%), a emissão ocorreu depois de 30 de junho. |
+
+**O perfil por sexo varia com a idade.** Na faixa de 18 a 29 anos, 1.563 dos 2.534 registros (61,68%) informam sexo masculino. Já na faixa de 40 a 49 anos, o sexo feminino é o mais frequente, com 1.262 dos 2.377 registros (53,09%). Os totais dessas faixas incluem, respectivamente, nove e dois registros sem informação de sexo.
+
+![Registros de CAT por faixa etária e sexo registrado, com o total de cada faixa acima da barra.](figuras/atividade_01/perfil_idade_sexo.png)
+
+**Quase duas em cada três CATs foram emitidas até o sétimo dia após o acidente.** A contagem inclui as 461 emissões no mesmo dia e chega a 5.675 das 8.849 CATs (64,13%). Até o 30º dia, a proporção acumulada atingiu 90,97% (8.050 de 8.849). As 799 restantes (9,03%) levaram mais de 30 dias.
+
+![Percentual acumulado de CATs emitidas por dia corrido desde o acidente, com marcações aos 7 e aos 30 dias.](figuras/atividade_01/prazo_emissao.png)
 
 ## Por que muda o mês com mais registros?
 
@@ -26,9 +34,15 @@ Das 1.648 cópias adicionais no recorte, 1.636 vêm da sobreposição dos **arqu
 
 Junho concentra mais registros na contagem completa. Quando as linhas idênticas são contadas uma vez, maio passa a liderar. Nessa segunda contagem, o acidente típico continua predominante (4.989 de 7.201, ou 69,28%) e o prazo mediano de emissão passa a quatro dias.
 
+Entre as 7.201 linhas distintas, fevereiro teve a menor contagem, com 1.102 registros. O tipo de acidente estava preenchido em todas elas, e doença foi o tipo menos frequente (519). A faixa de 18 a 29 anos foi a mais frequente (2.092), considerando a idade já completada na data do acidente. Os códigos de apoio à gestão de saúde e de atendimento hospitalar somaram, respectivamente, 780 e 725 registros. Em 4.343 registros, a emissão ocorreu de um a sete dias após o acidente. Em 547, o prazo ultrapassou 30 dias.
+
+Na análise de preenchimento, a data de despacho estava ausente em todas as 7.201 linhas distintas. O código da ocupação estava disponível em mais registros que sua descrição.
+
 ## Limitações e próximos passos
 
 Sem um identificador único de CAT, linhas iguais podem corresponder a uma reapresentação ou a ocorrências distintas com os mesmos atributos. Para interpretar a variação mensal e a concentração de empregadores no Distrito Federal, é preciso confirmar com a fonte como os arquivos mensais são compostos e como as UFs são codificadas.
+
+Para as comunicações enviadas pelo eSocial, sistema usado pelas empresas para informar o acidente, o número do recibo identifica a CAT. Ter esse número nos arquivos ajudaria a conferir as repetições diretamente. O CNPJ/CEI disponível identifica o empregador, que pode aparecer em várias comunicações.
 
 A cobertura da base e a subnotificação podem afetar as contagens por atividade e ocupação. Uma comparação de risco entre esses grupos exigiria conhecer o número de trabalhadores expostos em cada um.
 

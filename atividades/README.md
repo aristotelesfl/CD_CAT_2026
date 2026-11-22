@@ -5,8 +5,8 @@
 Adaptar os três projetos da disciplina aos registros de Comunicação de Acidente de Trabalho (CAT) disponíveis em `datasets/CAT_2026/`, com foco em acidentes cuja UF de ocorrência está registrada como Ceará. A unidade inicial de análise é o **registro de CAT**; não presumir que cada linha corresponda a uma pessoa, acidente único ou empresa única. Os temas e dados de varejo dos enunciados são exemplos substituíveis; suas exigências metodológicas e entregas continuam aplicáveis. Não transferir para a CAT as dimensões, o dicionário ou a distribuição de classes das bases de exemplo.
 
 1. [Análise exploratória](01_analise_exploratoria.md): formular perguntas e produzir evidências sobre os registros.
-2. [Pré-processamento e redução de dimensionalidade](02_pre_processamento_reducao.md): diagnosticar e preparar os dados, comparando representações.
-3. [Modelos supervisionados e avaliação](03_modelos_supervisionados.md): definir um problema viável, comparar os modelos exigidos e justificar a escolha.
+2. Preparar a classe registrada em **Parte Corpo Atingida**, analisar as 27 colunas e comparar as estratégias para reduzir as entradas. Reservar as datas para a organização dos registros. [Pré-processamento e redução de dimensionalidade](02_pre_processamento_reducao.md)
+3. Comparar quatro famílias de classificadores e avaliar em junho os acertos e as confusões entre as partes do corpo. [Modelos supervisionados e avaliação](03_modelos_supervisionados.md)
 
 ## Dados e cuidados compartilhados
 
@@ -41,9 +41,15 @@ As descrições correspondentes às classificações dos arquivos adicionais est
 
 Em cada junção, validar unicidade da chave, manter a quantidade de linhas e registrar quantos registros e códigos distintos foram associados, não encontrados ou ambíguos. Não substituir valores desconhecidos por suposições nem excluir linhas sem correspondência. Guardar descrição original e descrição normalizada separadamente; revisar divergências, códigos incompletos e descrições truncadas. Em particular, não unir diretamente tabelas com múltiplos sinônimos ou atividades por código sem controlar multiplicação de registros. Documentar critérios de correspondência, exemplos e proporção de cobertura no recorte de UF do acidente Ceará.
 
-## Organização sugerida dos produtos
+## Formato obrigatório dos notebooks e relatórios
 
-Criar um notebook executável e um relatório curto por etapa, além das bases derivadas e artefatos exigidos nos respectivos roteiros. Usar caminhos relativos à raiz do projeto e documentar como instalar dependências e executar cada notebook do início ao fim. Resultados e conclusões devem ser produzidos a partir dos dados efetivamente processados; estes arquivos são instruções, não resultados da análise.
+Os notebooks devem conter apenas células de código para executar a análise e exibir dados em tabelas ou gráficos. Nas visualizações, usar títulos, cabeçalhos, eixos, unidades e legendas para identificar os valores apresentados.
+
+Concentrar no relatório da etapa os objetivos, as descrições dos dados, as instruções de execução, as escolhas de método, as interpretações e as conclusões. Essa restrição vale também para células Markdown, comentários narrativos e mensagens explicativas impressas pelo código.
+
+## Organização dos produtos
+
+Criar um notebook executável e um relatório curto por etapa, além das bases derivadas e artefatos exigidos nos respectivos roteiros. Usar caminhos relativos à raiz do projeto e documentar no relatório como instalar as dependências e executar o notebook do início ao fim. Fundamentar os resultados nos dados processados.
 
 ## Fontes dos requisitos
 
