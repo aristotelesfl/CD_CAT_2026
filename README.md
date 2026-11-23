@@ -36,6 +36,7 @@ Os CSVs de CAT usam ponto e vírgula e são compatíveis com leitura `latin-1`; 
 
 ## Notebooks e organização
 
+- [Modelos supervisionados](03_modelos_supervisionados.ipynb) compara KNN, árvore de decisão, Random Forest e MLP. O [relatório da atividade 03](relatorio_modelos_supervisionados.md) apresenta a escolha na validação temporal e o teste de junho.
 - [Pré-processamento e redução de dimensionalidade](02_pre_processamento_reducao.ipynb) prepara a classificação de parte do corpo atingida. O [relatório da atividade 02](relatorio_pre_processamento_reducao.md) explica a escolha das entradas e compara as reduções.
 - [`CAT2026.ipynb`](CAT2026.ipynb): análise exploratória iniciada, incluindo conferência dos arquivos, localização, período, repetições e algumas distribuições.
 - [`main.ipynb`](main.ipynb): exploração anterior; aponta para uma pasta removida, omite maio e usa outro recorte geográfico. Precisa ser adaptado antes de ser reutilizado.
