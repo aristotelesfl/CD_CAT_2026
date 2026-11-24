@@ -2,22 +2,18 @@
 
 import json
 import warnings
-from itertools import product
 
 import numpy as np
 import pandas as pd
 from joblib import Parallel, delayed, parallel_config
 from sklearn.base import clone
 from sklearn.dummy import DummyClassifier
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.exceptions import ConvergenceWarning
 from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.neural_network import MLPClassifier
 from sklearn.pipeline import Pipeline
-from sklearn.tree import DecisionTreeClassifier
 from threadpoolctl import threadpool_limits
 
+from atividades.modelos import arvore_decisao, knn, mlp, random_forest
 from atividades.representacoes import ENTRADAS, representacao
 
 
@@ -29,21 +25,13 @@ REFERENCIA = "Classe mais frequente"
 
 
 def grade():
-    modelos = []
-    for k, voto in product((5, 15), ("uniform", "distance")):
-        modelos.append(("KNN", KNeighborsClassifier(n_neighbors=k, weights=voto)))
-    for profundidade, folha in product((10, None), (1, 5)):
-        modelos.append(("Árvore", DecisionTreeClassifier(
-            max_depth=profundidade, min_samples_leaf=folha, random_state=SEMENTE)))
-    for profundidade, folha in product((15, None), (1, 5)):
-        modelos.append(("Random Forest", RandomForestClassifier(
-            n_estimators=200, max_depth=profundidade, min_samples_leaf=folha,
-            random_state=SEMENTE, n_jobs=1)))
-    for camadas, alpha in product(((64,), (64, 32)), (0.0001, 0.01)):
-        modelos.append(("MLP", MLPClassifier(
-            hidden_layer_sizes=camadas, alpha=alpha, solver="adam",
-            max_iter=300, random_state=SEMENTE)))
-    return modelos
+    """Reúne as configurações na ordem usada para numerar as variantes."""
+    return [
+        *knn.configuracoes(),
+        *arvore_decisao.configuracoes(SEMENTE),
+        *random_forest.configuracoes(SEMENTE),
+        *mlp.configuracoes(SEMENTE),
+    ]
 
 
 def ler_base(pasta, nome):
