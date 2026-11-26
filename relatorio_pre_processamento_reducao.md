@@ -1,136 +1,224 @@
-# Relatório da atividade 02 — Pré-processamento e redução da dimensionalidade
+# Relatório de pré-processamento e redução de dimensionalidade
 
-## Introdução
+## 1. Introdução
 
-Esta atividade prepara os dados para classificar a categoria registrada em **Parte Corpo Atingida**. Cada resposta é uma das categorias observadas, como “Dedo”, “Joelho” ou “Partes múltiplas”. Também investigamos quais informações ajudam a distinguir essas categorias e comparamos maneiras de reduzir as colunas de entrada.
+Os registros de Comunicação de Acidente de Trabalho (CAT) reúnem informações sobre o acidente, o trabalhador e o empregador. Seu uso em um experimento de classificação exige examinar a qualidade dos dados, definir quais informações estarão disponíveis para a previsão e transformar os atributos em uma representação numérica adequada.
 
-**Sim, houve treinamento nesta etapa.** Ajustamos uma regressão logística multiclasse com parâmetros fixos para medir o efeito do pré-processamento em diferentes representações. Ela é apenas um modelo de referência para esta comparação. Não selecionamos o classificador final. A comparação de KNN, árvores, Random Forest e MLP, seguida pela avaliação final em junho, cabe à atividade 03. Assim, os percentuais deste relatório são resultados preliminares da regressão logística, e não o resultado final do projeto.
+Esta etapa investiga a preparação dos dados para a classificação de **Indica Óbito Acidente**, considerando **Sim** como classe positiva. O recorte abrange os registros cuja UF do acidente está informada como Ceará e cuja data do acidente pertence ao primeiro semestre de 2026. As análises descrevem os registros disponíveis nessa base. A interpretação de suas contagens depende da cobertura, do preenchimento e da identificação das CATs.
 
-## Metodologia
+A redução de dimensionalidade foi estudada por meio de filtros de variância, qui-quadrado e informação mútua, seleção sequencial forward, seleção pela importância de uma árvore e análise de componentes principais (PCA). Os resultados apresentados foram extraídos da execução do notebook que acompanha este relatório. [Notebook do experimento](02_pre_processamento.ipynb)
 
-### Preparação dos registros
+## 2. Objetivo
 
-Lemos os seis CSVs por posição, pois seus cabeçalhos se repetem. Conferimos o esquema, mantivemos os 27 campos como texto e guardamos arquivo e linha de origem. Preservar códigos como texto mantém zeros à esquerda.
+O objetivo geral foi preparar os dados e comparar as representações obtidas por diferentes técnicas de seleção e extração de características para o problema de classificação de óbito.
 
-Selecionamos registros com Ceará na UF do **acidente** e data do acidente entre janeiro e junho de 2026. Das 8.849 linhas, contamos uma vez cada combinação idêntica dos 27 campos, obtendo 7.201 combinações distintas. Sem identificador da CAT ou do acidente, esse número não representa necessariamente acidentes únicos.
+Os objetivos específicos foram os seguintes.
 
-Para classificação, usamos as 5.988 combinações de janeiro a maio, com 42 classes informadas. Seis classes tinham menos de dez registros. Mantivemos classes raras, partes múltiplas e descrições truncadas como registradas. Todas as respostas de parte atingida estavam preenchidas. Uma resposta ausente, se encontrada, seria registrada e excluída da avaliação, sem imputação do alvo.
+- Examinar duplicatas, ausências, códigos sem informação e descrições truncadas.
+- Definir os atributos utilizados no experimento e separar treino e teste.
+- Transformar as categorias em indicadores binários por one-hot encoding.
+- Aplicar métodos de seleção sobre uma base comum e identificar suas escolhas em comum.
+- Aplicar PCA, analisar a variância explicada e interpretar as componentes.
+- Discutir a redução de dimensão obtida e as limitações relacionadas ao desbalanceamento e às categorias raras.
 
-Padronizamos espaços e caixa para evitar categorias duplicadas por diferenças de escrita e mantivemos o texto original na auditoria. Identificamos valores vazios, `{ñ class}`, códigos de não informado e datas inválidas por campo. Nas entradas categóricas, a falta de informação virou `[desconhecido]`, preservando o registro. Não aplicamos média ou moda a variáveis categóricas.
+## 3. Metodologia
 
-Conferimos os códigos de CBO, CNAE e CID-10 nos dicionários, registrando associações ausentes ou ambíguas. Usamos os códigos para representar ocupação e atividade econômica. Suas descrições servem à auditoria e interpretação. Quando possível, usamos as hierarquias da CBO e da CNAE para criar família ocupacional e divisão econômica. Para o agente, só recuperamos a descrição completa quando o texto truncado teve uma única correspondência no dicionário.
+### 3.1. Fonte e recorte dos dados
 
-### Escolha das entradas
+Foram utilizados os seis arquivos CSV mensais de janeiro a junho de 2026, disponíveis em `datasets/CAT_2026`. A leitura empregou separador ponto e vírgula e codificação `latin-1`. Os campos CBO e CNAE foram lidos como texto para preservar zeros à esquerda.
 
-O alvo é a categoria de `Parte Corpo Atingida`, portanto esse campo e suas representações equivalentes não entram como preditores. CID-10, descrição do CID e natureza da lesão também ficaram de fora porque podem revelar diretamente a região atingida depois do acidente.
+Os arquivos foram concatenados e filtrados pela UF do acidente Ceará. A data do acidente foi convertida para o formato de data, com valores inválidos tratados como ausentes. Em seguida, foram selecionadas as datas entre 1º de janeiro e 30 de junho de 2026. O recorte temporal foi estabelecido pelo valor registrado em cada linha, independentemente do mês indicado no nome do arquivo.
 
-Começamos por **tipo do acidente, agente informado e atividade econômica do empregador**. O tipo tem três categorias e estava preenchido em todos os 5.988 registros do desenvolvimento. O agente tinha 119 ausências e, quando testado sozinho, obteve o maior percentual de acertos entre os atributos individuais avaliados. A CNAE tinha 288 códigos informados. Agrupá-la em divisões reduziu essa variedade a 69 categorias observadas.
+### 3.2. Limpeza e tratamento dos atributos
 
-Comparamos a ocupação CBO porque ela poderia acrescentar informação ao tipo, agente e setor. O código estava ausente em apenas um registro, mas a descrição faltava em 918. A comparação preliminar não mostrou ganho consistente ao acrescentar a família CBO. Mantivemos essa entrada entre as versões avaliadas, sem assumir que seja necessária.
+A inspeção inicial apresentou os tipos das colunas, a quantidade e o percentual de ausentes e o número de valores distintos. O marcador `{ñ class}` foi reconhecido como ausência. A detecção de duplicatas considerou os 27 campos originais, preservando uma ocorrência de cada combinação idêntica.
 
-Sexo, filiação e tipo de empregador ficaram fora da seleção inicial. Usados individualmente, não superaram a referência que sempre escolhe a classe mais frequente. Esse resultado isolado não avalia se esses atributos poderiam ajudar em combinação com outros.
+A remoção de duplicatas foi uma decisão de preparação da base. Sem um identificador único do acidente, a contagem de combinações distintas permanece sujeita às limitações de identificação dos registros.
 
-Também deixamos fora da matriz de preditores as datas, a idade e os prazos derivados delas, os campos administrativos e de desfecho, a localização do empregador e o CNPJ/CEI. Datas organizam a separação temporal, mas não são entradas de previsão. A UF do acidente é constante no recorte. Município e UF do empregador descrevem o empregador, não necessariamente o local do acidente. O identificador do empregador poderia permitir memorização de empresas. Essas colunas ainda servem à auditoria e à análise exploratória.
+No agente causador, descrições truncadas foram comparadas com o dicionário disponível no projeto. A associação ao código foi realizada quando havia uma correspondência única. Ausências, ambiguidades e descrições sem correspondência receberam a categoria `Desconhecido`. A situação de cada associação foi mantida na variável de auditoria `resultado_agente`.
 
-### Como preparamos as colunas e comparamos as versões da base
+Os códigos `000000` na CBO e `0000` na CNAE também foram tratados como desconhecidos. Nas três entradas utilizadas pelo one-hot, foram removidos espaços nas extremidades dos textos, e valores vazios ou ausentes foram preenchidos com `Desconhecido`.
 
-**1. Verificamos quais campos trazem informações parecidas.**
+### 3.3. Definição do alvo e das entradas
 
-A CNAE identifica a atividade econômica do empregador. Cada atividade pertence a uma divisão mais ampla. Assim, quando conhecemos o código da atividade, já sabemos sua divisão. Fizemos a mesma pergunta para outros pares de campos: quanto conhecer um deles ajuda a saber o valor do outro?
+A revisão inicial dos atributos considerou a função de cada campo, sua diversidade e sua disponibilidade no momento da previsão.
 
-Para montar o gráfico, contamos quantas CATs apresentavam cada combinação de categorias. Usamos o **V de Cramér com correção de viés** para resumir essas contagens em um número de 0 a 1. Quanto mais perto de 1, mais forte a associação. Esse cálculo faz sentido para códigos como CBO e CNAE porque seus números servem como nomes. A diferença numérica entre dois códigos não mede quanto duas ocupações ou atividades se parecem. Das 5.565 CATs disponíveis antes de junho, 5.272 tinham os seis campos preenchidos e entraram nesse gráfico.
+| Campo ou grupo | Tratamento adotado |
+|---|---|
+| CNPJ/CEI Empregador | Exclusão do identificador por decisão de escopo |
+| UF do acidente e espécie do benefício | Exclusão de campos constantes no recorte |
+| Origem de Cadastramento CAT | Exclusão por escopo administrativo, considerando que o campo contém Internet e ausências |
+| Data Despacho Benefício | Exclusão do campo preenchido com `00/00/0000` |
+| CID-10 e sua descrição | Exclusão considerando um cenário de previsão anterior à disponibilidade do diagnóstico |
+| Descrições de CBO e CNAE | Exclusão das descrições associadas aos códigos mantidos |
 
-**2. Transformamos as categorias em colunas de sim ou não.**
+Essa revisão produziu uma tabela com 18 colunas, incluindo o alvo. Após a separação de `Indica Óbito Acidente`, restaram 17 atributos candidatos. Para os experimentos de redução, foram escolhidas três entradas categóricas.
 
-O campo “tipo do acidente” ajuda a visualizar a transformação. Um único campo com três respostas possíveis virou três colunas. O valor 1 significa “sim” e o valor 0 significa “não”.
+| Entrada | Informação representada |
+|---|---|
+| Tipo do Acidente | Categoria registrada como típico, trajeto ou doença |
+| Agente Causador Acidente | Código associado ao agente causador ou categoria desconhecida |
+| Tipo de Empregador | Categoria de identificação do empregador |
 
-| Tipo registrado na CAT | É típico? | É de trajeto? | É doença? |
-| --- | ---: | ---: | ---: |
-| Típico | 1 | 0 | 0 |
-| Trajeto | 0 | 1 | 0 |
-| Doença | 0 | 0 | 1 |
+A escolha dessas três entradas define o alcance das comparações. Sua utilização pressupõe que estejam disponíveis no momento da previsão. Essa hipótese deve ser verificada antes de uma aplicação operacional.
 
-Essa técnica se chama **one-hot encoding**. Fizemos o mesmo para agente, ocupação e atividade econômica. Uma entrada sem informação recebeu a categoria `[desconhecido]`. Se uma categoria aparecia pela primeira vez no mês de avaliação, as colunas daquele campo ficavam em zero. Como há centenas de ocupações e atividades, os quatro campos originais passaram a ocupar 938 colunas na comparação de maio.
+### 3.4. Divisão e codificação dos dados
 
-**3. Comparamos três maneiras de usar menos colunas.**
+Foi realizada uma divisão aleatória estratificada, com 80% dos registros no treino, 20% no teste e `random_state=42`. A estratificação preservou aproximadamente a proporção das classes. As análises por tipo de acidente e agente causador foram realizadas no treino.
 
-| Estratégia | O que fizemos com os dados da CAT |
-| --- | --- |
-| Retirar ou agrupar campos | Em uma das versões, usamos tipo, agente e divisão da CNAE. Cada setor passou a reunir várias atividades econômicas. Essa versão ocupou 247 colunas em maio. |
-| Selecionar colunas por **informação mútua** | Para cada coluna de sim ou não, verificamos se a distribuição das partes do corpo atingidas mudava conforme a resposta. A informação mútua pontua quanto essa resposta ajuda a distinguir as partes atingidas. Em maio, guardamos as 469 colunas mais bem pontuadas entre as 938 disponíveis. Cada coluna selecionada conservou seu significado. |
-| Combinar colunas com **PCA** | A PCA cria novas colunas calculando somas com pesos diferentes para as colunas originais. Cada nova coluna resume um padrão de variação entre as CATs. Em maio, foram necessárias 413 para representar 95% da variação observada no treino. Esse percentual descreve os dados de entrada. A taxa de acertos foi medida à parte. |
+O one-hot encoding criou uma coluna binária para cada categoria aprendida no treino. Por exemplo, `Tipo do Acidente_Trajeto` assume valor 1 quando o registro é de trajeto e 0 nos demais registros. Esse procedimento gerou 163 indicadores a partir das três entradas.
 
-**4. Verificamos se ainda era possível prever a parte do corpo com as colunas reduzidas.**
+O encoder foi ajustado no treino e aplicado ao teste com `handle_unknown="ignore"`. Uma categoria encontrada apenas no teste é representada por zeros no bloco de indicadores do atributo correspondente. As matrizes foram convertidas em DataFrames densos para facilitar a apresentação dos nomes das colunas e a aplicação do procedimento didático de PCA.
 
-Por exemplo, para avaliar março, treinamos a regressão logística com acidentes de janeiro e fevereiro cujas CATs já tinham sido emitidas antes de 1º de março. Foi nesse conjunto que definimos as colunas de sim ou não, selecionamos a metade mais bem pontuada e calculamos as combinações da PCA para suas respectivas versões. Depois, aplicamos cada versão às mesmas CATs de março e comparamos as previsões com a parte do corpo registrada.
+### 3.5. Métodos de seleção
 
-Repetimos o procedimento em abril e maio, sempre usando os meses anteriores para aprender. Mantivemos o mesmo tipo de classificador e as mesmas configurações em todas as versões para medir o efeito da mudança nas colunas. Junho ficou reservado para a avaliação final da atividade 03.
+Primeiro foi aplicado o filtro de variância zero. A base resultante serviu de entrada para qui-quadrado, informação mútua, Wrapper e árvore. A interseção dos filtros foi construída como uma representação adicional.
 
-## Resultados
+| Técnica | Critério e configuração |
+|---|---|
+| Variância | `VarianceThreshold(threshold=0.0)`, removendo indicadores constantes no treino |
+| Qui-quadrado | `SelectKBest` com os 50 maiores escores de associação entre indicador e alvo |
+| Informação mútua | `SelectKBest` com os 50 maiores escores, usando `discrete_features=True` para os indicadores binários |
+| Interseção | Retenção dos indicadores aprovados por variância, qui-quadrado e informação mútua |
+| Wrapper forward | Seleção sequencial de 8 indicadores, com árvore de profundidade máxima 4, pesos de classe balanceados e average precision em três partições estratificadas |
+| Método embutido | Árvore de profundidade máxima 5, mínimo de 8 registros por folha, pesos de classe balanceados e retenção dos indicadores com importância maior que zero |
 
-### Redundância e ausência de informação
+As quantidades de 50 indicadores nos filtros supervisionados e 8 no Wrapper foram parâmetros definidos para o experimento. A quantidade utilizada pela árvore decorreu do ajuste realizado. As divisões internas do Wrapper e as árvores utilizaram `random_state=42`.
 
-- **Datas do acidente.** As duas colunas coincidiram nas 8.849 linhas. Usamos uma para definir os meses e a outra para conferir consistência.
-- **CBO.** Nos 5.069 registros do desenvolvimento com código e descrição preenchidos, cada código tinha um único texto. A descrição faltava 918 vezes e o código, uma vez. O código ou a família representa a ocupação na entrada. A descrição fica disponível para auditoria.
-- **CNAE.** Nos 5.786 registros com código e descrição, cada código tinha um texto. Porém, 30 descrições truncadas correspondiam a mais de um código. Usamos o código para identificar o setor e também comparamos a divisão CNAE, que reduz a quantidade de categorias informadas de 288 para 69.
-- **CID-10.** Nos 5.978 registros com código e descrição, cada um correspondia a um único par. Mantivemos o par para auditoria e excluímos essas informações clínicas dos preditores.
-- **Campos quase constantes ou ausentes.** Espécie do benefício apresentou um único valor. Origem do cadastro teve uma única categoria entre os valores informados e faltou em 575 registros. Data de despacho estava ausente em todas as 5.988 combinações.
+O qui-quadrado e a informação mútua avaliam cada indicador individualmente. O Wrapper acrescenta indicadores considerando sua contribuição junto aos que já foram escolhidos. A árvore utiliza os atributos nas divisões construídas durante o treinamento e atribui importância conforme a redução de impureza obtida.
 
-![Matriz de associação entre tipo, agente, CNAE, divisão da CNAE, CBO e família da CBO](figuras/atividade_02/associacao_atributos.png)
+### 3.6. Extração com PCA
 
-As associações mais altas ocorreram entre CNAE e sua divisão (V = 0,98) e entre CBO e sua família (V = 0,97). Cada um dos 279 códigos CNAE observados nesse subconjunto pertence a uma única divisão, e cada uma das 531 ocupações pertence a uma única família. O código detalhado permite recuperar o grupo. Usar apenas o grupo reduz a dimensão ao custo de reunir atividades ou ocupações distintas.
+O PCA foi aplicado à base produzida pelo filtro de variância. Antes do ajuste, os indicadores foram padronizados com `StandardScaler`, utilizando médias e desvios-padrão calculados no treino. Nos indicadores binários, essa transformação aumenta o peso relativo das categorias raras.
 
-Tipo e agente também apresentaram associação (V = 0,73). Nesse caso, a validação ajuda a decidir se vale manter os dois. Usando tipo e divisão CNAE, o F1 macro foi 4,05%. Ao acrescentar o agente às mesmas CATs, subiu para 7,71%. Mesmo associado ao tipo, o agente acrescentou informação para prever a parte do corpo.
+Inicialmente, foram calculadas todas as componentes para examinar o scree plot e a variância explicada acumulada. Em seguida, foi ajustada uma representação com retenção de 90% da variância, usando `PCA(n_components=0.90, svd_solver="full")`.
 
-### Resultados da regressão logística de referência
+As componentes são combinações lineares dos indicadores padronizados. Foram examinados seus coeficientes, os maiores pesos em módulo e a projeção dos registros nas duas primeiras componentes. O alvo foi utilizado para identificar visualmente os registros com óbito. A construção das componentes depende da variação dos dados de entrada.
 
-A tabela apresenta a média simples das validações de março, abril e maio. Cada mês tem o mesmo peso. **Acertos** é a proporção de registros classificados corretamente. **F1 macro** dá o mesmo peso a cada classe presente no mês. Classes observadas que nunca foram previstas recebem F1 zero. As colunas numéricas são a dimensão da matriz no treino de maio.
+## 4. Resultados
 
-| Representação de entrada | Colunas em maio | Acertos médios | F1 macro médio |
-| --- | ---: | ---: | ---: |
-| Referência: sempre escolher a classe mais frequente | — | 19,29% | 0,81% |
-| Agente, tipo, CNAE e CBO detalhados | 938 | 27,92% | 7,92% |
-| Tipo e agente | 181 | 28,44% | 6,14% |
-| **Tipo, agente e divisão da CNAE** | **247** | **29,25%** | 7,71% |
-| Tipo, agente, divisão da CNAE e família CBO | 510 | 28,21% | 7,85% |
-| Tipo e divisão da CNAE, sem agente | 69 | 24,99% | 4,05% |
-| Seleção por informação mútua na matriz detalhada | 469 | 27,99% | **7,98%** |
-| PCA na matriz detalhada | 413 | 27,70% | 7,88% |
+### 4.1. Preparação e distribuição dos registros
 
-![Número de colunas e F1 macro das representações avaliadas](figuras/atividade_02/dimensao_desempenho.png)
+O recorte inicial reuniu 8.849 linhas e 27 campos. Foram identificadas 3.296 linhas envolvidas em duplicatas exatas. A remoção das ocorrências adicionais eliminou 1.648 linhas e produziu 7.201 combinações distintas dos campos originais.
 
-Tipo, agente e divisão da CNAE tiveram o maior percentual médio de acertos. A seleção por informação mútua teve o maior F1 macro médio, com uma diferença pequena de 0,06 ponto percentual sobre a matriz detalhada. Acrescentar a família CBO à combinação de tipo, agente e setor aumentou a dimensão de 247 para 510 colunas, sem melhorar o percentual de acertos.
+No tratamento do agente causador, os resultados foram os seguintes.
 
-A seleção por informação mútua manteve 323 indicadores nas três rodadas. A sobreposição entre as listas foi de 76,0% entre março e abril e 82,6% entre abril e maio. A PCA preservou 95% da variância com 333, 391 e 413 componentes em março, abril e maio. As duas primeiras componentes somaram 16,64% da variância no treino de maio. O notebook contém os gráficos, os indicadores selecionados e os maiores pesos das componentes.
+| Situação da associação ao dicionário | Registros |
+|---|---:|
+| Correspondência única | 6.538 |
+| Descrição sem correspondência | 393 |
+| Descrição ambígua | 131 |
+| Ausência | 139 |
+| Total | 7.201 |
 
-### Desempenho por classe
+Os três últimos grupos resultaram em 663 registros com agente representado como `Desconhecido`.
 
-A métrica geral esconde diferenças entre classes. Na média das três validações, a versão com tipo, agente e divisão da CNAE teve F1 de 54,4% para “Dedo”, 17,0% para “Joelho” e 6,1% para “Mao (Exceto Punho ou”. Especificamente em maio, 27 das 40 classes presentes ficaram sem acertos. As métricas completas por classe foram salvas para a atividade 03.
+A distribuição do alvo evidencia o desbalanceamento.
 
-## Discussão
+| Conjunto | Total de registros | Sem óbito | Com óbito | Percentual com óbito |
+|---|---:|---:|---:|---:|
+| Base após deduplicação | 7.201 | 7.174 | 27 | 0,37% |
+| Treino | 5.760 | 5.738 | 22 | 0,38% |
+| Teste | 1.441 | 1.436 | 5 | 0,35% |
 
-Os slides alertam que adicionar atributos não significa necessariamente adicionar informação útil. Nesta comparação, tipo, agente e divisão CNAE tiveram mais acertos que a representação detalhada, usando 247 colunas em vez de 938. Agrupar a atividade econômica manteve uma representação interpretável. A CBO permanece entre as opções de comparação: teve pequena variação no F1 macro, mas aumentou a dimensão da matriz.
+No treino, os acidentes de trajeto reuniram 12 óbitos em 1.373 registros, aproximadamente 0,87%. Os acidentes típicos reuniram 10 óbitos em 3.982 registros, aproximadamente 0,25%. Entre os 405 registros classificados como doença, foram observados zero óbitos.
 
-A informação mútua é um método filtro. Ela reduziu o número de indicadores, embora as listas tenham variado entre meses. Como pontua colunas individualmente, não garante que o subconjunto seja ótimo em conjunto ou para outro classificador.
+### 4.2. Dimensão das representações
 
-A PCA é um método de extração. Seus componentes resumem a variância, mas perdem o significado direto de nomes como “tipo de acidente” ou “setor”. Seu F1 macro médio ficou próximo ao da matriz detalhada. Preservar 95% da variância não garante preservar a separação entre as classes, porque a PCA não considera o alvo na criação dos componentes.
+A tabela compara a quantidade de colunas de cada representação. A redução percentual foi calculada em relação aos 163 indicadores iniciais.
 
-Os resultados descrevem um exercício de preparação com regressão logística de referência. Eles ajudam a comparar as entradas e as reduções, mas ainda não dizem qual classificador será escolhido. A atividade 03 deve comparar os modelos previstos, examinar erros por classe e avaliar uma vez em junho. Junho contém 1.213 registros e não participou da escolha das representações.
+| Representação | Colunas resultantes | Redução da dimensão |
+|---|---:|---:|
+| One-hot completo | 163 | 0,00% |
+| Após filtro de variância | 163 | 0,00% |
+| Qui-quadrado | 50 | 69,33% |
+| Informação mútua | 50 | 69,33% |
+| Interseção dos filtros | 49 | 69,94% |
+| Wrapper | 8 | 95,09% |
+| Método embutido | 10 | 93,87% |
+| PCA com retenção de 90% | 142 | 12,88% |
 
-A presença do agente e do tipo no primeiro relato é uma hipótese. No desenvolvimento, 4.947 registros tiveram correspondência única do agente ao dicionário, 581 foram ambíguos, 341 não tiveram correspondência e 119 estavam sem informação. A versão sem agente foi comparada nas mesmas observações. Se o agente não estiver disponível no relato inicial real, o resultado com esse campo não representa essa situação.
+Todos os indicadores apresentaram variância positiva no treino. O filtro com limiar zero manteve as 163 colunas, permitindo que categorias raras continuassem participando das demais seleções.
 
-## Reprodução
+### 4.3. Qui-quadrado, informação mútua e interseção
 
-A execução usou Python 3.12.14. Na raiz do projeto, instale as dependências e execute o notebook:
+O maior escore de qui-quadrado foi obtido pelo indicador de medicamento em geral, código `305068300`. A categoria reuniu apenas três registros e um óbito. O alto escore decorre da diferença entre a contagem observada e a esperada em uma base com baixa frequência de óbito.
 
-```sh
-python -m pip install jupyterlab numpy==2.3.5 pandas==3.0.1 scipy==1.18.1 scikit-learn==1.9.1 matplotlib==3.11.2 pyarrow==26.0.1 threadpoolctl==3.8.0
-python -m jupyterlab 02_pre_processamento_reducao.ipynb
-```
+| Indicador | Registros no treino | Óbitos | Escore qui-quadrado |
+|---|---:|---:|---:|
+| Medicamento em geral | 3 | 1 | 85,6112 |
+| Edifício ou estrutura, código `302050900` | 22 | 1 | 10,0231 |
+| Acidente de trajeto | 1.373 | 12 | 8,7369 |
+| Agente do acidente inexistente | 92 | 2 | 7,7644 |
+| Veículo, código `303075900` | 336 | 4 | 5,7729 |
 
-O notebook gera as tabelas, os gráficos, as bases Parquet para a atividade 03 e o manifesto de entradas. As escolhas, interpretações e conclusões estão descritas neste relatório.
+A leitura conjunta dos escores e das contagens evidencia que as associações têm suportes amostrais distintos. No caso de medicamento em geral, a posição no ranking depende de um único registro com óbito.
 
-## Material da disciplina
+Na informação mútua, o indicador de trajeto ocupou a primeira posição, seguido por medicamento em geral e acidente típico. A ordem diferiu daquela obtida pelo qui-quadrado, embora os conjuntos selecionados tenham sido muito semelhantes.
 
-- [Pré-processamento de dados](context/Pre-processamentoDeDados.pdf): limpeza, valores ausentes, redundância, codificação categórica e vazamento de informação.
-- [Redução de dimensionalidade](context/Reducao_Dimensionalidade.pdf): métodos filtro, seleção de atributos, PCA e extração de atributos.
+Os dois métodos compartilharam 49 dos 50 indicadores escolhidos. O qui-quadrado incluiu adicionalmente o indicador de chão, código `302010550`, enquanto a informação mútua incluiu o de bicicleta, código `303075100`. A interseção com o filtro de variância produziu uma representação com 49 indicadores.
+
+### 4.4. Wrapper, árvore e concordância entre métodos
+
+O Wrapper selecionou os três indicadores de tipo do acidente e cinco indicadores de agente causador. Estes correspondem a rua ou estrada, calçada ou caminho para pedestre, escada permanente, chão e agente do acidente inexistente.
+
+A árvore do método embutido utilizou dez indicadores. Acidente de trajeto apresentou a maior importância, com valor aproximado de 0,332, seguido por agente do acidente inexistente, piso de veículo e edifício ou estrutura. Essas importâncias descrevem a participação relativa dos atributos nas reduções de impureza obtidas por essa árvore.
+
+Quatro indicadores foram escolhidos por qui-quadrado, informação mútua, Wrapper e método embutido.
+
+- Acidente de trajeto.
+- Acidente típico.
+- Calçada ou caminho para pedestre.
+- Agente do acidente inexistente.
+
+Os indicadores de tipo de empregador ficaram fora das quatro seleções. No treino, CNPJ/CGC estava presente em 5.755 dos 5.760 registros, indicando pequena diversidade desse atributo na amostra utilizada.
+
+### 4.5. PCA e variância explicada
+
+A quantidade de componentes necessária para atingir cada limite de variância acumulada foi a seguinte.
+
+| Limite de variância acumulada | Componentes necessárias |
+|---|---:|
+| Pelo menos 85% | 134 |
+| Pelo menos 90% | 142 |
+| Pelo menos 95% | 150 |
+
+A representação escolhida produziu 142 componentes e preservou 90,15% da variância da matriz padronizada. A redução de dimensão foi de 12,88%. Esse resultado mostra que a variação está distribuída entre muitas componentes.
+
+A primeira componente explicou aproximadamente 1,54% da variância e apresentou coeficientes destacados para acidente típico e trajeto, com sinais opostos, além de agentes relacionados a veículos e vias. A segunda explicou aproximadamente 1,38% e apresentou pesos destacados para tipo de empregador.
+
+Juntas, as duas primeiras componentes preservaram 2,92% da variância padronizada. Na projeção bidimensional, os registros com óbito apareceram sobrepostos a registros sem óbito. A pequena proporção de variância representada limita as conclusões sobre a estrutura completa dos dados a partir desse gráfico.
+
+## 5. Discussão
+
+### 5.1. Redução de dimensão e escolha de uma representação
+
+Os métodos de seleção produziram representações mais compactas, conservando o significado dos indicadores escolhidos. A interseção reduziu a matriz para 49 colunas e apresentou forte concordância entre os dois filtros supervisionados. Wrapper e árvore produziram subconjuntos menores, com critérios que consideram a utilização conjunta dos indicadores.
+
+A quantidade de colunas deve ser interpretada junto aos parâmetros. Os filtros foram configurados para selecionar 50 indicadores, e o Wrapper foi configurado para selecionar oito. A dimensão obtida por essas técnicas reflete esses limites. A capacidade de preservar informação útil para identificar óbitos depende da avaliação preditiva de cada representação.
+
+O PCA com padronização exigiu 142 componentes para atingir a retenção proposta. Essa configuração ofereceu uma redução menor de dimensão e gerou colunas cujo significado é descrito por combinações de indicadores. A padronização do one-hot contribui para dar participação relativa às categorias raras e ajuda a contextualizar a distribuição da variância por muitas componentes.
+
+### 5.2. Categorias raras e interpretação das associações
+
+A categoria de medicamento em geral exemplifica a sensibilidade dos rankings a poucos registros. Seu escore elevado de qui-quadrado foi sustentado por um óbito em três observações. A estabilidade dessa associação depende de sua avaliação em outras partições e amostras.
+
+Trajeto apresentou uma associação observada em um grupo maior, com 12 óbitos em 1.373 registros do treino, e foi destacado pelos diferentes métodos. Esse resultado justifica sua discussão como característica relevante para a classificação no recorte estudado. Uma explicação causal exige investigação específica sobre os acidentes, os registros e os possíveis fatores associados.
+
+O tratamento das descrições truncadas também influencia as entradas. A categoria `Desconhecido` reuniu situações de ausência, ambiguidade e falta de correspondência ao dicionário. Essa decisão preservou os registros, mas agregou situações potencialmente diferentes em um mesmo indicador.
+
+### 5.3. Desbalanceamento e avaliação preditiva
+
+A amostra contém 27 registros com óbito, dos quais 22 ficaram no treino e cinco no teste. Um classificador que atribuísse Não a todos os registros da base teria acurácia de aproximadamente 99,63% e recall de Sim igual a zero. Por isso, a avaliação deve examinar métricas voltadas à classe positiva.
+
+Average precision resume a relação entre precisão e recall ao variar o limiar de decisão. O recall de Sim indica a fração dos óbitos identificados em um limiar escolhido. A precisão e a contagem de falsos positivos ajudam a interpretar quantos alertas gerados correspondem a registros com óbito.
+
+A comparação preditiva entre todas as representações ainda está pendente nesta versão do notebook. A validação interna do Wrapper foi utilizada para escolher seu subconjunto. Para estimar o desempenho das representações, o procedimento deve reajustar o one-hot, os seletores e, quando aplicável, a padronização e o PCA dentro do treino de cada fold, usando partições e classificador comparáveis. O teste deve ser utilizado na avaliação final do procedimento escolhido.
+
+Com cinco óbitos no teste, a identificação de um caso adicional altera o recall em 20 pontos percentuais. Esse tamanho amostral exige considerar a variação dos resultados ao interpretar diferenças entre métodos.
+
+### 5.4. Alcance dos resultados desta etapa
+
+A preparação produziu uma base com 7.201 registros e matrizes consistentes de treino e teste. O experimento documentou o tratamento das ausências e ambiguidades, explicitou as três entradas utilizadas e gerou diferentes representações para a etapa de classificação.
+
+A concordância dos filtros, a presença de trajeto entre os indicadores destacados e a redução limitada obtida pelo PCA padronizado constituem os principais resultados observados. As conclusões se aplicam ao recorte de CATs do Ceará, às entradas escolhidas, à divisão aleatória estratificada e aos parâmetros registrados. A definição da representação final depende da comparação de seu desempenho na identificação de óbitos.

@@ -1,57 +1,133 @@
-# Comunicações de Acidente de Trabalho no Ceará no primeiro semestre de 2026
+# Relatório de análise exploratória das CATs no Ceará
 
-## Quais registros entraram na análise?
+## 1. Introdução
 
-Dos 620.163 registros nos seis arquivos mensais, 10.295 informam Ceará na **UF do acidente**. Nesse grupo, antes do corte por data, 9.545 (92,71%) indicam Distrito Federal na UF do empregador e apenas 13 indicam Ceará nos dois campos. A localização do empregador, portanto, mudaria a população estudada. O único município disponível é o do empregador.
+Os registros de Comunicação de Acidente de Trabalho (CAT) reúnem informações sobre o acidente, o trabalhador e o empregador. Este relatório analisa **7.201 registros distintos pelos campos disponíveis**, com **UF do acidente informada como Ceará** e ocorrência de **1º de janeiro a 30 de junho de 2026**. [Notebook da análise exploratória](01_analise_exploratoria.ipynb)
 
-Entre os registros com UF do acidente Ceará, **8.849 têm data do acidente entre 1º de janeiro e 30 de junho de 2026**. Cada linha representa um registro de Comunicação de Acidente de Trabalho (CAT). Uma mesma ocorrência pode aparecer mais de uma vez.
+## 2. Objetivo
 
-## O que mostram as comunicações do semestre?
+O objetivo é descrever os registros de CAT do primeiro semestre de 2026 com UF do acidente informada como Ceará.
 
-| Aspecto | Resultado entre os registros do semestre |
-| --- | --- |
-| Idade e sexo | A idade mediana na data do acidente foi de 37 anos. O campo de sexo registra 4.713 casos como masculinos, 4.125 como femininos e 11 sem informação. |
-| Tipo de acidente e parte do corpo | A categoria “Típico” foi a mais frequente, com 6.045 registros (68,31%). O dedo foi a parte do corpo mais citada, em 1.687 registros (19,06%). Entre as CATs de acidentes típicos, 26,60% citam o dedo (1.608 de 6.045). Nas de trajeto, essa proporção é de 3,39% (71 de 2.097). |
-| Atividade e ocupação | As duas atividades mais frequentes dos empregadores foram apoio à gestão de saúde (CNAE 8660) e atendimento hospitalar (CNAE 8610). Juntas, somaram 1.845 registros (20,85%). Técnico de enfermagem foi a ocupação mais frequente, com 1.102 (12,45%). |
-| Prazo de emissão | A mediana entre o acidente e a emissão da CAT foi de cinco dias corridos. Em 714 registros (8,07%), a emissão ocorreu depois de 30 de junho. |
+### 2.1. Perguntas que queremos responder
 
-**O perfil por sexo varia com a idade.** Na faixa de 18 a 29 anos, 1.563 dos 2.534 registros (61,68%) informam sexo masculino. Já na faixa de 40 a 49 anos, o sexo feminino é o mais frequente, com 1.262 dos 2.377 registros (53,09%). Os totais dessas faixas incluem, respectivamente, nove e dois registros sem informação de sexo.
+1. Qual é o perfil dos trabalhadores acidentados nos registros, por sexo e faixa etária?
+2. Quais atividades e setores econômicos dos empregadores concentram mais registros de acidentes?
+3. Quais são os principais tipos de acidente registrados na base?
+4. Como os acidentes estão distribuídos entre os municípios do Ceará? A base permite comparar os municípios de ocorrência?
+5. Existe diferença entre a data do acidente e a emissão da CAT? Quantos dias corridos separam essas datas?
+6. Como os registros de acidentes de trabalho variaram ao longo do primeiro semestre de 2026?
+
+## 3. Metodologia
+
+### 3.1. Fonte, recorte e unidade de análise
+
+Foram utilizados os seis CSVs de janeiro a junho em `datasets/CAT_2026/`, lidos com separador ponto e vírgula e codificação Latin-1. Os cabeçalhos repetidos foram identificados por posição, e cada registro preserva o arquivo e a linha de origem. A data de extração dos arquivos locais é desconhecida. [Catálogo de dados abertos do INSS](https://dadosabertos.inss.gov.br/dataset/comunicacoes-de-acidente-de-trabalho-cat-plano-de-dados-abertos-jun-2023-a-dez-2027)
+
+As duas colunas de data do acidente coincidiram nos seis arquivos. O período foi definido pela data registrada na ocorrência. O mês no nome do CSV serviu para auditar a origem das linhas. O recorte inclui CATs emitidas depois de junho quando já constam nos arquivos.
+
+| Etapa do recorte | Registros |
+|---|---:|
+| Seis CSVs consolidados, com 27 campos de origem | 620.163 |
+| UF do acidente registrada como Ceará, em qualquer data | 10.295 |
+| UF do acidente registrada como Ceará e data de ocorrência no semestre, antes da deduplicação | 8.849 |
+| Cópias adicionais retiradas | 1.648 |
+| Base de análise, com uma linha por combinação distinta dos 27 campos originais | **7.201** |
+
+### 3.2. Qualidade dos dados e medidas
+
+A deduplicação preservou a primeira linha de cada combinação idêntica dos 27 campos originais, considerando os arquivos em ordem mensal. O procedimento ocorreu antes da limpeza e da associação com os dicionários. As 7.201 linhas resultantes são a base dos resultados e dos gráficos. As contagens anteriores à deduplicação aparecem na auditoria da base e na avaliação do efeito das repetições sobre a série mensal.
+
+A auditoria separou campos vazios, marcadores como `{ñ class}` e datas zeradas. A data de despacho estava ausente nas 7.201 linhas. A descrição da ocupação estava ausente em 1.118 registros, enquanto o código da CBO faltava em um. Os códigos foram lidos como texto para preservar os zeros à esquerda. Os dicionários locais completaram rótulos quando houve correspondência única. Os casos sem chave, sem correspondência ou ambíguos foram contabilizados separadamente.
+
+A idade foi calculada em anos completos na data da ocorrência. O prazo de emissão foi calculado em dias corridos entre a ocorrência e a emissão.
+
+## 4. Resultados
+
+### 4.1. Perfil por sexo e faixa etária
+
+Dos 7.201 registros distintos, **3.856 (53,55%)** informaram sexo masculino, **3.336 (46,33%)** informaram sexo feminino e **9 (0,12%)** ficaram sem informação. A idade pôde ser calculada em todas as linhas, variou de 15 a 84 anos e teve mediana de **37 anos**.
+
+A faixa de **18 a 29 anos** foi a mais frequente, com **2.092 registros (29,05%)**, dos quais **1.290 (61,66%)** informaram sexo masculino. Entre 40 e 49 anos, o sexo feminino foi o mais frequente, com **1.022 dos 1.919 registros (53,26%)**.
 
 ![Registros de CAT por faixa etária e sexo registrado, com o total de cada faixa acima da barra.](figuras/atividade_01/perfil_idade_sexo.png)
 
-**Quase duas em cada três CATs foram emitidas até o sétimo dia após o acidente.** A contagem inclui as 461 emissões no mesmo dia e chega a 5.675 das 8.849 CATs (64,13%). Até o 30º dia, a proporção acumulada atingiu 90,97% (8.050 de 8.849). As 799 restantes (9,03%) levaram mais de 30 dias.
+### 4.2. Atividade econômica e ocupação
 
-![Percentual acumulado de CATs emitidas por dia corrido desde o acidente, com marcações aos 7 e aos 30 dias.](figuras/atividade_01/prazo_emissao.png)
+As duas classes de CNAE mais frequentes foram **atividades de apoio à gestão de saúde (8660)**, com **780 registros (10,83%)**, e **atividades de atendimento hospitalar (8610)**, com **725 (10,07%)**. Juntas, somaram **1.505 de 7.201 registros (20,90%)**.
 
-## Por que muda o mês com mais registros?
+| Seção da CNAE do empregador | Registros | % das 7.201 linhas |
+|---|---:|---:|
+| Saúde humana e serviços sociais | 1.847 | 25,65% |
+| Comércio e reparação de veículos automotores e motocicletas | 1.023 | 14,21% |
+| Atividades administrativas e serviços complementares | 782 | 10,86% |
 
-Das 1.648 cópias adicionais no recorte, 1.636 vêm da sobreposição dos **arquivos de maio e junho**. Todas as linhas selecionadas no arquivo de junho já constam no de maio. Contar esse conteúdo compartilhado uma vez deixa 7.213 linhas. Ao contar uma vez cada combinação dos 27 campos originais, as outras 12 repetições também são descontadas. A tabela mostra o efeito dessa última regra pelo **mês em que ocorreu o acidente**.
+Havia **234 registros (3,25%)** sem código CNAE informado e três com código sem correspondência no dicionário. Na classificação por ocupação, **técnico de enfermagem** foi a categoria mais frequente, com **890 registros (12,36%)**.
 
-| Forma de contagem | Total no semestre | Data do acidente em maio | Data do acidente em junho |
-| --- | ---: | ---: | ---: |
-| Todas as linhas | 8.849 | 1.608 | **2.426** |
-| Linhas distintas nos 27 campos | 7.201 | **1.305** | 1.213 |
+### 4.3. Tipos de acidente e parte do corpo atingida
 
-Junho concentra mais registros na contagem completa. Quando as linhas idênticas são contadas uma vez, maio passa a liderar. Nessa segunda contagem, o acidente típico continua predominante (4.989 de 7.201, ou 69,28%) e o prazo mediano de emissão passa a quatro dias.
+Todos os registros distintos tinham tipo informado.
 
-Entre as 7.201 linhas distintas, fevereiro teve a menor contagem, com 1.102 registros. O tipo de acidente estava preenchido em todas elas, e doença foi o tipo menos frequente (519). A faixa de 18 a 29 anos foi a mais frequente (2.092), considerando a idade já completada na data do acidente. Os códigos de apoio à gestão de saúde e de atendimento hospitalar somaram, respectivamente, 780 e 725 registros. Em 4.343 registros, a emissão ocorreu de um a sete dias após o acidente. Em 547, o prazo ultrapassou 30 dias.
+| Tipo registrado | Registros | % das 7.201 linhas |
+|---|---:|---:|
+| Típico | **4.989** | **69,28%** |
+| Trajeto | 1.693 | 23,51% |
+| Doença | 519 | 7,21% |
 
-Na análise de preenchimento, a data de despacho estava ausente em todas as 7.201 linhas distintas. O código da ocupação estava disponível em mais registros que sua descrição.
+O dedo foi a parte do corpo mais citada, em **1.395 de 7.201 registros (19,37%)**. Entre os acidentes típicos, apareceu em **1.331 de 4.989 (26,68%)**. Nos de trajeto, foram **58 de 1.693 (3,43%)**.
 
-## Limitações e próximos passos
+### 4.4. Por que a base não permite comparar os municípios de ocorrência
 
-Sem um identificador único de CAT, linhas iguais podem corresponder a uma reapresentação ou a ocorrências distintas com os mesmos atributos. Para interpretar a variação mensal e a concentração de empregadores no Distrito Federal, é preciso confirmar com a fonte como os arquivos mensais são compostos e como as UFs são codificadas.
+**Os arquivos registram a localização do acidente somente no nível da UF.** O campo `UF  Munic.  Acidente` informa a unidade federativa da ocorrência. Os campos `UF Munic. Empregador` e `Munic Empr` identificam a localização registrada para o empregador. Um acidente pode ocorrer em município diferente daquele em que o empregador está registrado.
 
-Para as comunicações enviadas pelo eSocial, sistema usado pelas empresas para informar o acidente, o número do recibo identifica a CAT. Ter esse número nos arquivos ajudaria a conferir as repetições diretamente. O CNPJ/CEI disponível identifica o empregador, que pode aparecer em várias comunicações.
+A diferença aparece na própria base de análise. Mesmo com Ceará registrado como UF do acidente nas 7.201 linhas, a maioria informa **Brasília** no município do empregador.
 
-A cobertura da base e a subnotificação podem afetar as contagens por atividade e ocupação. Uma comparação de risco entre esses grupos exigiria conhecer o número de trabalhadores expostos em cada um.
+| Município registrado para o empregador | Registros | % das 7.201 linhas |
+|---|---:|---:|
+| Brasília (DF) | 6.668 | 92,60% |
+| Fortaleza (CE) | 9 | 0,12% |
+| Eusébio (CE) | 1 | 0,01% |
+| Demais municípios | 284 | 3,94% |
+| Município sem informação | 239 | 3,32% |
 
-## Como reproduzir
+Filtrar Fortaleza nesse campo seleciona registros pelo endereço informado para o empregador. Para comparar as ocorrências entre municípios cearenses, seria necessário um campo que identificasse diretamente o município de cada acidente.
 
-Os seis CSVs estão em `datasets/CAT_2026/`. O cabeçalho repete nomes de campos. A posição identifica as duas datas de acidente e os pares de código e descrição. O notebook conserva o arquivo e a linha de origem. A data de download e a versão de extração dos arquivos são desconhecidas. [Catálogo de dados abertos do INSS](https://dadosabertos.inss.gov.br/dataset/comunicacoes-de-acidente-de-trabalho-cat-plano-de-dados-abertos-jun-2023-a-dez-2027)
+### 4.5. Intervalo entre acidente e emissão da CAT
 
-No diagnóstico dos campos, a contagem de valores distintos ignora espaços externos e diferenças entre maiúsculas e minúsculas. A comparação de linhas repetidas usa os textos originais. No diagnóstico por arquivo, a primeira ocorrência de uma combinação já presente em um CSV anterior entra na coluna de sobreposição. As cópias seguintes no mesmo CSV entram na coluna de repetições internas.
+Todos os **7.201 intervalos** puderam ser calculados e foram de zero a **191 dias corridos**. A mediana foi de **4 dias** e o percentil 90 foi de **25 dias**.
 
-Os dicionários locais permitem recuperar descrições truncadas. Para o agente causador, a chave é o trecho da descrição presente na CAT. Na tabela de cobertura, “Chaves” conta os valores distintos observados, inclusive as grafias dos marcadores no grupo “Sem chave”. Nas distribuições por categoria, o grupo de baixa frequência reúne categorias informadas com até cinco registros cada.
+| Prazo de emissão | Registros | % dos 7.201 intervalos |
+|---|---:|---:|
+| No mesmo dia | 388 | 5,39% |
+| De 1 a 7 dias | 4.343 | 60,31% |
+| De 8 a 30 dias | 1.923 | 26,70% |
+| Mais de 30 dias | 547 | 7,60% |
 
-Para reproduzir a análise, use Python 3.12.14 na raiz do projeto, instale as dependências com `python -m pip install jupyterlab pandas==3.0.1 matplotlib==3.11.2` e execute as células em ordem. [Notebook da análise exploratória](01_analise_exploratoria.ipynb)
+Até o sétimo dia, incluindo as emissões no mesmo dia, foram emitidas **4.731 CATs (65,70%)**. Até o 30º dia, foram **6.654 (92,40%)**. A mediana foi de **20 dias** nos 519 registros de doença, **5 dias** nos 1.693 de trajeto e **4 dias** nos 4.989 de acidentes típicos.
+
+![Percentual acumulado das CATs emitidas por dia corrido desde o acidente, com marcações aos 7 e aos 30 dias.](figuras/atividade_01/prazo_emissao.png)
+
+### 4.6. Variação mensal no primeiro semestre
+
+| Mês do acidente | Linhas distintas | Emitidas após junho |
+|---|---:|---:|
+| Janeiro | 1.115 | 8 |
+| Fevereiro | 1.102 | 10 |
+| Março | 1.264 | 13 |
+| Abril | 1.202 | 17 |
+| Maio | **1.305** | 47 |
+| Junho | 1.213 | 262 |
+| **Total** | **7.201** | **357** |
+
+**Maio** teve a maior contagem de linhas distintas, com **1.305**, e **fevereiro** teve a menor, com **1.102**. Das **7.201 CATs**, **357 (4,96%)** foram emitidas após o semestre, incluindo **262** referentes a acidentes ocorridos em junho.
+
+A auditoria mostra por que usar as linhas distintas muda a leitura da série. A contagem anterior à deduplicação tinha seu pico em junho, com **2.426 linhas**. Das 1.648 cópias adicionais, 1.636 correspondem a linhas do arquivo de junho que também aparecem no arquivo de maio.
+
+## 5. Discussão
+
+A deduplicação reduz a influência da sobreposição entre arquivos. Sem um identificador individual da CAT, a unicidade é definida pelos 27 campos disponíveis. Linhas com os mesmos valores podem corresponder a ocorrências distintas, e uma mesma ocorrência pode aparecer em registros com valores diferentes. A série mensal também depende das emissões já presentes nos arquivos e pode mudar com atualizações da base.
+
+As frequências descrevem a composição das notificações disponíveis. A comparação de risco entre atividades exigiria o número de trabalhadores expostos em cada setor e informações sobre a cobertura e a subnotificação. Os cruzamentos por sexo, idade e tipo descrevem associações. A divergência entre as UFs registradas merece verificação com a fonte, e a comparação municipal depende da disponibilidade do campo de ocorrência.
+
+## 6. Como reproduzir
+
+Na raiz do projeto, use Python 3.12.14 e instale as dependências com `python -m pip install jupyterlab pandas==3.0.1 matplotlib==3.11.2`. Abra o Jupyter e execute as células em ordem com a raiz do projeto como diretório de trabalho. O notebook inclui as auditorias de esquema e cobertura, as tabelas completas e os gráficos. [Notebook da análise exploratória](01_analise_exploratoria.ipynb)
