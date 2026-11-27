@@ -16,6 +16,7 @@ O objetivo é descrever os registros de CAT do primeiro semestre de 2026 com UF 
 4. Como os acidentes estão distribuídos entre os municípios do Ceará? A base permite comparar os municípios de ocorrência?
 5. Existe diferença entre a data do acidente e a emissão da CAT? Quantos dias corridos separam essas datas?
 6. Como os registros de acidentes de trabalho variaram ao longo do primeiro semestre de 2026?
+7. *(Extra)* Quais setores econômicos e tipos de acidente concentram os registros com óbito — e eles coincidem com os que lideram o volume total de CATs?
 
 ## 3. Metodologia
 
@@ -122,11 +123,31 @@ Até o sétimo dia, incluindo as emissões no mesmo dia, foram emitidas **4.731 
 
 A auditoria mostra por que usar as linhas distintas muda a leitura da série. A contagem anterior à deduplicação tinha seu pico em junho, com **2.426 linhas**. Das 1.648 cópias adicionais, 1.636 correspondem a linhas do arquivo de junho que também aparecem no arquivo de maio.
 
+### 4.7. Registros com óbito por setor econômico e tipo de acidente
+
+Dos **7.201 registros distintos**, **27 (0,37%)** informaram óbito (`3,7` óbitos a cada 1.000 CATs) e **7.174 (99,63%)** informaram não ter havido óbito, sem valores ausentes nesse campo. Os setores e tipos que concentram os óbitos diferem daqueles que lideram o volume total de CATs.
+
+| Seção da CNAE do empregador | Total de CATs | Óbitos | % dos óbitos | Óbitos / 1.000 CATs | Trajeto | Típico |
+|---|---:|---:|---:|---:|---:|---:|
+| Atividades administrativas e serviços complementares | 782 | **6** | 22,22% | 7,7 | 5 | 1 |
+| Construção | 471 | **5** | 18,52% | **10,6** | 2 | 3 |
+| Comércio; reparação de veículos automotores e motocicletas | 1.023 | **5** | 18,52% | 4,9 | 4 | 1 |
+| Sem informação | 234 | 4 | 14,81% | 17,1 | 2 | 2 |
+| Transporte, armazenagem e correio | 522 | 2 | 7,41% | 3,8 | 1 | 1 |
+| Saúde humana e serviços sociais | 1.847 | 2 | 7,41% | 1,1 | 0 | 2 |
+| Demais setores com óbito (Indústria, Financeiras, Alojamento) | 1.133 | 3 | 11,11% | 2,6 | 1 | 2 |
+
+Enquanto **Saúde humana e serviços sociais** lidera o volume geral (**1.847 CATs; 25,65%**), registrou apenas **2 óbitos** (`1,1` por 1.000 CATs). Nos óbitos, destacam-se **Atividades administrativas e serviços complementares** (**6**), **Construção** (**5**, com a maior proporção entre setores identificados: `10,6` por 1.000 CATs) e **Comércio e reparação de veículos** (**5**). Além disso, **4 óbitos** ocorreram em registros sem código CNAE informado.
+
+A distribuição por tipo também se inverte em relação ao conjunto geral: os acidentes de **trajeto** concentram **15 dos 27 óbitos (55,56%)**, com **`8,9` óbitos por 1.000 CATs**, frente a **12 óbitos** em acidentes **típicos** (`2,4` por 1.000 CATs) e **zero** em doenças. Coerentemente, **15 dos 27 óbitos** têm como agente causador veículos (`Veículo, NIC`, `Veículo rodoviário motorizado`, `Motocicleta, motoneta`) ou vias públicas (`Rua e estrada`). Quanto ao perfil, **24 dos 27 óbitos (88,89%)** informam sexo masculino (`6,2` por 1.000 CATs, contra `0,9` no feminino) e a idade mediana sobe de **37** para **44 anos**.
+
+![Óbitos registrados por seção da CNAE e tipo de acidente, com proporção por 1.000 CATs e total de registros de cada setor.](figuras/atividade_01/obitos_setor_tipo.png)
+
 ## 5. Discussão
 
 A deduplicação reduz a influência da sobreposição entre arquivos. Sem um identificador individual da CAT, a unicidade é definida pelos 27 campos disponíveis. Linhas com os mesmos valores podem corresponder a ocorrências distintas, e uma mesma ocorrência pode aparecer em registros com valores diferentes. A série mensal também depende das emissões já presentes nos arquivos e pode mudar com atualizações da base.
 
-As frequências descrevem a composição das notificações disponíveis. A comparação de risco entre atividades exigiria o número de trabalhadores expostos em cada setor e informações sobre a cobertura e a subnotificação. Os cruzamentos por sexo, idade e tipo descrevem associações. A divergência entre as UFs registradas merece verificação com a fonte, e a comparação municipal depende da disponibilidade do campo de ocorrência.
+As frequências descrevem a composição das notificações disponíveis. A comparação de risco entre atividades exigiria o número de trabalhadores expostos em cada setor e informações sobre a cobertura e a subnotificação. Nos registros com óbito, o tamanho reduzido do grupo (`n = 27`) torna as proporções por 1.000 CATs sensíveis a variações unitárias, reforçando a leitura estritamente descritiva. Os cruzamentos por sexo, idade e tipo descrevem associações. A divergência entre as UFs registradas merece verificação com a fonte, e a comparação municipal depende da disponibilidade do campo de ocorrência.
 
 ## 6. Como reproduzir
 
