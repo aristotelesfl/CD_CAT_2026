@@ -1,0 +1,1442 @@
+Tipo do Acidente,Agente  Causador  Acidente,Parte Corpo Atingida,Natureza da Lesão,Sexo,Indica Óbito Acidente
+Típico,302030900,"Perna (Do Tornozelo,",Fratura,Masculino,Não
+Doença,Desconhecido,Dedo,"Doenca, Nic",Feminino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,302010200,"Membros Inferiores,",Fratura,Masculino,Não
+Típico,302010550,"Perna (Do Tornozelo,",Fratura,Masculino,Não
+Típico,302030900,Perna (Entre O Torno,Lesao Imediata,Feminino,Não
+Trajeto,303075200,Perna (Entre O Torno,Lesao Imediata,Feminino,Não
+Trajeto,303075200,Partes Multiplas - A,"Corte, Laceracao, Fe",Masculino,Não
+Típico,305068600,Mao (Exceto Punho ou,"Escoriacao, Abrasao",Feminino,Não
+Trajeto,303075250,Torax (Inclusive Org,"Contusao, Esmagament",Feminino,Não
+Trajeto,303075900,Perna (Entre O Torno,Fratura,Feminino,Não
+Típico,302010350,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Trajeto,302010250,Cotovelo,"Contusao, Esmagament",Feminino,Não
+Típico,302010550,Coxa,Lesoes Multiplas,Feminino,Não
+Típico,305044000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,Desconhecido,Mao (Exceto Punho ou,Queimadura ou Escald,Masculino,Não
+Típico,309000000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303075250,Perna (Entre O Torno,Fratura,Masculino,Não
+Típico,302010900,Articulacao do Torno,"Distensao, Torcao",Masculino,Não
+Típico,302010550,Perna (Entre O Torno,"Distensao, Torcao",Feminino,Não
+Típico,302010350,Articulacao do Torno,"Distensao, Torcao",Masculino,Não
+Típico,305036000,Punho,Luxacao,Feminino,Não
+Típico,303075250,Dedo,"Contusao, Esmagament",Feminino,Não
+Típico,302010350,Pe (Exceto Artelhos),Fratura,Feminino,Não
+Trajeto,303075250,"Membros Superiores,",Fratura,Masculino,Não
+Típico,302010350,Pe (Exceto Artelhos),Fratura,Masculino,Não
+Trajeto,303075200,Punho,Luxacao,Masculino,Não
+Típico,302010550,Articulacao do Torno,"Distensao, Torcao",Masculino,Não
+Típico,303075900,Cotovelo,"Contusao, Esmagament",Masculino,Não
+Típico,302090000,Mao (Exceto Punho ou,Lesao Imediata,Masculino,Não
+Trajeto,303075200,Dorso (Inclusive Mus,"Outras Lesoes, Nic",Masculino,Não
+Típico,Desconhecido,Antebraco (Entre O P,Queimadura ou Escald,Masculino,Não
+Típico,303020900,Nariz (Inclusive Fos,"Outras Lesoes, Nic",Masculino,Não
+Trajeto,303075900,"Membros Superiores,","Distensao, Torcao",Feminino,Não
+Típico,303020900,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010300,Sistemas e Aparelhos,Envenenamento Sistem,Feminino,Não
+Típico,309000000,Dorso (Inclusive Mus,Lesao Imediata,Feminino,Não
+Típico,302010350,Braco (Entre O Punho,"Escoriacao, Abrasao",Feminino,Não
+Trajeto,302010200,Torax (Inclusive Org,Luxacao,Masculino,Não
+Trajeto,303075250,"Perna (Do Tornozelo,",Luxacao,Feminino,Não
+Típico,303075600,Cotovelo,"Lesao Imediata, Nic",Masculino,Não
+Típico,302010200,Pe (Exceto Artelhos),"Contusao, Esmagament",Masculino,Não
+Típico,306060000,Dedo,Doenca Contagiosa ou,Feminino,Não
+Típico,302010250,"Membros Inferiores,",Lesao Imediata,Feminino,Não
+Típico,303010160,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,307030200,Quadris (Inclusive P,Lesao Imediata,Feminino,Não
+Típico,305032500,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,Desconhecido,Olho (Inclusive Nerv,Lesao Imediata,Feminino,Não
+Típico,303075450,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010200,Joelho,Lesao Imediata,Masculino,Não
+Típico,303075200,"Membros Superiores,",Luxacao,Masculino,Não
+Típico,303020440,Punho,"Corte, Laceracao, Fe",Masculino,Não
+Típico,309000000,Olho (Inclusive Nerv,"Outras Lesoes, Nic",Masculino,Não
+Doença,Desconhecido,"Membros Superiores,","Doenca, Nic",Feminino,Não
+Trajeto,302010250,Joelho,"Distensao, Torcao",Feminino,Não
+Típico,302010300,Nariz (Inclusive Fos,"Outras Lesoes, Nic",Masculino,Não
+Trajeto,303075250,Partes Multiplas - A,"Contusao, Esmagament",Feminino,Não
+Trajeto,303075250,Partes Multiplas - A,"Contusao, Esmagament",Masculino,Não
+Trajeto,303075250,Partes Multiplas - A,Fratura,Feminino,Não
+Trajeto,303075250,Sistemas e Aparelhos,"Outras Lesoes, Nic",Masculino,Não
+Típico,309000000,Dedo,"Escoriacao, Abrasao",Feminino,Não
+Típico,305032500,Olho (Inclusive Nerv,Lesao Imediata,Masculino,Não
+Trajeto,302010350,Joelho,Inflamacao de Articu,Feminino,Não
+Típico,303015200,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302050900,"Membros Superiores,",Luxacao,Feminino,Não
+Trajeto,303075200,Torax (Inclusive Org,"Contusao, Esmagament",Masculino,Não
+Típico,307030200,Antebraco (Entre O P,"Distensao, Torcao",Masculino,Não
+Típico,309000000,Pe (Exceto Artelhos),"Lesao Imediata, Nic",Masculino,Não
+Típico,303010900,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,303075250,Dedo,Fratura,Masculino,Não
+Típico,305008500,Mao (Exceto Punho ou,Queimadura ou Escald,Masculino,Não
+Trajeto,303075200,Partes Multiplas - A,Lesao Imediata,Masculino,Não
+Típico,302010550,Dedo,Queimadura ou Escald,Masculino,Não
+Trajeto,303075250,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,303020360,Dedo,Fratura,Masculino,Não
+Típico,Desconhecido,Punho,"Contusao, Esmagament",Masculino,Não
+Trajeto,302010200,Braco (Entre O Punho,Fratura,Masculino,Não
+Típico,Desconhecido,"Ouvido (Externo, Med",Lesao Imediata,Masculino,Não
+Trajeto,302010250,Punho,Fratura,Feminino,Não
+Típico,305032500,Mao (Exceto Punho ou,Lesao Imediata,Masculino,Não
+Típico,307040100,Antebraco (Entre O P,"Escoriacao, Abrasao",Masculino,Não
+Típico,306090000,"Membros Inferiores,","Outras Lesoes, Nic",Feminino,Não
+Típico,306060000,Olho (Inclusive Nerv,"Outras Lesoes, Nic",Feminino,Não
+Típico,302010300,Articulacao do Torno,Fratura,Masculino,Não
+Trajeto,303075200,Partes Multiplas - A,"Contusao, Esmagament",Masculino,Não
+Típico,302010350,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Trajeto,303075250,Joelho,Luxacao,Masculino,Não
+Típico,303090000,Dorso (Inclusive Mus,Lesao Imediata,Masculino,Não
+Típico,302010300,Joelho,"Contusao, Esmagament",Feminino,Não
+Típico,303075900,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075900,Pe (Exceto Artelhos),Luxacao,Masculino,Não
+Típico,309000000,Abdome (Inclusive Or,Lesao Imediata,Feminino,Não
+Típico,309000000,Punho,"Distensao, Torcao",Feminino,Não
+Típico,305032500,"Cabeca, Nic","Corte, Laceracao, Fe",Masculino,Não
+Típico,303075900,Joelho,"Contusao, Esmagament",Masculino,Não
+Trajeto,303075250,Abdome (Inclusive Or,"Escoriacao, Abrasao",Feminino,Não
+Típico,305032500,Pe (Exceto Artelhos),Fratura,Masculino,Não
+Típico,303075450,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Típico,309000000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010350,Perna (Entre O Torno,Lesoes Multiplas,Masculino,Não
+Típico,303010900,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010550,Articulacao do Torno,"Distensao, Torcao",Masculino,Não
+Típico,305068600,Dedo,"Escoriacao, Abrasao",Feminino,Não
+Trajeto,302010200,Ombro,"Outras Lesoes, Nic",Masculino,Não
+Trajeto,303075250,Partes Multiplas - A,Lesoes Multiplas,Masculino,Não
+Trajeto,302010250,Cotovelo,"Contusao, Esmagament",Feminino,Não
+Típico,305008500,Punho,Queimadura ou Escald,Feminino,Não
+Típico,302010300,Perna (Entre O Torno,"Distensao, Torcao",Masculino,Não
+Trajeto,302010200,Antebraco (Entre O P,"Escoriacao, Abrasao",Feminino,Não
+Típico,302090000,"Tronco, Parte Multip",Fratura,Masculino,Não
+Típico,302010200,Cotovelo,"Outras Lesoes, Nic",Feminino,Não
+Típico,307070000,Braco (Entre O Punho,Fratura,Masculino,Não
+Típico,302010300,"Membros Superiores,","Contusao, Esmagament",Feminino,Não
+Típico,302010350,Torax (Inclusive Org,"Outras Lesoes, Nic",Feminino,Não
+Típico,307030400,Braco (Entre O Punho,"Outras Lesoes, Nic",Feminino,Não
+Típico,303010600,Olho (Inclusive Nerv,"Escoriacao, Abrasao",Masculino,Não
+Trajeto,305040200,Quadris (Inclusive P,"Doenca, Nic",Feminino,Não
+Típico,305068600,Dedo,Lesao Imediata,Feminino,Não
+Típico,Desconhecido,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,305068600,Olho (Inclusive Nerv,"Outras Lesoes, Nic",Feminino,Não
+Típico,309000000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,303010040,Pe (Exceto Artelhos),Lesao Imediata,Masculino,Não
+Típico,302010600,Pe (Exceto Artelhos),Fratura,Masculino,Não
+Típico,303020900,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010300,"Cabeca, Partes Multi","Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075250,"Membros Superiores,",Fratura,Masculino,Não
+Típico,302010550,Braco (Entre O Punho,Fratura,Masculino,Não
+Típico,309000000,"Membros Superiores,",Fratura,Masculino,Não
+Típico,306090000,"Membros Superiores,","Escoriacao, Abrasao",Feminino,Não
+Típico,309500000,Dedo,"Contusao, Esmagament",Masculino,Não
+Doença,307070000,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,302010200,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Trajeto,302010200,Partes Multiplas - A,"Escoriacao, Abrasao",Masculino,Não
+Típico,302010650,"Face, Partes Multipl","Escoriacao, Abrasao",Masculino,Não
+Trajeto,303075250,"Membros Superiores,",Luxacao,Feminino,Não
+Típico,307030500,Mao (Exceto Punho ou,"Outras Lesoes, Nic",Feminino,Não
+Trajeto,303075100,Punho,Fratura,Feminino,Não
+Trajeto,303075250,Partes Multiplas - A,Lesao Imediata,Masculino,Não
+Típico,302010600,"Membros Inferiores,",Lesao Imediata,Masculino,Não
+Típico,302010250,Pe (Exceto Artelhos),Fratura,Feminino,Não
+Típico,306090000,"Face, Partes Multipl","Escoriacao, Abrasao",Feminino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Típico,305048300,Perna (Entre O Torno,"Distensao, Torcao",Masculino,Não
+Típico,303010900,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Típico,309000000,Braco (Entre O Punho,Fratura,Feminino,Não
+Típico,309000000,Mao (Exceto Punho ou,"Doenca, Nic",Feminino,Não
+Típico,Desconhecido,Partes Multiplas - A,Choque Eletrico e El,Masculino,Não
+Típico,302010550,Pe (Exceto Artelhos),"Escoriacao, Abrasao",Feminino,Não
+Típico,302010300,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Típico,305028000,Pe (Exceto Artelhos),Envenenamento Sistem,Masculino,Não
+Trajeto,303075900,Partes Multiplas - A,"Contusao, Esmagament",Feminino,Não
+Típico,302010400,Partes Multiplas - A,"Escoriacao, Abrasao",Masculino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,Desconhecido,"Face, Partes Multipl","Lesao Imediata, Nic",Feminino,Não
+Trajeto,303075200,Joelho,"Contusao, Esmagament",Masculino,Não
+Trajeto,309500000,"Membros Inferiores,",Lesoes Multiplas,Feminino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Típico,Desconhecido,"Membros Superiores,","Escoriacao, Abrasao",Masculino,Não
+Típico,302090000,Dorso (Inclusive Mus,Lesao Imediata,Feminino,Não
+Típico,Desconhecido,Dedo,Lesao Imediata,Feminino,Não
+Típico,302010700,Cranio (Inclusive En,"Outras Lesoes, Nic",Feminino,Não
+Trajeto,303075200,Abdome (Inclusive Or,"Escoriacao, Abrasao",Feminino,Não
+Típico,306060000,Olho (Inclusive Nerv,"Doenca, Nic",Feminino,Não
+Típico,309500000,Joelho,Lesao Imediata,Feminino,Não
+Trajeto,303075250,"Tronco, Parte Multip","Contusao, Esmagament",Masculino,Não
+Típico,305044000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075250,Partes Multiplas - A,"Outras Lesoes, Nic",Masculino,Não
+Típico,303010900,Dedo,Lesao Imediata,Feminino,Não
+Trajeto,302010200,Localizacao da Lesao,Fratura,Masculino,Não
+Típico,303075200,Ombro,Fratura,Masculino,Não
+Típico,307040100,Ombro,Lesao Imediata,Masculino,Não
+Típico,303020720,"Perna (Do Tornozelo,",Queimadura ou Escald,Masculino,Não
+Trajeto,303075900,Pe (Exceto Artelhos),"Contusao, Esmagament",Masculino,Não
+Típico,307030100,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010550,Braco (Entre O Punho,"Corte, Laceracao, Fe",Feminino,Não
+Típico,309500000,"Tronco, Nic",Lesao Imediata,Feminino,Não
+Trajeto,302010400,Joelho,Luxacao,Feminino,Não
+Típico,303090000,Dedo,"Corte, Laceracao, Fe",Indeterminado,Não
+Típico,Desconhecido,Nariz (Inclusive Fos,"Lesao Imediata, Nic",Feminino,Não
+Doença,307030900,"Membros Inferiores,",Lesoes Multiplas,Feminino,Não
+Típico,Desconhecido,Dedo,"Escoriacao, Abrasao",Masculino,Não
+Trajeto,302010250,Ombro,"Distensao, Torcao",Masculino,Não
+Típico,307030900,Dedo,"Contusao, Esmagament",Feminino,Não
+Trajeto,303075200,Torax (Inclusive Org,Fratura,Masculino,Não
+Típico,306090000,Partes Multiplas - A,"Outras Lesoes, Nic",Masculino,Não
+Típico,302010250,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,305068600,Olho (Inclusive Nerv,"Doenca, Nic",Feminino,Não
+Típico,302010350,"Cabeca, Nic",Lesao Imediata,Feminino,Não
+Típico,306090000,Antebraco (Entre O P,"Outras Lesoes, Nic",Masculino,Não
+Trajeto,303075900,"Cabeca, Nic","Escoriacao, Abrasao",Masculino,Não
+Típico,303010120,Torax (Inclusive Org,"Corte, Laceracao, Fe",Masculino,Não
+Típico,305048900,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Doença,Desconhecido,Dorso (Inclusive Mus,"Distensao, Torcao",Feminino,Não
+Trajeto,303075900,Partes Multiplas - A,Lesao Imediata,Feminino,Não
+Típico,303045200,"Membros Superiores,","Escoriacao, Abrasao",Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,302090000,"Membros Superiores,","Contusao, Esmagament",Feminino,Não
+Típico,Desconhecido,Olho (Inclusive Nerv,Doenca Contagiosa ou,Feminino,Não
+Trajeto,303075200,"Perna (Do Tornozelo,",Fratura,Masculino,Não
+Típico,305068600,Olho (Inclusive Nerv,Lesao Imediata,Feminino,Não
+Típico,Desconhecido,"Face, Partes Multipl",Lesao Imediata,Masculino,Não
+Trajeto,303075900,Partes Multiplas - A,Fratura,Masculino,Não
+Típico,309000000,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,Desconhecido,Aparelho Digestivo,Lesao Imediata,Masculino,Não
+Típico,303010120,Pe (Exceto Artelhos),"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010300,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,305008500,"Membros Superiores,",Queimadura ou Escald,Masculino,Não
+Trajeto,303075200,Ombro,Fratura,Masculino,Não
+Típico,307030100,Quadris (Inclusive P,"Contusao, Esmagament",Feminino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,305068600,Dedo,"Lesao Imediata, Nic",Masculino,Não
+Típico,309000000,"Membros Inferiores,",Lesao Imediata,Feminino,Não
+Típico,302010250,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Doença,Desconhecido,"Cabeca, Nic","Doenca, Nic",Masculino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,302010200,Perna (Entre O Torno,"Escoriacao, Abrasao",Feminino,Não
+Típico,305020000,Dedo,Pneumoconiose (Silic,Feminino,Não
+Trajeto,303075250,Partes Multiplas - A,"Escoriacao, Abrasao",Masculino,Não
+Típico,302050700,Ombro,Lesao Imediata,Masculino,Não
+Típico,302030900,Articulacao do Torno,Luxacao,Masculino,Não
+Típico,306060000,"Face, Partes Multipl","Doenca, Nic",Feminino,Não
+Trajeto,303075200,"Membros Inferiores,",Fratura,Masculino,Não
+Típico,303075200,Partes Multiplas - A,"Escoriacao, Abrasao",Masculino,Não
+Típico,303075900,Perna (Entre O Torno,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010350,Braco (Entre O Punho,Fratura,Feminino,Não
+Típico,307030100,Dorso (Inclusive Mus,"Contusao, Esmagament",Masculino,Não
+Típico,303075250,Localizacao da Lesao,"Outras Lesoes, Nic",Masculino,Não
+Típico,302010300,Joelho,"Contusao, Esmagament",Feminino,Não
+Típico,302010550,Joelho,"Contusao, Esmagament",Masculino,Não
+Doença,Desconhecido,"Membros Superiores,",Inflamacao de Articu,Masculino,Não
+Trajeto,303075200,Partes Multiplas - A,Lesoes Multiplas,Feminino,Não
+Típico,303020200,Dedo,Lesao Imediata,Masculino,Não
+Típico,305044000,"Face, Partes Multipl","Corte, Laceracao, Fe",Masculino,Não
+Típico,306040000,Partes Multiplas - A,"Outras Lesoes, Nic",Masculino,Não
+Trajeto,302010300,"Face, Partes Multipl",Fratura,Masculino,Não
+Típico,306060000,Mao (Exceto Punho ou,"Escoriacao, Abrasao",Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,302050900,Quadris (Inclusive P,"Contusao, Esmagament",Masculino,Não
+Típico,Desconhecido,Dorso (Inclusive Mus,Inflamacao de Articu,Masculino,Não
+Típico,302010300,Braco (Entre O Punho,Luxacao,Feminino,Não
+Típico,302010500,Dorso (Inclusive Mus,Lesao Imediata,Feminino,Não
+Típico,303020040,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010350,Articulacao do Torno,Luxacao,Masculino,Não
+Típico,305032500,Joelho,"Contusao, Esmagament",Masculino,Não
+Típico,302010300,"Cabeca, Nic",Luxacao,Masculino,Não
+Típico,307030100,Braco (Entre O Punho,Lesao Imediata,Feminino,Não
+Típico,303020440,Dedo,Amputacao ou Enuclea,Masculino,Não
+Típico,355016800,"Cabeca, Partes Multi","Outras Lesoes, Nic",Feminino,Não
+Trajeto,302010250,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Trajeto,303075900,"Cabeca, Nic","Corte, Laceracao, Fe",Feminino,Não
+Típico,303020200,Dedo,Queimadura ou Escald,Feminino,Não
+Típico,302030900,"Membros Superiores,","Contusao, Esmagament",Masculino,Não
+Típico,305032500,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,305032500,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010300,Articulacao do Torno,Lesao Imediata,Masculino,Não
+Trajeto,303075200,Perna (Entre O Torno,Fratura,Masculino,Não
+Típico,302010550,"Cabeca, Partes Multi","Corte, Laceracao, Fe",Masculino,Não
+Trajeto,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,305008900,Pescoco,Queimadura ou Escald,Feminino,Não
+Típico,302010550,Quadris (Inclusive P,Lesao Imediata,Masculino,Não
+Trajeto,303075200,"Membros Superiores,",Fratura,Feminino,Não
+Trajeto,303075900,"Tronco, Nic",Lesao Imediata,Feminino,Não
+Típico,302030900,"Perna (Do Tornozelo,","Contusao, Esmagament",Masculino,Não
+Típico,302010300,Pe (Exceto Artelhos),Lesao Imediata,Masculino,Não
+Típico,303075900,Joelho,"Distensao, Torcao",Masculino,Não
+Típico,354000000,"Membros Superiores,",Choque Eletrico e El,Masculino,Não
+Típico,309000000,Dedo,Fratura,Masculino,Não
+Típico,303020900,Mao (Exceto Punho ou,Lesao Imediata,Masculino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302030900,"Perna (Do Tornozelo,",Luxacao,Masculino,Não
+Trajeto,303075250,Torax (Inclusive Org,Fratura,Masculino,Não
+Trajeto,303075200,Joelho,Lesao Imediata,Masculino,Não
+Doença,Desconhecido,Joelho,Lesao Imediata,Feminino,Não
+Típico,302010550,Pe (Exceto Artelhos),Lesao Imediata,Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Trajeto,307070000,Quadris (Inclusive P,"Lesao Imediata, Nic",Masculino,Não
+Típico,302010550,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Típico,302030900,Perna (Entre O Torno,"Distensao, Torcao",Masculino,Não
+Típico,303010900,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,309000000,Mao (Exceto Punho ou,"Contusao, Esmagament",Feminino,Não
+Típico,302010200,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Doença,Desconhecido,Punho,"Outras Lesoes, Nic",Feminino,Não
+Típico,305020000,Olho (Inclusive Nerv,"Outras Lesoes, Nic",Masculino,Não
+Típico,307030200,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303075900,"Membros Superiores,",Lesao Imediata,Masculino,Não
+Típico,305032500,Dedo,Lesao Imediata,Masculino,Não
+Típico,306090000,Dorso (Inclusive Mus,"Outras Lesoes, Nic",Feminino,Não
+Trajeto,302010550,"Perna (Do Tornozelo,","Escoriacao, Abrasao",Feminino,Não
+Típico,302010300,Joelho,"Distensao, Torcao",Feminino,Não
+Típico,302010350,"Cabeca, Partes Multi",Lesao Imediata,Masculino,Não
+Típico,302010300,Joelho,Fratura,Masculino,Não
+Típico,306060000,Dedo,"Doenca, Nic",Masculino,Não
+Típico,303075200,Mao (Exceto Punho ou,Fratura,Masculino,Não
+Típico,302050700,"Cabeca, Nic","Lesao Imediata, Nic",Masculino,Não
+Trajeto,303075900,Torax (Inclusive Org,"Distensao, Torcao",Feminino,Não
+Trajeto,309500000,Joelho,Fratura,Masculino,Não
+Doença,Desconhecido,"Membros Superiores,","Doenca, Nic",Feminino,Não
+Típico,303020080,Dedo,"Outras Lesoes, Nic",Feminino,Não
+Típico,302010400,Ombro,Inflamacao de Articu,Masculino,Não
+Típico,303075200,Punho,Lesao Imediata,Masculino,Não
+Trajeto,302090000,Articulacao do Torno,"Contusao, Esmagament",Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,302010350,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,302010550,Pe (Exceto Artelhos),Lesao Imediata,Masculino,Não
+Típico,309000000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,303075250,Partes Multiplas - A,"Escoriacao, Abrasao",Masculino,Não
+Típico,302010350,Sistema Musculo-Esqu,Lesao Imediata,Feminino,Não
+Típico,307040300,Perna (Entre O Torno,"Outras Lesoes, Nic",Masculino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,302010200,Braco (Entre O Punho,"Escoriacao, Abrasao",Masculino,Não
+Trajeto,303075250,Dorso (Inclusive Mus,Fratura,Feminino,Não
+Trajeto,303075250,Partes Multiplas - A,Fratura,Masculino,Não
+Trajeto,302010350,Partes Multiplas - A,"Contusao, Esmagament",Feminino,Não
+Típico,305048400,Antebraco (Entre O P,Queimadura ou Escald,Masculino,Não
+Típico,303020900,Braco (Entre O Punho,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075200,"Perna (Do Tornozelo,",Lesao Imediata,Masculino,Não
+Típico,303075550,Joelho,"Distensao, Torcao",Masculino,Não
+Trajeto,309000000,Partes Multiplas - A,Lesao Imediata,Feminino,Não
+Típico,302010350,Dorso (Inclusive Mus,Lesao Imediata,Feminino,Não
+Trajeto,303075200,"Cabeca, Partes Multi",Lesoes Multiplas,Masculino,Sim
+Doença,Desconhecido,Quadris (Inclusive P,Lesao Imediata,Masculino,Não
+Típico,302010550,"Membros Inferiores,","Lesao Imediata, Nic",Feminino,Não
+Típico,Desconhecido,Aparelho Respiratori,"Doenca, Nic",Feminino,Não
+Típico,303010120,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,302010200,Joelho,"Contusao, Esmagament",Masculino,Não
+Trajeto,303075200,Torax (Inclusive Org,Luxacao,Masculino,Não
+Trajeto,302010650,Dorso (Inclusive Mus,"Contusao, Esmagament",Feminino,Não
+Típico,302010550,Ombro,"Distensao, Torcao",Feminino,Não
+Típico,303075250,"Tronco, Nic",Fratura,Masculino,Não
+Típico,305028000,Pe (Exceto Artelhos),"Contusao, Esmagament",Masculino,Não
+Trajeto,303075250,Perna (Entre O Torno,"Contusao, Esmagament",Indeterminado,Não
+Típico,303010240,Braco (Acima do Coto,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,303075200,Partes Multiplas - A,Lesao Imediata,Masculino,Não
+Trajeto,303075250,Pe (Exceto Artelhos),"Outras Lesoes, Nic",Feminino,Não
+Típico,303010900,Pescoco,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010300,"Membros Inferiores,","Outras Lesoes, Nic",Feminino,Não
+Trajeto,303075250,Partes Multiplas - A,Lesao Imediata,Masculino,Sim
+Típico,302010550,Pe (Exceto Artelhos),Lesao Imediata,Feminino,Não
+Trajeto,303075200,"Perna (Do Tornozelo,",Fratura,Masculino,Não
+Típico,303075900,"Tronco, Parte Multip","Escoriacao, Abrasao",Masculino,Não
+Trajeto,303075200,"Perna (Do Tornozelo,","Distensao, Torcao",Masculino,Não
+Típico,302010300,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Trajeto,303075900,Dorso (Inclusive Mus,"Outras Lesoes, Nic",Feminino,Não
+Trajeto,303075200,Partes Multiplas - A,"Escoriacao, Abrasao",Feminino,Não
+Trajeto,303075200,Joelho,"Distensao, Torcao",Feminino,Não
+Típico,305008500,Joelho,Lesao Imediata,Feminino,Não
+Típico,303015700,Punho,"Corte, Laceracao, Fe",Masculino,Não
+Típico,306060000,Dedo,Doenca Contagiosa ou,Feminino,Não
+Trajeto,303075200,"Perna (Do Tornozelo,","Corte, Laceracao, Fe",Masculino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075100,Ombro,Inflamacao de Articu,Feminino,Não
+Trajeto,302010350,Pe (Exceto Artelhos),Inflamacao de Articu,Feminino,Não
+Típico,305004350,Braco (Entre O Punho,Queimadura Quimica (,Masculino,Não
+Típico,305008500,Pe (Exceto Artelhos),Queimadura ou Escald,Feminino,Não
+Típico,305044000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010400,Torax (Inclusive Org,"Outras Lesoes, Nic",Feminino,Não
+Trajeto,302010200,Joelho,"Contusao, Esmagament",Feminino,Não
+Típico,309000000,Dedo,Lesao Imediata,Masculino,Não
+Típico,Desconhecido,Sistema Nervoso,Perda ou Diminuicao,Masculino,Não
+Trajeto,303075900,Dedo,Fratura,Masculino,Não
+Típico,303075900,"Face, Partes Multipl","Corte, Laceracao, Fe",Masculino,Não
+Típico,307030200,Joelho,"Contusao, Esmagament",Masculino,Não
+Doença,Desconhecido,Mao (Exceto Punho ou,Inflamacao de Articu,Masculino,Não
+Típico,307030900,Mao (Exceto Punho ou,"Contusao, Esmagament",Feminino,Não
+Típico,302010550,Joelho,"Distensao, Torcao",Feminino,Não
+Típico,306090000,"Perna (Do Tornozelo,","Contusao, Esmagament",Feminino,Não
+Trajeto,302010200,Partes Multiplas - A,Luxacao,Feminino,Não
+Típico,302010550,"Cabeca, Partes Multi","Outras Lesoes, Nic",Feminino,Não
+Doença,309500000,Dorso (Inclusive Mus,"Doenca, Nic",Masculino,Não
+Trajeto,302010350,Pe (Exceto Artelhos),Fratura,Feminino,Não
+Trajeto,303075250,Dedo,"Contusao, Esmagament",Feminino,Não
+Típico,302010700,Ombro,"Escoriacao, Abrasao",Masculino,Não
+Trajeto,303075200,"Cabeca, Nic","Corte, Laceracao, Fe",Masculino,Não
+Típico,309000000,Coxa,Queimadura Quimica (,Feminino,Não
+Típico,305028000,Dedo,Fratura,Masculino,Não
+Típico,305020000,Olho (Inclusive Nerv,Lesao Imediata,Feminino,Não
+Típico,307030900,Pe (Exceto Artelhos),"Contusao, Esmagament",Masculino,Não
+Típico,302010350,Dorso (Inclusive Mus,Lesao Imediata,Masculino,Não
+Trajeto,303075200,Joelho,"Distensao, Torcao",Masculino,Não
+Típico,309500000,Dedo,Lesao Imediata,Feminino,Não
+Típico,306020000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,302010250,Joelho,"Distensao, Torcao",Feminino,Não
+Típico,303020900,Dedo,"Contusao, Esmagament",Masculino,Não
+Típico,309000000,"Membros Superiores,",Lesao Imediata,Feminino,Não
+Típico,306090000,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Típico,305044000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Trajeto,302010200,"Cabeca, Nic","Escoriacao, Abrasao",Masculino,Não
+Doença,307070000,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Trajeto,302010550,Perna (Entre O Torno,Lesao Imediata,Feminino,Não
+Trajeto,303075900,"Cabeca, Nic",Concussao Cerebral,Masculino,Não
+Típico,303020900,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,302010200,Perna (Entre O Torno,Lesao Imediata,Masculino,Não
+Trajeto,302010200,Punho,"Contusao, Esmagament",Masculino,Não
+Trajeto,303075900,Partes Multiplas - A,"Contusao, Esmagament",Masculino,Não
+Típico,303020900,Dedo,"Contusao, Esmagament",Feminino,Não
+Típico,302010350,Braco (Entre O Punho,"Escoriacao, Abrasao",Feminino,Não
+Típico,305020000,Olho (Inclusive Nerv,"Escoriacao, Abrasao",Masculino,Não
+Doença,309000000,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,309500000,Joelho,"Outras Lesoes, Nic",Masculino,Não
+Típico,302010350,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010350,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Típico,305008500,Torax (Inclusive Org,Fratura,Feminino,Não
+Típico,Desconhecido,"Perna (Do Tornozelo,",Fratura,Masculino,Não
+Típico,302010350,Pe (Exceto Artelhos),Lesao Imediata,Feminino,Não
+Típico,302010350,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Típico,302010550,"Tronco, Parte Multip","Contusao, Esmagament",Masculino,Não
+Típico,Desconhecido,Nariz (Inclusive Fos,Envenenamento Sistem,Feminino,Não
+Típico,309000000,Olho (Inclusive Nerv,Lesao Imediata,Feminino,Não
+Típico,303075900,Pe (Exceto Artelhos),Fratura,Masculino,Não
+Típico,303075250,Torax (Inclusive Org,Luxacao,Masculino,Não
+Típico,302010300,Cotovelo,Lesao Imediata,Feminino,Não
+Típico,302010550,Punho,Luxacao,Feminino,Não
+Típico,309000000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,303075900,Pe (Exceto Artelhos),"Contusao, Esmagament",Masculino,Não
+Típico,302010250,Articulacao do Torno,Luxacao,Masculino,Não
+Típico,302010550,Articulacao do Torno,Lesao Imediata,Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,309000000,"Membros Inferiores,","Contusao, Esmagament",Feminino,Não
+Típico,309500000,Dedo,Luxacao,Feminino,Não
+Típico,303075200,Articulacao do Torno,Luxacao,Masculino,Não
+Típico,309000000,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Típico,306060000,Dedo,Lesao Imediata,Feminino,Não
+Típico,305068600,"Face, Partes Multipl","Outras Lesoes, Nic",Feminino,Não
+Doença,309000000,"Tronco, Parte Multip","Doenca, Nic",Masculino,Não
+Trajeto,306020000,"Perna (Do Tornozelo,","Corte, Laceracao, Fe",Masculino,Não
+Típico,Desconhecido,Dedo,"Lesao Imediata, Nic",Feminino,Não
+Típico,306090000,Joelho,Luxacao,Feminino,Não
+Típico,302010550,Articulacao do Torno,"Distensao, Torcao",Masculino,Não
+Típico,305032500,Dedo,Lesao Imediata,Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Trajeto,303075900,Punho,Lesao Imediata,Masculino,Não
+Trajeto,303075250,Torax (Inclusive Org,Fratura,Masculino,Não
+Típico,302010200,Pe (Exceto Artelhos),Lesao Imediata,Masculino,Não
+Típico,303090000,Dedo,"Contusao, Esmagament",Masculino,Não
+Típico,302050800,"Cabeca, Nic",Concussao Cerebral,Masculino,Não
+Típico,302010300,Joelho,"Outras Lesoes, Nic",Feminino,Não
+Trajeto,303075250,Pescoco,"Outras Lesoes, Nic",Feminino,Não
+Trajeto,302010550,Articulacao do Torno,"Distensao, Torcao",Masculino,Não
+Típico,306060000,Olho (Inclusive Nerv,"Doenca, Nic",Masculino,Não
+Típico,307030100,Partes Multiplas - A,"Contusao, Esmagament",Feminino,Não
+Típico,307030100,Joelho,"Contusao, Esmagament",Feminino,Não
+Típico,307030900,"Cabeca, Nic","Contusao, Esmagament",Feminino,Não
+Típico,303010900,Boca (Inclusive Labi,"Outras Lesoes, Nic",Feminino,Não
+Típico,305068600,Dedo,Lesao Imediata,Feminino,Não
+Típico,302010550,Pe (Exceto Artelhos),Fratura,Masculino,Não
+Trajeto,303075250,Pescoco,"Distensao, Torcao",Feminino,Não
+Trajeto,302010550,Joelho,Luxacao,Feminino,Não
+Típico,302010550,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303020440,Coxa,"Escoriacao, Abrasao",Masculino,Não
+Típico,309000000,"Membros Superiores,",Lesao Imediata,Feminino,Não
+Típico,302010200,Dorso (Inclusive Mus,Lesao Imediata,Masculino,Não
+Típico,303075200,Partes Multiplas - A,Lesao Imediata,Masculino,Não
+Típico,302030900,Joelho,"Escoriacao, Abrasao",Feminino,Não
+Típico,303020900,Dedo,Amputacao ou Enuclea,Masculino,Não
+Típico,306060000,Braco (Entre O Punho,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,303075900,"Cabeca, Partes Multi","Corte, Laceracao, Fe",Feminino,Não
+Trajeto,303075250,Partes Multiplas - A,"Outras Lesoes, Nic",Feminino,Não
+Típico,303090000,"Membros Superiores,","Lesao Imediata, Nic",Masculino,Não
+Típico,302010550,Quadris (Inclusive P,Fratura,Feminino,Não
+Típico,303075900,"Cabeca, Nic","Corte, Laceracao, Fe",Masculino,Não
+Típico,305008900,Aparelho Digestivo,Lesao Imediata,Masculino,Não
+Típico,302010300,Pe (Exceto Artelhos),Luxacao,Masculino,Não
+Típico,309000000,Dorso (Inclusive Mus,Hernia de Qualquer N,Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,307040100,"Tronco, Parte Multip",Lesao Imediata,Masculino,Não
+Doença,Desconhecido,Aparelho Digestivo,"Doenca, Nic",Feminino,Não
+Trajeto,303075250,"Perna (Do Tornozelo,","Contusao, Esmagament",Masculino,Não
+Trajeto,303075200,"Membros Superiores,",Fratura,Masculino,Não
+Trajeto,303075250,Dorso (Inclusive Mus,Fratura,Feminino,Não
+Doença,Desconhecido,Braco (Entre O Punho,"Lesao Imediata, Nic",Masculino,Não
+Típico,307040700,Pe (Exceto Artelhos),Lesao Imediata,Feminino,Não
+Típico,302010350,Joelho,"Distensao, Torcao",Feminino,Não
+Típico,302010350,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,307040700,Dedo,Luxacao,Feminino,Não
+Trajeto,307030100,Joelho,"Contusao, Esmagament",Masculino,Não
+Típico,302010550,Pe (Exceto Artelhos),Luxacao,Feminino,Não
+Típico,306060000,Dedo,"Outras Lesoes, Nic",Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,303010160,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010300,Perna (Entre O Torno,"Lesao Imediata, Nic",Feminino,Não
+Típico,Desconhecido,Dorso (Inclusive Mus,Inflamacao de Articu,Masculino,Não
+Trajeto,302010350,"Perna (Do Tornozelo,","Distensao, Torcao",Feminino,Não
+Típico,309000000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010300,"Perna (Do Tornozelo,","Contusao, Esmagament",Feminino,Não
+Trajeto,303075900,"Tronco, Parte Multip",Fratura,Masculino,Não
+Doença,Desconhecido,Dorso (Inclusive Mus,Hernia de Qualquer N,Feminino,Não
+Típico,309500000,Mao (Exceto Punho ou,"Escoriacao, Abrasao",Feminino,Não
+Típico,302070500,Torax (Inclusive Org,"Contusao, Esmagament",Masculino,Não
+Típico,302010550,Cranio (Inclusive En,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303010120,Punho,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075200,Mao (Exceto Punho ou,Fratura,Masculino,Não
+Trajeto,303090000,"Cabeca, Nic",Lesoes Multiplas,Masculino,Sim
+Típico,303010160,Mao (Exceto Punho ou,Lesao Imediata,Feminino,Não
+Típico,309000000,"Face, Partes Multipl",Lesao Imediata,Feminino,Não
+Trajeto,303075900,Localizacao da Lesao,"Outras Lesoes, Nic",Masculino,Não
+Típico,303020040,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,309000000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010550,Pe (Exceto Artelhos),Lesao Imediata,Masculino,Não
+Doença,Desconhecido,Aparelho Genito-Urin,"Doenca, Nic",Feminino,Não
+Trajeto,306090000,Localizacao da Lesao,"Outras Lesoes, Nic",Feminino,Não
+Típico,303025900,Joelho,Lesao Imediata,Masculino,Não
+Típico,305068600,Dedo,"Outras Lesoes, Nic",Masculino,Não
+Típico,309000000,Braco (Entre O Punho,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010350,Joelho,"Contusao, Esmagament",Masculino,Não
+Típico,302010300,"Tronco, Parte Multip",Lesao Imediata,Feminino,Não
+Trajeto,303075200,Pe (Exceto Artelhos),"Escoriacao, Abrasao",Masculino,Não
+Típico,303090000,Braco (Entre O Punho,Fratura,Masculino,Não
+Trajeto,303075200,Joelho,Fratura,Feminino,Não
+Típico,303090000,Dedo,Lesao Imediata,Masculino,Não
+Típico,303020200,Dedo,Fratura,Masculino,Não
+Típico,302010550,"Membros Superiores,",Lesao Imediata,Feminino,Não
+Típico,303020040,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Típico,306020000,Joelho,Lesao Imediata,Masculino,Não
+Típico,305032500,Dedo,Fratura,Feminino,Não
+Típico,302030900,Punho,Fratura,Masculino,Não
+Doença,Desconhecido,"Membros Superiores,",Inflamacao de Articu,Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,305032500,Partes Multiplas - A,"Contusao, Esmagament",Masculino,Não
+Trajeto,303075200,Quadris (Inclusive P,"Escoriacao, Abrasao",Masculino,Não
+Típico,302010300,Joelho,"Contusao, Esmagament",Feminino,Não
+Típico,307030200,Dedo,"Distensao, Torcao",Feminino,Não
+Típico,Desconhecido,Ombro,"Contusao, Esmagament",Masculino,Não
+Típico,309000000,Dedo,Lesao Imediata,Masculino,Não
+Típico,309000000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010350,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,309500000,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,303075200,Quadris (Inclusive P,"Escoriacao, Abrasao",Masculino,Não
+Doença,Desconhecido,Sistemas e Aparelhos,"Doenca, Nic",Masculino,Não
+Trajeto,302010200,Ombro,Luxacao,Masculino,Não
+Típico,303020080,Dedo,Lesao Imediata,Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,303020900,Ombro,"Contusao, Esmagament",Masculino,Não
+Trajeto,302010200,Joelho,"Outras Lesoes, Nic",Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,302010400,Braco (Acima do Coto,"Outras Lesoes, Nic",Feminino,Não
+Típico,303060000,"Cabeca, Nic",Lesao Imediata,Masculino,Não
+Típico,302010550,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Trajeto,302010250,Torax (Inclusive Org,Lesao Imediata,Feminino,Não
+Típico,307040300,Dedo,Fratura,Masculino,Não
+Trajeto,302010200,Ombro,Inflamacao de Articu,Feminino,Não
+Típico,302010350,"Tronco, Nic","Distensao, Torcao",Feminino,Não
+Típico,309000000,"Cabeca, Nic","Corte, Laceracao, Fe",Masculino,Não
+Típico,305032500,Dedo,Fratura,Masculino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,305008500,Mao (Exceto Punho ou,Queimadura ou Escald,Feminino,Não
+Típico,303060000,Dedo,Queimadura ou Escald,Feminino,Não
+Típico,302050900,Braco (Entre O Punho,Lesao Imediata,Masculino,Não
+Típico,307040100,"Tronco, Parte Multip",Lesao Imediata,Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Típico,305044000,Mao (Exceto Punho ou,Lesao Imediata,Feminino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Típico,Desconhecido,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010550,Partes Multiplas - A,Lesao Imediata,Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,Lesao Imediata,Feminino,Não
+Típico,306060000,Dedo,Lesao Imediata,Feminino,Não
+Típico,303010900,Dedo,"Outras Lesoes, Nic",Feminino,Não
+Trajeto,305032500,Pe (Exceto Artelhos),"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075900,"Face, Partes Multipl",Lesao Imediata,Feminino,Não
+Típico,306090000,Sistema Nervoso,"Lesao Imediata, Nic",Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Outras Lesoes, Nic",Masculino,Não
+Típico,302010550,Joelho,"Contusao, Esmagament",Feminino,Não
+Típico,302010300,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,309000000,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010550,Pe (Exceto Artelhos),Luxacao,Feminino,Não
+Típico,305008900,Partes Multiplas - A,Queimadura ou Escald,Feminino,Não
+Típico,302010550,"Cabeca, Nic",Lesao Imediata,Feminino,Não
+Típico,303020760,Mao (Exceto Punho ou,Lesoes Multiplas,Masculino,Não
+Trajeto,302010550,"Face, Partes Multipl",Lesao Imediata,Feminino,Não
+Trajeto,302010250,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Típico,306020000,Dedo,"Outras Lesoes, Nic",Masculino,Não
+Típico,302010350,Mao (Exceto Punho ou,Luxacao,Masculino,Não
+Trajeto,303075900,Partes Multiplas - A,Fratura,Masculino,Não
+Doença,Desconhecido,"Cabeca, Nic","Doenca, Nic",Feminino,Não
+Típico,305008900,Partes Multiplas - A,Queimadura ou Escald,Masculino,Não
+Típico,354040000,Olho (Inclusive Nerv,"Escoriacao, Abrasao",Masculino,Não
+Trajeto,303075200,Articulacao do Torno,Fratura,Masculino,Não
+Típico,309000000,Dedo,"Doenca, Nic",Feminino,Não
+Típico,305032500,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010550,Braco (Entre O Punho,"Contusao, Esmagament",Masculino,Não
+Típico,302090000,Articulacao do Torno,Luxacao,Feminino,Não
+Típico,354040000,Mao (Exceto Punho ou,Queimadura ou Escald,Masculino,Não
+Típico,309000000,Ombro,"Distensao, Torcao",Masculino,Não
+Trajeto,303075200,Antebraco (Entre O P,Lesao Imediata,Masculino,Não
+Trajeto,303075250,Partes Multiplas - A,Lesao Imediata,Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Trajeto,302010200,"Cabeca, Nic","Outras Lesoes, Nic",Feminino,Não
+Típico,302050100,"Membros Superiores,","Contusao, Esmagament",Feminino,Não
+Trajeto,303075200,Punho,"Distensao, Torcao",Masculino,Não
+Trajeto,303075900,Pescoco,Lesao Imediata,Feminino,Não
+Típico,303010120,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302050800,Dedo,Luxacao,Masculino,Não
+Típico,Desconhecido,Aparelho Respiratori,Envenenamento Sistem,Masculino,Não
+Típico,305044000,Punho,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010550,Ombro,Fratura,Masculino,Não
+Doença,306090000,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,305032500,Antebraco (Entre O P,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302090000,Dedo,"Outras Lesoes, Nic",Feminino,Não
+Típico,303010280,Punho,"Contusao, Esmagament",Masculino,Não
+Típico,302010350,Pe (Exceto Artelhos),Fratura,Feminino,Não
+Típico,302010300,Braco (Entre O Punho,Fratura,Masculino,Não
+Trajeto,302010200,Punho,Fratura,Feminino,Não
+Típico,303075550,Dedo,Lesao Imediata,Masculino,Não
+Típico,305032500,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075900,Partes Multiplas - A,"Escoriacao, Abrasao",Masculino,Não
+Típico,303090000,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Típico,309000000,Pe (Exceto Artelhos),"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010300,Partes Multiplas - A,Fratura,Masculino,Não
+Típico,302090000,Partes Multiplas - A,"Escoriacao, Abrasao",Masculino,Não
+Típico,303075900,Partes Multiplas - A,Lesao Imediata,Masculino,Não
+Típico,Desconhecido,Mao (Exceto Punho ou,"Contusao, Esmagament",Masculino,Não
+Típico,305032500,Pe (Exceto Artelhos),Lesao Imediata,Masculino,Não
+Trajeto,303075250,Sistemas e Aparelhos,Lesao Imediata,Feminino,Não
+Típico,Desconhecido,Partes Multiplas - A,Queimadura ou Escald,Masculino,Não
+Típico,309000000,Pe (Exceto Artelhos),Lesao Imediata,Masculino,Não
+Trajeto,302010200,Ombro,"Contusao, Esmagament",Masculino,Não
+Típico,302010700,Abdome (Inclusive Or,Hernia de Qualquer N,Masculino,Não
+Típico,302050800,Perna (Entre O Torno,Concussao Cerebral,Masculino,Não
+Típico,302010350,Joelho,Luxacao,Masculino,Não
+Típico,302010350,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Típico,303090000,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Típico,302070100,Joelho,"Distensao, Torcao",Masculino,Não
+Típico,302050200,Articulacao do Torno,"Contusao, Esmagament",Feminino,Não
+Típico,305044000,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Indeterminado,Não
+Doença,Desconhecido,Localizacao da Lesao,"Doenca, Nic",Masculino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010200,Articulacao do Torno,"Distensao, Torcao",Masculino,Não
+Típico,Desconhecido,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,303075250,Perna (Entre O Torno,Luxacao,Masculino,Não
+Típico,307030100,Partes Multiplas - A,Lesao Imediata,Feminino,Não
+Típico,302010550,Localizacao da Lesao,"Escoriacao, Abrasao",Feminino,Não
+Típico,306020000,Braco (Entre O Punho,"Escoriacao, Abrasao",Masculino,Não
+Típico,305068600,Dedo,"Outras Lesoes, Nic",Feminino,Não
+Típico,302010300,Braco (Entre O Punho,"Distensao, Torcao",Feminino,Não
+Típico,303010120,Coxa,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,302010300,Cotovelo,Inflamacao de Articu,Masculino,Não
+Típico,Desconhecido,Dorso (Inclusive Mus,Inflamacao de Articu,Masculino,Não
+Típico,302010250,Ombro,"Escoriacao, Abrasao",Masculino,Não
+Típico,309000000,Olho (Inclusive Nerv,Lesao Imediata,Feminino,Não
+Típico,306060000,Olho (Inclusive Nerv,"Lesao Imediata, Nic",Feminino,Não
+Doença,302050900,"Cabeca, Partes Multi","Doenca, Nic",Feminino,Não
+Típico,303075450,Mao (Exceto Punho ou,Luxacao,Masculino,Não
+Trajeto,303075200,Torax (Inclusive Org,"Escoriacao, Abrasao",Feminino,Não
+Doença,309000000,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,307040100,Quadris (Inclusive P,Lesao Imediata,Masculino,Não
+Típico,309000000,Dorso (Inclusive Mus,Lesao Imediata,Feminino,Não
+Típico,306090000,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,303075450,Pe (Exceto Artelhos),Luxacao,Feminino,Não
+Típico,Desconhecido,Antebraco (Entre O P,Luxacao,Masculino,Não
+Trajeto,302010400,Articulacao do Torno,Luxacao,Feminino,Não
+Típico,Desconhecido,Dedo,Lesao Imediata,Feminino,Não
+Típico,303090000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,306060000,"Membros Superiores,","Outras Lesoes, Nic",Feminino,Não
+Típico,306090000,Dedo,Fratura,Masculino,Não
+Típico,309000000,Ombro,Luxacao,Masculino,Não
+Típico,302030900,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Típico,302010550,"Perna (Do Tornozelo,","Contusao, Esmagament",Feminino,Não
+Trajeto,302010200,"Membros Inferiores,",Luxacao,Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Trajeto,303075200,Joelho,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303075200,Ombro,Fratura,Masculino,Não
+Típico,307040700,Pe (Exceto Artelhos),"Contusao, Esmagament",Feminino,Não
+Trajeto,303075250,Joelho,"Contusao, Esmagament",Masculino,Não
+Típico,305072000,Sistemas e Aparelhos,Envenenamento Sistem,Feminino,Não
+Típico,306060000,Dedo,"Escoriacao, Abrasao",Feminino,Não
+Trajeto,303075250,Partes Multiplas - A,Lesao Imediata,Masculino,Não
+Típico,309000000,"Membros Superiores,","Distensao, Torcao",Feminino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,302010200,Articulacao do Torno,"Contusao, Esmagament",Feminino,Não
+Típico,303020120,"Cabeca, Nic","Outras Lesoes, Nic",Masculino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Trajeto,303075250,Pescoco,"Distensao, Torcao",Masculino,Não
+Trajeto,303075250,"Membros Inferiores,",Lesao Imediata,Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,305008900,Perna (Entre O Torno,Lesao Imediata,Feminino,Não
+Típico,302050700,Pe (Exceto Artelhos),"Contusao, Esmagament",Masculino,Não
+Típico,303010280,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,305068600,"Membros Inferiores,","Escoriacao, Abrasao",Feminino,Não
+Doença,354020000,"Ouvido (Externo, Med",Perda ou Diminuicao,Feminino,Não
+Típico,305068600,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,302010200,Articulacao do Torno,Fratura,Masculino,Não
+Típico,303050600,Ombro,Inflamacao de Articu,Feminino,Não
+Típico,302010300,Joelho,"Distensao, Torcao",Feminino,Não
+Típico,307030900,Mao (Exceto Punho ou,Lesao Imediata,Masculino,Não
+Típico,303075200,Joelho,"Escoriacao, Abrasao",Masculino,Não
+Típico,302010350,"Membros Inferiores,","Distensao, Torcao",Masculino,Não
+Típico,305068600,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Feminino,Não
+Doença,Desconhecido,Braco (Entre O Punho,"Distensao, Torcao",Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,303025600,Dorso (Inclusive Mus,Lesao Imediata,Feminino,Não
+Trajeto,303075900,Sistema Nervoso,Concussao Cerebral,Feminino,Não
+Típico,307030100,"Membros Superiores,",Lesoes Multiplas,Feminino,Não
+Típico,305032500,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Feminino,Não
+Doença,302010300,Sistema Musculo-Esqu,"Distensao, Torcao",Feminino,Não
+Típico,305044000,"Face, Partes Multipl","Corte, Laceracao, Fe",Masculino,Não
+Doença,302010550,Torax (Inclusive Org,"Doenca, Nic",Feminino,Não
+Típico,303075900,Torax (Inclusive Org,Lesao Imediata,Masculino,Não
+Típico,302050700,Dorso (Inclusive Mus,Luxacao,Masculino,Não
+Típico,306060000,"Membros Superiores,",Doenca Contagiosa ou,Feminino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075200,Punho,Fratura,Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,307030900,Partes Multiplas - A,"Contusao, Esmagament",Feminino,Não
+Típico,306060000,Dedo,"Outras Lesoes, Nic",Masculino,Não
+Típico,Desconhecido,Braco (Entre O Punho,Lesao Imediata,Masculino,Não
+Típico,302030900,"Face, Partes Multipl",Fratura,Masculino,Não
+Trajeto,302010200,Braco (Entre O Punho,Luxacao,Feminino,Não
+Típico,305048300,"Face, Partes Multipl","Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075900,"Cabeca, Nic","Corte, Laceracao, Fe",Feminino,Não
+Típico,305044000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,302010200,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Típico,Desconhecido,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,305044000,Ombro,"Corte, Laceracao, Fe",Masculino,Não
+Típico,354040000,Braco (Entre O Punho,Queimadura ou Escald,Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Trajeto,309000000,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,305032500,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,309000000,Punho,"Outras Lesoes, Nic",Feminino,Não
+Típico,303075900,Pe (Exceto Artelhos),Luxacao,Masculino,Não
+Típico,302010350,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,309000000,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Típico,302010200,Mao (Exceto Punho ou,Lesao Imediata,Masculino,Não
+Típico,307040500,Dorso (Inclusive Mus,"Outras Lesoes, Nic",Masculino,Não
+Trajeto,309000000,Olho (Inclusive Nerv,"Lesao Imediata, Nic",Masculino,Não
+Típico,307030900,Dedo,Fratura,Feminino,Não
+Trajeto,303075200,Joelho,"Distensao, Torcao",Masculino,Não
+Trajeto,303075250,Mao (Exceto Punho ou,Fratura,Masculino,Não
+Típico,306060000,Olho (Inclusive Nerv,Doenca Contagiosa ou,Feminino,Não
+Típico,302090000,Braco (Entre O Punho,"Contusao, Esmagament",Masculino,Não
+Típico,303075900,Partes Multiplas - A,Fratura,Masculino,Não
+Trajeto,303075250,Punho,Fratura,Masculino,Não
+Típico,303075250,"Perna (Do Tornozelo,",Fratura,Masculino,Não
+Típico,302010300,Cotovelo,Fratura,Feminino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,306090000,Pe (Exceto Artelhos),Lesao Imediata,Feminino,Não
+Típico,309500000,Dedo,"Escoriacao, Abrasao",Feminino,Não
+Típico,Desconhecido,Dedo,"Contusao, Esmagament",Masculino,Não
+Trajeto,309500000,Dedo,"Outras Lesoes, Nic",Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Outras Lesoes, Nic",Feminino,Não
+Típico,305008900,Pe (Exceto Artelhos),"Outras Lesoes, Nic",Masculino,Não
+Trajeto,303075200,Perna (Entre O Torno,"Contusao, Esmagament",Masculino,Não
+Típico,303075550,Braco (Entre O Punho,Luxacao,Feminino,Não
+Trajeto,305040150,Perna (Entre O Torno,"Contusao, Esmagament",Feminino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Doença,302070500,Sistemas e Aparelhos,"Doenca, Nic",Masculino,Não
+Típico,305040150,Braco (Acima do Coto,Fratura,Masculino,Não
+Doença,Desconhecido,Sistemas e Aparelhos,"Outras Lesoes, Nic",Masculino,Não
+Trajeto,303075100,Perna (Entre O Torno,"Escoriacao, Abrasao",Masculino,Não
+Típico,309000000,Dedo,"Outras Lesoes, Nic",Feminino,Não
+Típico,303010900,Dedo,Lesao Imediata,Feminino,Não
+Trajeto,303075250,Pescoco,"Contusao, Esmagament",Masculino,Não
+Típico,309000000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010550,Articulacao do Torno,"Distensao, Torcao",Masculino,Não
+Típico,309000000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,303015150,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,302010250,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,302010550,Joelho,"Distensao, Torcao",Feminino,Não
+Trajeto,Desconhecido,Dedo,Fratura,Masculino,Não
+Típico,305032500,Ombro,Fratura,Masculino,Não
+Típico,306060000,"Face, Partes Multipl",Lesao Imediata,Feminino,Não
+Típico,309000000,Braco (Acima do Coto,Lesao Imediata,Masculino,Não
+Típico,302010550,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Trajeto,303075250,Antebraco (Entre O P,Fratura,Masculino,Não
+Típico,303025900,"Membros Inferiores,",Luxacao,Feminino,Não
+Típico,303015900,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,305032500,Dedo,Fratura,Masculino,Não
+Típico,302010650,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Doença,Desconhecido,Ombro,Lesao Imediata,Feminino,Não
+Trajeto,303075200,Braco (Entre O Punho,Fratura,Masculino,Não
+Típico,303075450,Pe (Exceto Artelhos),Fratura,Masculino,Não
+Trajeto,303075200,Perna (Entre O Torno,Fratura,Masculino,Não
+Trajeto,302010350,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,309000000,Dedo,"Escoriacao, Abrasao",Feminino,Não
+Típico,307030200,Dedo,"Escoriacao, Abrasao",Masculino,Não
+Trajeto,303075200,Pe (Exceto Artelhos),Fratura,Masculino,Não
+Típico,302010350,Joelho,Lesao Imediata,Feminino,Não
+Típico,306020000,Perna (Entre O Torno,"Outras Lesoes, Nic",Masculino,Não
+Típico,302010350,Articulacao do Torno,Inflamacao de Articu,Feminino,Não
+Trajeto,302010200,Mao (Exceto Punho ou,"Escoriacao, Abrasao",Feminino,Não
+Doença,Desconhecido,Localizacao da Lesao,"Doenca, Nic",Feminino,Não
+Típico,302010350,Braco (Entre O Punho,Luxacao,Masculino,Não
+Típico,302050100,Nariz (Inclusive Fos,Inflamacao de Articu,Feminino,Não
+Típico,302090000,Antebraco (Entre O P,"Outras Lesoes, Nic",Feminino,Não
+Trajeto,302010200,Perna (Entre O Torno,"Distensao, Torcao",Masculino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303010600,Dorso (Inclusive Mus,Luxacao,Masculino,Não
+Típico,303090000,Dorso (Inclusive Mus,"Distensao, Torcao",Masculino,Não
+Trajeto,303075250,Dedo,Fratura,Masculino,Não
+Típico,305032500,Mao (Exceto Punho ou,Lesao Imediata,Masculino,Não
+Trajeto,302010250,"Perna (Do Tornozelo,","Distensao, Torcao",Feminino,Não
+Típico,309000000,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010350,Articulacao do Torno,Luxacao,Masculino,Não
+Típico,302050700,"Perna (Do Tornozelo,","Corte, Laceracao, Fe",Masculino,Não
+Típico,302010200,Joelho,"Distensao, Torcao",Masculino,Não
+Trajeto,302010200,Punho,"Distensao, Torcao",Masculino,Não
+Típico,307040100,Dedo,"Contusao, Esmagament",Feminino,Não
+Típico,302010550,Articulacao do Torno,"Distensao, Torcao",Masculino,Não
+Típico,307040500,"Cabeca, Nic","Escoriacao, Abrasao",Masculino,Não
+Típico,307030900,"Membros Superiores,",Lesao Imediata,Feminino,Não
+Típico,302010200,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,303060000,Olho (Inclusive Nerv,Queimadura ou Escald,Masculino,Não
+Típico,Desconhecido,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,307030100,"Cabeca, Partes Multi","Contusao, Esmagament",Masculino,Não
+Típico,302010550,Braco (Entre O Punho,Lesao Imediata,Feminino,Não
+Trajeto,303075900,"Tronco, Nic",Lesao Imediata,Feminino,Não
+Trajeto,302010200,Ombro,Luxacao,Masculino,Não
+Trajeto,309000000,Partes Multiplas - A,Fratura,Masculino,Não
+Doença,306020000,Sistemas e Aparelhos,"Intermacao, Insolaca",Masculino,Não
+Típico,309000000,Braco (Entre O Punho,"Outras Lesoes, Nic",Masculino,Não
+Típico,302010550,"Cabeca, Partes Multi",Lesao Imediata,Feminino,Não
+Típico,305032500,Dedo,Luxacao,Masculino,Não
+Típico,306090000,Localizacao da Lesao,"Doenca, Nic",Masculino,Não
+Trajeto,303075900,Perna (Entre O Torno,"Distensao, Torcao",Masculino,Não
+Típico,302010250,Braco (Entre O Punho,"Contusao, Esmagament",Feminino,Não
+Típico,Desconhecido,Braco (Acima do Coto,Choque Eletrico e El,Masculino,Não
+Típico,305068600,Dedo,"Escoriacao, Abrasao",Feminino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Outras Lesoes, Nic",Feminino,Não
+Típico,307040100,Partes Multiplas - A,Fratura,Masculino,Não
+Típico,306090000,Abdome (Inclusive Or,"Lesao Imediata, Nic",Feminino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302090000,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Típico,307030900,"Cabeca, Nic","Contusao, Esmagament",Feminino,Não
+Típico,302010550,Dedo,Lesao Imediata,Masculino,Não
+Típico,302010550,Joelho,Fratura,Feminino,Não
+Típico,305032500,Dedo,"Contusao, Esmagament",Masculino,Não
+Típico,305044000,Dedo,Lesao Imediata,Feminino,Não
+Típico,302010400,"Membros Inferiores,","Distensao, Torcao",Feminino,Não
+Típico,302070100,Partes Multiplas - A,"Asfixia, Estrangulam",Masculino,Sim
+Típico,305044000,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Feminino,Não
+Doença,309500000,Punho,Inflamacao de Articu,Feminino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Trajeto,303075200,Partes Multiplas - A,Lesao Imediata,Masculino,Não
+Típico,Desconhecido,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302050700,Punho,Lesao Imediata,Masculino,Não
+Típico,302010200,"Tronco, Nic",Fratura,Feminino,Não
+Típico,Desconhecido,Boca (Inclusive Labi,Lesao Imediata,Feminino,Não
+Típico,303060000,"Membros Superiores,",Queimadura ou Escald,Feminino,Não
+Típico,305008500,Pe (Exceto Artelhos),Queimadura ou Escald,Feminino,Não
+Típico,307030100,Quadris (Inclusive P,Fratura,Feminino,Não
+Trajeto,303075900,"Membros Superiores,","Lesao Imediata, Nic",Feminino,Não
+Típico,302010550,Ombro,Luxacao,Masculino,Não
+Típico,306090000,Pescoco,Inflamacao de Articu,Feminino,Não
+Típico,303075900,"Tronco, Parte Multip","Escoriacao, Abrasao",Masculino,Não
+Típico,305032500,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302030900,"Perna (Do Tornozelo,",Lesao Imediata,Masculino,Não
+Típico,307030900,"Membros Superiores,",Lesoes Multiplas,Feminino,Não
+Típico,307030900,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,303010900,"Face, Partes Multipl","Lesao Imediata, Nic",Masculino,Não
+Típico,302010300,Joelho,Lesao Imediata,Feminino,Não
+Típico,309000000,"Membros Superiores,","Distensao, Torcao",Masculino,Não
+Típico,302010300,Pe (Exceto Artelhos),Fratura,Feminino,Não
+Típico,306060000,"Face, Partes Multipl","Corte, Laceracao, Fe",Feminino,Não
+Trajeto,302010350,Articulacao do Torno,Luxacao,Feminino,Não
+Trajeto,303075200,Braco (Entre O Punho,Lesao Imediata,Feminino,Não
+Típico,302010550,Quadris (Inclusive P,"Contusao, Esmagament",Masculino,Não
+Típico,302010300,Pe (Exceto Artelhos),Fratura,Feminino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010450,Pe (Exceto Artelhos),Fratura,Feminino,Não
+Trajeto,303075900,Ombro,"Escoriacao, Abrasao",Feminino,Não
+Típico,303075200,Joelho,Fratura,Masculino,Não
+Típico,303010120,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Doença,302050100,"Tronco, Parte Multip",Lesao Imediata,Masculino,Não
+Típico,303050400,Nariz (Inclusive Fos,Lesao Imediata,Feminino,Não
+Típico,305028000,Olho (Inclusive Nerv,Lesao Imediata,Masculino,Não
+Doença,Desconhecido,Ombro,"Doenca, Nic",Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,Desconhecido,Dorso (Inclusive Mus,"Outras Lesoes, Nic",Feminino,Não
+Típico,303010900,Dorso (Inclusive Mus,Lesao Imediata,Masculino,Não
+Trajeto,306020000,Perna (Entre O Torno,"Outras Lesoes, Nic",Masculino,Não
+Trajeto,302010550,"Membros Inferiores,",Fratura,Feminino,Não
+Trajeto,309000000,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Típico,306090000,Dedo,Lesao Imediata,Feminino,Não
+Típico,302010200,Sistema Nervoso,"Outras Lesoes, Nic",Masculino,Não
+Típico,303075450,Artelho,Fratura,Masculino,Não
+Típico,309000000,Dorso (Inclusive Mus,Lesao Imediata,Masculino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,303075200,"Membros Superiores,","Escoriacao, Abrasao",Feminino,Não
+Típico,303020900,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303075900,Pe (Exceto Artelhos),"Contusao, Esmagament",Feminino,Não
+Típico,307040300,Mao (Exceto Punho ou,Lesao Imediata,Feminino,Não
+Trajeto,303075900,Quadris (Inclusive P,"Contusao, Esmagament",Feminino,Não
+Típico,307040100,"Tronco, Parte Multip","Distensao, Torcao",Masculino,Não
+Trajeto,303075200,Antebraco (Entre O P,Fratura,Masculino,Não
+Trajeto,302010250,Ombro,"Contusao, Esmagament",Masculino,Não
+Típico,303075900,Pescoco,"Lesao Imediata, Nic",Feminino,Não
+Trajeto,302010350,Articulacao do Torno,Luxacao,Feminino,Não
+Típico,302010350,"Cabeca, Partes Multi",Lesao Imediata,Feminino,Não
+Trajeto,302010200,Dedo,Fratura,Masculino,Não
+Típico,309500000,Olho (Inclusive Nerv,"Escoriacao, Abrasao",Masculino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075250,Partes Multiplas - A,"Escoriacao, Abrasao",Feminino,Não
+Típico,302010200,Articulacao do Torno,Lesao Imediata,Feminino,Não
+Típico,305004100,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075250,Dedo,"Contusao, Esmagament",Feminino,Não
+Típico,Desconhecido,"Tronco, Nic",Choque Eletrico e El,Masculino,Não
+Típico,302010550,Articulacao do Torno,Lesao Imediata,Masculino,Não
+Típico,305044000,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Típico,305044000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303020040,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075200,Antebraco (Entre O P,"Escoriacao, Abrasao",Masculino,Não
+Trajeto,303075250,Ombro,"Distensao, Torcao",Feminino,Não
+Típico,302010350,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Típico,307040700,Pe (Exceto Artelhos),Luxacao,Masculino,Não
+Trajeto,303075200,Punho,Fratura,Feminino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,303020900,Mao (Exceto Punho ou,Amputacao ou Enuclea,Masculino,Não
+Trajeto,302010350,Pe (Exceto Artelhos),Fratura,Feminino,Não
+Típico,302010300,Partes Multiplas - A,Lesao Imediata,Masculino,Não
+Típico,305068600,Dedo,Lesao Imediata,Masculino,Não
+Típico,303010900,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,309000000,Olho (Inclusive Nerv,"Doenca, Nic",Feminino,Não
+Típico,303010900,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010350,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Típico,302010200,Joelho,"Contusao, Esmagament",Feminino,Não
+Típico,302010450,Quadris (Inclusive P,"Contusao, Esmagament",Masculino,Não
+Trajeto,303075200,Punho,Fratura,Masculino,Não
+Típico,307030100,Partes Multiplas - A,"Contusao, Esmagament",Feminino,Não
+Trajeto,303075250,Braco (Entre O Punho,"Contusao, Esmagament",Masculino,Não
+Trajeto,302010550,Partes Multiplas - A,"Contusao, Esmagament",Feminino,Não
+Típico,309000000,Partes Multiplas - A,Lesao Imediata,Feminino,Não
+Típico,306090000,Olho (Inclusive Nerv,"Outras Lesoes, Nic",Feminino,Não
+Típico,309000000,Dedo,"Outras Lesoes, Nic",Feminino,Não
+Trajeto,302010200,Braco (Entre O Punho,"Escoriacao, Abrasao",Masculino,Não
+Trajeto,303075250,"Membros Superiores,","Outras Lesoes, Nic",Feminino,Não
+Típico,306060000,Olho (Inclusive Nerv,Lesao Imediata,Feminino,Não
+Trajeto,302050500,Punho,"Distensao, Torcao",Masculino,Não
+Trajeto,303075250,Antebraco (Entre O P,Lesao Imediata,Feminino,Não
+Típico,303025900,Punho,Lesao Imediata,Masculino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Trajeto,303075200,Joelho,"Distensao, Torcao",Feminino,Não
+Típico,305044000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075250,Partes Multiplas - A,Lesao Imediata,Masculino,Não
+Trajeto,302010250,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Típico,354040000,Antebraco (Entre O P,Queimadura ou Escald,Feminino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,309500000,Sistemas e Aparelhos,"Doenca, Nic",Feminino,Não
+Típico,309000000,Mao (Exceto Punho ou,"Contusao, Esmagament",Feminino,Não
+Típico,307040500,Quadris (Inclusive P,Lesao Imediata,Masculino,Não
+Doença,303020080,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Doença,Desconhecido,Localizacao da Lesao,"Doenca, Nic",Masculino,Não
+Típico,302010400,Articulacao do Torno,"Distensao, Torcao",Masculino,Não
+Trajeto,302010200,"Perna (Do Tornozelo,",Lesoes Multiplas,Masculino,Não
+Típico,303075900,Ombro,"Contusao, Esmagament",Masculino,Não
+Típico,Desconhecido,Aparelho Respiratori,"Outras Lesoes, Nic",Feminino,Não
+Típico,Desconhecido,Sistema Nervoso,"Outras Lesoes, Nic",Feminino,Não
+Típico,305008500,Antebraco (Entre O P,Queimadura ou Escald,Feminino,Não
+Típico,305032500,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075200,Perna (Entre O Torno,"Lesao Imediata, Nic",Masculino,Não
+Típico,309000000,Punho,Lesao Imediata,Feminino,Não
+Trajeto,303075250,Joelho,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075250,Partes Multiplas - A,Fratura,Masculino,Não
+Doença,309000000,Localizacao da Lesao,"Doenca, Nic",Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,Desconhecido,Dedo,"Outras Lesoes, Nic",Masculino,Não
+Típico,307030900,Dedo,"Contusao, Esmagament",Feminino,Não
+Típico,309000000,Olho (Inclusive Nerv,"Corte, Laceracao, Fe",Masculino,Não
+Típico,309000000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302090000,"Cabeca, Nic",Luxacao,Masculino,Não
+Trajeto,303075900,Quadris (Inclusive P,Lesao Imediata,Masculino,Não
+Trajeto,303075250,Joelho,Luxacao,Masculino,Não
+Típico,305008500,Articulacao do Torno,Queimadura ou Escald,Masculino,Não
+Típico,302030900,"Perna (Do Tornozelo,","Distensao, Torcao",Masculino,Não
+Típico,Desconhecido,Pe (Exceto Artelhos),Fratura,Feminino,Não
+Típico,307040300,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Feminino,Não
+Típico,309000000,"Cabeca, Partes Multi","Outras Lesoes, Nic",Masculino,Não
+Típico,302010200,Pe (Exceto Artelhos),Lesao Imediata,Feminino,Não
+Trajeto,302010200,Pe (Exceto Artelhos),"Lesao Imediata, Nic",Feminino,Não
+Típico,303025900,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,305068300,Olho (Inclusive Nerv,"Escoriacao, Abrasao",Feminino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,309000000,Olho (Inclusive Nerv,"Outras Lesoes, Nic",Feminino,Não
+Trajeto,302010250,Boca (Inclusive Labi,Lesao Imediata,Masculino,Não
+Típico,302010350,Perna (Entre O Torno,"Distensao, Torcao",Feminino,Não
+Típico,305064300,"Tronco, Parte Multip","Escoriacao, Abrasao",Masculino,Não
+Típico,302010550,"Membros Inferiores,",Lesao Imediata,Masculino,Não
+Típico,305048500,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303010040,Dedo,Fratura,Masculino,Não
+Típico,303010240,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,303075900,"Tronco, Nic",Fratura,Feminino,Não
+Trajeto,302010200,Pe (Exceto Artelhos),Fratura,Masculino,Não
+Típico,305048500,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303020900,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,309500000,"Cabeca, Partes Multi","Contusao, Esmagament",Masculino,Não
+Típico,302030900,Perna (Entre O Torno,Lesao Imediata,Feminino,Não
+Típico,302010300,Mao (Exceto Punho ou,Fratura,Masculino,Não
+Trajeto,303075250,Braco (Entre O Punho,Amputacao ou Enuclea,Masculino,Não
+Típico,303075900,Dedo,"Contusao, Esmagament",Feminino,Não
+Típico,306090000,Dedo,"Contusao, Esmagament",Feminino,Não
+Típico,302010250,Pe (Exceto Artelhos),Fratura,Feminino,Não
+Trajeto,302030900,Dorso (Inclusive Mus,"Outras Lesoes, Nic",Feminino,Não
+Típico,306060000,Dedo,Lesao Imediata,Feminino,Não
+Típico,Desconhecido,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010250,Pe (Exceto Artelhos),Lesao Imediata,Masculino,Não
+Trajeto,303075900,Partes Multiplas - A,Fratura,Masculino,Não
+Trajeto,302010200,Punho,Lesao Imediata,Masculino,Não
+Doença,302050100,Sistema Nervoso,"Outras Lesoes, Nic",Masculino,Não
+Típico,302090000,Mao (Exceto Punho ou,Lesao Imediata,Masculino,Não
+Típico,302010350,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Trajeto,303075250,Localizacao da Lesao,"Outras Lesoes, Nic",Masculino,Não
+Típico,307030900,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010300,Articulacao do Torno,"Outras Lesoes, Nic",Feminino,Não
+Típico,302010600,Cotovelo,"Contusao, Esmagament",Masculino,Não
+Típico,302010200,Joelho,"Distensao, Torcao",Masculino,Não
+Típico,305044000,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075200,Antebraco (Entre O P,Fratura,Masculino,Não
+Típico,302010550,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Trajeto,302010900,Perna (Entre O Torno,Fratura,Masculino,Não
+Doença,309500000,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,307030900,Braco (Entre O Punho,"Escoriacao, Abrasao",Feminino,Não
+Típico,302010350,"Membros Inferiores,",Lesao Imediata,Feminino,Não
+Típico,302010350,Dedo,Fratura,Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,Desconhecido,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302050700,Perna (Entre O Torno,"Escoriacao, Abrasao",Masculino,Não
+Trajeto,303075250,Abdome (Inclusive Or,"Contusao, Esmagament",Masculino,Não
+Típico,306020000,Dedo,"Outras Lesoes, Nic",Feminino,Não
+Trajeto,302010300,Articulacao do Torno,"Distensao, Torcao",Masculino,Não
+Doença,309000000,Sistemas e Aparelhos,"Doenca, Nic",Feminino,Não
+Típico,305032500,Dedo,"Contusao, Esmagament",Masculino,Não
+Típico,302010550,Joelho,"Contusao, Esmagament",Feminino,Não
+Típico,354040000,Partes Multiplas - A,Queimadura ou Escald,Feminino,Não
+Típico,303010160,Dedo,Lesao Imediata,Feminino,Não
+Típico,302010350,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,303075200,Partes Multiplas - A,Lesoes Multiplas,Masculino,Não
+Típico,Desconhecido,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Doença,Desconhecido,Aparelho Respiratori,"Doenca, Nic",Feminino,Não
+Trajeto,302010600,Pe (Exceto Artelhos),Fratura,Feminino,Não
+Trajeto,303075250,Braco (Entre O Punho,Fratura,Feminino,Não
+Trajeto,303075200,Perna (Entre O Torno,Lesoes Multiplas,Masculino,Não
+Típico,309000000,Joelho,"Distensao, Torcao",Feminino,Não
+Típico,303010900,Dedo,"Escoriacao, Abrasao",Feminino,Não
+Típico,302010550,"Membros Inferiores,","Distensao, Torcao",Feminino,Não
+Trajeto,303075250,Partes Multiplas - A,Lesao Imediata,Feminino,Não
+Típico,309000000,Mao (Exceto Punho ou,Lesao Imediata,Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Trajeto,303075900,Braco (Entre O Punho,"Escoriacao, Abrasao",Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,303010120,Braco (Acima do Coto,"Corte, Laceracao, Fe",Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,302010550,"Face, Partes Multipl","Corte, Laceracao, Fe",Masculino,Não
+Típico,302030900,Abdome (Inclusive Or,"Distensao, Torcao",Masculino,Não
+Típico,302010550,Perna (Entre O Torno,"Lesao Imediata, Nic",Feminino,Não
+Típico,303010900,Antebraco (Entre O P,"Outras Lesoes, Nic",Feminino,Não
+Doença,Desconhecido,"Cabeca, Nic","Outras Lesoes, Nic",Masculino,Não
+Doença,309000000,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Trajeto,302010550,"Perna (Do Tornozelo,","Distensao, Torcao",Feminino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,302010200,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Trajeto,309500000,Articulacao do Torno,Fratura,Masculino,Não
+Trajeto,302010200,Antebraco (Entre O P,Fratura,Masculino,Não
+Típico,303050600,Olho (Inclusive Nerv,"Contusao, Esmagament",Masculino,Não
+Doença,303020720,"Membros Superiores,",Lesoes Multiplas,Feminino,Não
+Típico,302010550,Quadris (Inclusive P,"Corte, Laceracao, Fe",Feminino,Não
+Doença,306090000,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Típico,302030900,Joelho,"Contusao, Esmagament",Feminino,Não
+Típico,Desconhecido,Joelho,Queimadura ou Escald,Masculino,Não
+Típico,303075250,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303025900,"Cabeca, Partes Multi",Lesao Imediata,Feminino,Não
+Típico,303020760,Braco (Entre O Punho,"Corte, Laceracao, Fe",Feminino,Não
+Típico,303010600,Dedo,"Contusao, Esmagament",Masculino,Não
+Típico,309000000,"Cabeca, Nic","Contusao, Esmagament",Feminino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303060000,Dedo,"Distensao, Torcao",Masculino,Não
+Trajeto,303075200,"Tronco, Parte Multip",Lesoes Multiplas,Feminino,Não
+Típico,305048300,Pe (Exceto Artelhos),"Contusao, Esmagament",Masculino,Não
+Típico,302050100,Dedo,Lesao Imediata,Feminino,Não
+Típico,302030900,Pe (Exceto Artelhos),Lesao Imediata,Feminino,Não
+Trajeto,302010350,Articulacao do Torno,Lesao Imediata,Feminino,Não
+Trajeto,303075200,Braco (Entre O Punho,"Contusao, Esmagament",Masculino,Não
+Trajeto,303090000,Quadris (Inclusive P,Fratura,Masculino,Não
+Típico,305032500,Dorso (Inclusive Mus,Lesao Imediata,Masculino,Não
+Doença,Desconhecido,Sistemas e Aparelhos,"Doenca, Nic",Masculino,Não
+Típico,303010900,Dedo,Lesao Imediata,Feminino,Não
+Trajeto,302010350,Perna (Entre O Torno,"Escoriacao, Abrasao",Feminino,Não
+Típico,302030900,Pe (Exceto Artelhos),"Outras Lesoes, Nic",Masculino,Não
+Típico,305028000,Olho (Inclusive Nerv,Lesao Imediata,Masculino,Não
+Trajeto,303075900,Joelho,"Escoriacao, Abrasao",Masculino,Não
+Trajeto,303075900,"Perna (Do Tornozelo,",Fratura,Masculino,Não
+Típico,302010350,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Típico,307030200,Joelho,Luxacao,Feminino,Não
+Trajeto,302010200,"Membros Inferiores,",Fratura,Feminino,Não
+Típico,307030300,Dedo,"Contusao, Esmagament",Masculino,Não
+Típico,355016000,"Face, Partes Multipl","Outras Lesoes, Nic",Feminino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,307030900,Perna (Entre O Torno,"Escoriacao, Abrasao",Feminino,Não
+Típico,Desconhecido,Perna (Entre O Torno,"Corte, Laceracao, Fe",Masculino,Não
+Doença,309000000,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,305032500,Pe (Exceto Artelhos),"Contusao, Esmagament",Masculino,Não
+Típico,309500000,Coxa,Luxacao,Feminino,Não
+Típico,309000000,Braco (Acima do Coto,"Distensao, Torcao",Feminino,Não
+Típico,302010350,Braco (Entre O Punho,"Escoriacao, Abrasao",Feminino,Não
+Típico,354000000,Boca (Inclusive Labi,Choque Eletrico e El,Masculino,Não
+Típico,309000000,Dorso (Inclusive Mus,Lesao Imediata,Feminino,Não
+Trajeto,303075100,"Face, Partes Multipl","Outras Lesoes, Nic",Masculino,Não
+Típico,302010350,"Membros Superiores,","Contusao, Esmagament",Masculino,Não
+Trajeto,303075200,Partes Multiplas - A,Fratura,Masculino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Trajeto,302010250,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,302010550,Joelho,"Distensao, Torcao",Masculino,Não
+Típico,305048500,"Tronco, Nic","Outras Lesoes, Nic",Masculino,Não
+Típico,302010550,Partes Multiplas - A,Lesao Imediata,Feminino,Não
+Trajeto,303075250,Cranio (Inclusive En,"Escoriacao, Abrasao",Masculino,Não
+Típico,303020040,Dedo,Fratura,Masculino,Não
+Doença,Desconhecido,"Membros Superiores,","Doenca, Nic",Masculino,Não
+Trajeto,303075250,"Cabeca, Partes Multi",Lesao Imediata,Feminino,Não
+Típico,303090000,Dedo,Lesao Imediata,Masculino,Não
+Típico,309000000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,303020040,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303075200,Braco (Entre O Punho,Fratura,Masculino,Não
+Típico,309000000,Dedo,Lesao Imediata,Masculino,Não
+Doença,307070000,"Cabeca, Partes Multi",Lesoes Multiplas,Feminino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Típico,309000000,"Membros Inferiores,","Outras Lesoes, Nic",Masculino,Não
+Típico,302010550,Joelho,"Contusao, Esmagament",Feminino,Não
+Típico,302010350,Partes Multiplas - A,Luxacao,Masculino,Não
+Típico,302090000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,305068600,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010350,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Trajeto,303075200,Perna (Entre O Torno,"Contusao, Esmagament",Masculino,Não
+Típico,302010550,Braco (Entre O Punho,Fratura,Feminino,Não
+Típico,302010550,Partes Multiplas - A,"Contusao, Esmagament",Feminino,Não
+Doença,Desconhecido,Partes Multiplas - A,Inflamacao de Articu,Feminino,Não
+Típico,303020900,Ombro,"Outras Lesoes, Nic",Masculino,Não
+Doença,Desconhecido,Cranio (Inclusive En,Concussao Cerebral,Feminino,Não
+Típico,307040100,Boca (Inclusive Labi,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303075900,Mao (Exceto Punho ou,"Contusao, Esmagament",Masculino,Não
+Típico,302010250,Ombro,"Distensao, Torcao",Masculino,Não
+Típico,302010350,Localizacao da Lesao,"Outras Lesoes, Nic",Masculino,Não
+Típico,307030400,"Cabeca, Nic","Corte, Laceracao, Fe",Feminino,Não
+Típico,302010300,"Tronco, Nic","Contusao, Esmagament",Masculino,Não
+Típico,305068600,Dedo,"Escoriacao, Abrasao",Feminino,Não
+Típico,302050900,Dedo,Fratura,Feminino,Não
+Típico,306090000,Mao (Exceto Punho ou,"Escoriacao, Abrasao",Masculino,Não
+Trajeto,303075900,"Tronco, Nic","Contusao, Esmagament",Feminino,Não
+Típico,302030900,Joelho,"Outras Lesoes, Nic",Masculino,Não
+Típico,302030900,Joelho,Luxacao,Masculino,Não
+Típico,303020360,Dedo,Amputacao ou Enuclea,Masculino,Não
+Típico,309000000,Dedo,Lesao Imediata,Masculino,Não
+Típico,305076000,Mao (Exceto Punho ou,Lesao Imediata,Masculino,Não
+Típico,302010250,Dedo,"Contusao, Esmagament",Masculino,Não
+Típico,302010350,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Típico,303020900,Dedo,Lesao Imediata,Masculino,Não
+Típico,303010120,"Membros Superiores,","Corte, Laceracao, Fe",Masculino,Não
+Típico,309500000,Dedo,Lesao Imediata,Feminino,Não
+Típico,307030200,"Membros Superiores,",Lesao Imediata,Masculino,Não
+Trajeto,309000000,"Membros Inferiores,","Contusao, Esmagament",Feminino,Não
+Típico,303015200,Dedo,Amputacao ou Enuclea,Masculino,Não
+Típico,302010550,Pe (Exceto Artelhos),Fratura,Feminino,Não
+Típico,302010550,"Cabeca, Partes Multi",Fratura,Feminino,Não
+Típico,309000000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,303075900,Partes Multiplas - A,Lesoes Multiplas,Masculino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075900,"Perna (Do Tornozelo,",Luxacao,Masculino,Não
+Típico,303010120,Braco (Entre O Punho,"Corte, Laceracao, Fe",Masculino,Não
+Típico,Desconhecido,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Feminino,Não
+Típico,309000000,Ombro,Luxacao,Masculino,Não
+Típico,303010120,Punho,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,309000000,"Tronco, Parte Multip","Outras Lesoes, Nic",Feminino,Não
+Típico,303020440,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303075900,Dedo,Fratura,Masculino,Não
+Típico,309000000,Partes Multiplas - A,"Outras Lesoes, Nic",Masculino,Não
+Típico,303060000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Trajeto,302010250,"Perna (Do Tornozelo,","Outras Lesoes, Nic",Masculino,Não
+Típico,302010550,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Trajeto,303075200,Joelho,"Escoriacao, Abrasao",Masculino,Não
+Trajeto,303075900,Partes Multiplas - A,"Outras Lesoes, Nic",Masculino,Não
+Típico,302090000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,303075250,Dorso (Inclusive Mus,"Lesao Imediata, Nic",Masculino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,303010240,Braco (Entre O Punho,"Corte, Laceracao, Fe",Masculino,Não
+Típico,306090000,Braco (Acima do Coto,Inflamacao de Articu,Feminino,Não
+Típico,305004350,Olho (Inclusive Nerv,Lesao Imediata,Feminino,Não
+Doença,309500000,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Doença,309000000,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,309000000,Dedo,"Outras Lesoes, Nic",Feminino,Não
+Trajeto,302010650,Partes Multiplas - A,Lesoes Multiplas,Feminino,Não
+Típico,307040100,Mao (Exceto Punho ou,Lesao Imediata,Feminino,Não
+Trajeto,303075250,Partes Multiplas - A,Lesoes Multiplas,Masculino,Não
+Típico,306090000,Sistema Nervoso,"Outras Lesoes, Nic",Feminino,Não
+Típico,Desconhecido,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,302010400,Cranio (Inclusive En,"Escoriacao, Abrasao",Feminino,Não
+Trajeto,303075200,Artelho,Fratura,Masculino,Não
+Doença,Desconhecido,Pescoco,Hernia de Qualquer N,Masculino,Não
+Típico,302010650,Cotovelo,"Lesao Imediata, Nic",Masculino,Não
+Típico,305028000,"Face, Partes Multipl",Lesao Imediata,Masculino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Trajeto,302010200,Partes Multiplas - A,"Escoriacao, Abrasao",Masculino,Não
+Trajeto,302010300,Articulacao do Torno,"Contusao, Esmagament",Feminino,Não
+Típico,305028000,Mao (Exceto Punho ou,"Contusao, Esmagament",Masculino,Não
+Típico,302050700,"Perna (Do Tornozelo,","Outras Lesoes, Nic",Masculino,Não
+Típico,303075200,"Membros Superiores,","Outras Lesoes, Nic",Masculino,Não
+Típico,309000000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,302010200,Joelho,Lesao Imediata,Feminino,Não
+Trajeto,303075900,Ombro,"Contusao, Esmagament",Masculino,Não
+Típico,302050700,Torax (Inclusive Org,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,302010250,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,307030100,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,302010550,Partes Multiplas - A,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010350,"Perna (Do Tornozelo,",Luxacao,Feminino,Não
+Trajeto,303075200,Joelho,Fratura,Masculino,Não
+Típico,305028000,Pe (Exceto Artelhos),Fratura,Masculino,Não
+Doença,Desconhecido,Punho,Inflamacao de Articu,Feminino,Não
+Trajeto,303075900,Partes Multiplas - A,Lesoes Multiplas,Masculino,Não
+Típico,305068600,Dedo,Lesao Imediata,Feminino,Não
+Doença,302050900,"Cabeca, Nic","Lesao Imediata, Nic",Masculino,Não
+Típico,305068600,Dedo,"Escoriacao, Abrasao",Masculino,Não
+Típico,305032500,Pe (Exceto Artelhos),Lesao Imediata,Masculino,Não
+Típico,302010200,"Perna (Do Tornozelo,",Luxacao,Feminino,Não
+Típico,303010120,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Típico,309000000,Dedo,"Outras Lesoes, Nic",Feminino,Não
+Típico,305024900,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010900,"Tronco, Nic","Outras Lesoes, Nic",Masculino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,305048900,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,302010200,Cotovelo,Lesao Imediata,Masculino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010550,Joelho,"Distensao, Torcao",Masculino,Não
+Típico,303015100,Mao (Exceto Punho ou,Lesao Imediata,Masculino,Não
+Típico,302010300,Braco (Entre O Punho,Luxacao,Feminino,Não
+Típico,306060000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010200,Dedo,"Outras Lesoes, Nic",Masculino,Não
+Típico,302010350,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Trajeto,303075200,Joelho,Lesao Imediata,Masculino,Não
+Trajeto,302010550,Perna (Entre O Torno,Fratura,Masculino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Típico,302010550,Braco (Acima do Coto,Luxacao,Feminino,Não
+Doença,Desconhecido,"Cabeca, Nic","Doenca, Nic",Feminino,Não
+Típico,303075250,Partes Multiplas - A,Lesao Imediata,Masculino,Não
+Típico,302030900,Pe (Exceto Artelhos),"Contusao, Esmagament",Feminino,Não
+Típico,302010550,Pe (Exceto Artelhos),Luxacao,Masculino,Não
+Típico,307030100,Ombro,Lesao Imediata,Masculino,Não
+Típico,309500000,Dedo,"Escoriacao, Abrasao",Feminino,Não
+Típico,309000000,Pe (Exceto Artelhos),Luxacao,Masculino,Não
+Típico,302090000,Braco (Acima do Coto,"Distensao, Torcao",Feminino,Não
+Típico,303075900,"Perna (Do Tornozelo,",Fratura,Masculino,Não
+Típico,303075650,Dorso (Inclusive Mus,Hernia de Qualquer N,Masculino,Não
+Trajeto,303075200,"Perna (Do Tornozelo,",Fratura,Masculino,Não
+Típico,305044000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,305008500,Antebraco (Entre O P,Queimadura ou Escald,Feminino,Não
+Trajeto,302010200,Pe (Exceto Artelhos),"Contusao, Esmagament",Feminino,Não
+Típico,303015400,Dedo,Fratura,Masculino,Não
+Típico,303010120,Dedo,Lesao Imediata,Feminino,Não
+Típico,302010900,"Membros Inferiores,","Contusao, Esmagament",Masculino,Não
+Típico,303075900,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Típico,302010350,Perna (Entre O Torno,"Distensao, Torcao",Feminino,Não
+Típico,302010700,Punho,Fratura,Masculino,Não
+Típico,307030900,Joelho,"Distensao, Torcao",Masculino,Não
+Típico,309000000,Dedo,"Distensao, Torcao",Feminino,Não
+Típico,305068600,Dedo,Lesao Imediata,Feminino,Não
+Doença,Desconhecido,Sistemas e Aparelhos,"Doenca, Nic",Feminino,Não
+Típico,303075250,"Perna (Do Tornozelo,",Luxacao,Masculino,Não
+Típico,303075250,Partes Multiplas - A,Concussao Cerebral,Feminino,Não
+Típico,306090000,Olho (Inclusive Nerv,Lesao Imediata,Masculino,Não
+Típico,309500000,Dedo,Queimadura ou Escald,Masculino,Não
+Trajeto,302010250,Joelho,"Outras Lesoes, Nic",Masculino,Não
+Típico,305028000,Coxa,"Contusao, Esmagament",Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,305032500,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303020080,Dedo,"Outras Lesoes, Nic",Masculino,Não
+Trajeto,303075250,Joelho,"Outras Lesoes, Nic",Masculino,Não
+Típico,302010550,Coxa,"Distensao, Torcao",Masculino,Não
+Típico,303010160,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Feminino,Não
+Típico,302010350,"Perna (Do Tornozelo,","Distensao, Torcao",Feminino,Não
+Típico,307040100,Dorso (Inclusive Mus,Luxacao,Feminino,Não
+Típico,303010900,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,305032500,Pe (Exceto Artelhos),"Escoriacao, Abrasao",Masculino,Não
+Típico,305044000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,354050300,Dedo,"Outras Lesoes, Nic",Feminino,Não
+Típico,303015400,Mao (Exceto Punho ou,Lesao Imediata,Masculino,Não
+Trajeto,302010200,Perna (Entre O Torno,Lesao Imediata,Masculino,Não
+Típico,305032500,Dorso (Inclusive Mus,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010200,Abdome (Inclusive Or,Lesao Imediata,Masculino,Não
+Típico,309500000,"Membros Inferiores,","Escoriacao, Abrasao",Masculino,Não
+Típico,303010120,Dedo,"Escoriacao, Abrasao",Feminino,Não
+Típico,302010550,Ombro,"Contusao, Esmagament",Masculino,Não
+Típico,302030900,Pe (Exceto Artelhos),Luxacao,Masculino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Típico,302030900,Dorso (Inclusive Mus,"Lesao Imediata, Nic",Masculino,Não
+Típico,309000000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,305032500,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,306060000,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Feminino,Não
+Trajeto,303075200,"Membros Inferiores,","Contusao, Esmagament",Feminino,Não
+Típico,303010480,Punho,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303075250,Braco (Entre O Punho,"Escoriacao, Abrasao",Masculino,Não
+Típico,305044000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302070900,"Tronco, Parte Multip","Corte, Laceracao, Fe",Masculino,Não
+Típico,303075600,Dedo,Fratura,Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,302010550,Pe (Exceto Artelhos),"Distensao, Torcao",Masculino,Não
+Típico,305040150,Joelho,"Contusao, Esmagament",Masculino,Não
+Trajeto,302010200,Partes Multiplas - A,"Escoriacao, Abrasao",Masculino,Não
+Típico,303020720,Dedo,Fratura,Masculino,Não
+Trajeto,303075900,Perna (Entre O Torno,"Outras Lesoes, Nic",Masculino,Não
+Trajeto,303075200,Partes Multiplas - A,"Escoriacao, Abrasao",Masculino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Típico,309000000,Olho (Inclusive Nerv,"Outras Lesoes, Nic",Masculino,Não
+Trajeto,303075900,"Membros Superiores,",Lesao Imediata,Feminino,Não
+Típico,302010550,Perna (Entre O Torno,Lesao Imediata,Feminino,Não
+Típico,307030900,Pe (Exceto Artelhos),"Escoriacao, Abrasao",Feminino,Não
+Típico,302030900,Pe (Exceto Artelhos),"Distensao, Torcao",Feminino,Não
+Típico,305028000,"Perna (Do Tornozelo,",Lesao Imediata,Masculino,Não
+Trajeto,303075250,Partes Multiplas - A,Lesao Imediata,Feminino,Não
+Típico,309000000,Dorso (Inclusive Mus,"Doenca, Nic",Feminino,Não
+Típico,306060000,Dedo,Lesao Imediata,Feminino,Não
+Típico,303020160,Dedo,Lesao Imediata,Masculino,Não
+Doença,309000000,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,303020080,Punho,"Corte, Laceracao, Fe",Feminino,Não
+Típico,305008900,Pescoco,Queimadura ou Escald,Feminino,Não
+Típico,Desconhecido,"Face, Partes Multipl",Lesao Imediata,Feminino,Não
+Trajeto,303075200,Perna (Entre O Torno,Fratura,Masculino,Não
+Típico,Desconhecido,Dorso (Inclusive Mus,Inflamacao de Articu,Masculino,Não
+Típico,302010300,"Perna (Do Tornozelo,",Fratura,Masculino,Não
+Típico,305044000,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,309000000,"Face, Partes Multipl","Corte, Laceracao, Fe",Feminino,Não
+Típico,306020000,Perna (Entre O Torno,"Corte, Laceracao, Fe",Masculino,Não
+Típico,306060000,Dedo,"Escoriacao, Abrasao",Feminino,Não
+Típico,303010120,Dedo,Amputacao ou Enuclea,Masculino,Não
+Típico,354040000,"Face, Partes Multipl",Queimadura ou Escald,Masculino,Não
+Trajeto,303075200,Joelho,"Escoriacao, Abrasao",Masculino,Não
+Doença,307030200,Pe (Exceto Artelhos),"Contusao, Esmagament",Feminino,Não
+Típico,309000000,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Feminino,Não
+Típico,309000000,Antebraco (Entre O P,Lesao Imediata,Masculino,Não
+Trajeto,303075200,Ombro,"Lesao Imediata, Nic",Masculino,Não
+Típico,302010200,Joelho,"Contusao, Esmagament",Masculino,Não
+Trajeto,303075900,Partes Multiplas - A,"Lesao Imediata, Nic",Masculino,Não
+Trajeto,303075900,Abdome (Inclusive Or,"Outras Lesoes, Nic",Feminino,Não
+Trajeto,302010550,Articulacao do Torno,Inflamacao de Articu,Masculino,Não
+Típico,305008900,Partes Multiplas - A,Queimadura ou Escald,Feminino,Não
+Típico,305068600,Olho (Inclusive Nerv,Lesao Imediata,Feminino,Não
+Trajeto,303075900,Dorso (Inclusive Mus,Lesao Imediata,Feminino,Não
+Típico,Desconhecido,Braco (Entre O Punho,Lesao Imediata,Masculino,Não
+Trajeto,303075200,Mao (Exceto Punho ou,Lesao Imediata,Masculino,Não
+Típico,303090000,Cotovelo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,303020900,Mao (Exceto Punho ou,Choque Eletrico e El,Feminino,Não
+Típico,307030900,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,309000000,Aparelho Respiratori,Lesao Imediata,Feminino,Não
+Doença,Desconhecido,"Cabeca, Nic","Doenca, Nic",Feminino,Não
+Típico,305008500,Joelho,"Contusao, Esmagament",Feminino,Não
+Típico,307040100,Dedo,Luxacao,Masculino,Não
+Típico,309000000,Dedo,"Doenca, Nic",Feminino,Não
+Típico,309000000,Pescoco,"Outras Lesoes, Nic",Feminino,Não
+Típico,302030900,"Membros Superiores,","Escoriacao, Abrasao",Masculino,Não
+Típico,Desconhecido,Joelho,"Outras Lesoes, Nic",Masculino,Não
+Típico,303075200,Partes Multiplas - A,Luxacao,Masculino,Não
+Típico,302010300,"Membros Inferiores,",Lesao Imediata,Feminino,Não
+Típico,303010900,"Cabeca, Nic","Corte, Laceracao, Fe",Masculino,Não
+Típico,306060000,Braco (Entre O Punho,"Corte, Laceracao, Fe",Feminino,Não
+Típico,303075250,Torax (Inclusive Org,Lesao Imediata,Masculino,Não
+Típico,303075900,Pe (Exceto Artelhos),Fratura,Masculino,Não
+Típico,302010700,Articulacao do Torno,Fratura,Masculino,Não
+Típico,303075250,Dedo,Fratura,Masculino,Não
+Típico,303025900,Dedo,"Contusao, Esmagament",Feminino,Não
+Típico,303075200,Braco (Acima do Coto,Lesao Imediata,Masculino,Não
+Típico,305032500,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Típico,302010350,Pe (Exceto Artelhos),"Contusao, Esmagament",Masculino,Não
+Trajeto,302010200,Ombro,Luxacao,Masculino,Não
+Típico,302090000,Braco (Entre O Punho,"Contusao, Esmagament",Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Trajeto,303075900,Mao (Exceto Punho ou,Fratura,Masculino,Não
+Trajeto,302010550,Articulacao do Torno,"Distensao, Torcao",Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,303010120,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,305068600,Olho (Inclusive Nerv,"Outras Lesoes, Nic",Masculino,Não
+Trajeto,302010200,"Membros Inferiores,","Escoriacao, Abrasao",Masculino,Não
+Trajeto,302010350,Pe (Exceto Artelhos),Lesao Imediata,Masculino,Não
+Trajeto,305040150,Braco (Acima do Coto,"Distensao, Torcao",Feminino,Não
+Típico,302010900,"Cabeca, Nic","Lesao Imediata, Nic",Feminino,Não
+Típico,303075250,Joelho,"Escoriacao, Abrasao",Masculino,Não
+Típico,302010300,"Membros Inferiores,","Distensao, Torcao",Masculino,Não
+Típico,305032500,Dedo,Queimadura ou Escald,Feminino,Não
+Típico,306090000,"Tronco, Parte Multip",Lesao Imediata,Feminino,Não
+Típico,302010300,Punho,"Contusao, Esmagament",Feminino,Não
+Típico,305020000,Dedo,Pneumoconiose (Silic,Feminino,Não
+Típico,305068600,Olho (Inclusive Nerv,"Outras Lesoes, Nic",Feminino,Não
+Doença,306090000,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,306090000,Mao (Exceto Punho ou,"Corte, Laceracao, Fe",Masculino,Não
+Típico,305008900,"Membros Superiores,",Luxacao,Feminino,Não
+Típico,309000000,Dedo,Lesao Imediata,Feminino,Não
+Típico,306090000,Localizacao da Lesao,"Outras Lesoes, Nic",Feminino,Não
+Trajeto,303075900,Punho,"Escoriacao, Abrasao",Feminino,Não
+Típico,307030200,"Perna (Do Tornozelo,","Distensao, Torcao",Masculino,Não
+Típico,307030200,Pe (Exceto Artelhos),"Outras Lesoes, Nic",Feminino,Não
+Típico,305032500,Pe (Exceto Artelhos),Lesao Imediata,Masculino,Não
+Trajeto,309000000,"Membros Superiores,","Outras Lesoes, Nic",Feminino,Não
+Típico,306060000,Olho (Inclusive Nerv,"Outras Lesoes, Nic",Masculino,Não
+Típico,307030400,Dedo,"Contusao, Esmagament",Feminino,Não
+Trajeto,302010550,Antebraco (Entre O P,Fratura,Masculino,Não
+Típico,303040600,"Membros Superiores,",Lesao Imediata,Masculino,Não
+Doença,309500000,Sistema Nervoso,"Doenca, Nic",Masculino,Não
+Típico,305032500,Dedo,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,303075200,Braco (Entre O Punho,Lesao Imediata,Masculino,Não
+Trajeto,302010350,Pe (Exceto Artelhos),Luxacao,Feminino,Não
+Típico,303075900,Pescoco,"Escoriacao, Abrasao",Masculino,Não
+Típico,303090000,Mao (Exceto Punho ou,"Distensao, Torcao",Masculino,Não
+Doença,306090000,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,Desconhecido,Antebraco (Entre O P,Queimadura ou Escald,Masculino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,303075450,Dedo,Fratura,Masculino,Não
+Típico,302010350,Articulacao do Torno,"Distensao, Torcao",Masculino,Não
+Típico,302010400,Joelho,"Escoriacao, Abrasao",Feminino,Não
+Típico,Desconhecido,Olho (Inclusive Nerv,Lesao Imediata,Masculino,Não
+Típico,303075250,Cranio (Inclusive En,"Corte, Laceracao, Fe",Masculino,Não
+Trajeto,302010650,"Perna (Do Tornozelo,",Lesao Imediata,Feminino,Não
+Doença,Desconhecido,Sistema Nervoso,"Doenca, Nic",Feminino,Não
+Típico,307030400,Pe (Exceto Artelhos),Fratura,Masculino,Não
+Típico,302010200,"Membros Superiores,","Asfixia, Estrangulam",Masculino,Sim
+Típico,302030900,"Perna (Do Tornozelo,","Contusao, Esmagament",Feminino,Não
+Típico,309000000,"Tronco, Nic","Escoriacao, Abrasao",Masculino,Não
+Típico,303010120,Dedo,"Outras Lesoes, Nic",Masculino,Não
+Típico,303090000,Dedo,"Corte, Laceracao, Fe",Feminino,Não
+Típico,305032500,"Cabeca, Nic","Outras Lesoes, Nic",Masculino,Não
+Típico,305008900,Olho (Inclusive Nerv,"Lesao Imediata, Nic",Feminino,Não
+Típico,303075900,Mao (Exceto Punho ou,"Contusao, Esmagament",Masculino,Não
+Típico,305068600,"Face, Partes Multipl","Lesao Imediata, Nic",Masculino,Não
+Típico,302010350,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,303030400,Dedo,Luxacao,Masculino,Não
+Doença,303075250,"Membros Superiores,",Lesao Imediata,Masculino,Não
+Típico,309500000,Localizacao da Lesao,Luxacao,Feminino,Não
+Típico,302010550,Braco (Acima do Coto,"Contusao, Esmagament",Feminino,Não
+Típico,303075900,Punho,Lesao Imediata,Masculino,Não
+Típico,302010550,Articulacao do Torno,"Distensao, Torcao",Feminino,Não
+Típico,302010250,Articulacao do Torno,"Distensao, Torcao",Masculino,Não

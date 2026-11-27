@@ -1,124 +1,177 @@
-# Atividade 3 — Previsão da parte do corpo atingida nas CATs
+# Atividade 3 — Modelos supervisionados para triagem de óbito nas CATs do Ceará
 
 ## Introdução
 
-Uma Comunicação de Acidente de Trabalho (CAT) registra as circunstâncias da ocorrência e a parte do corpo atingida. Nos registros do Ceará, há uma razão empírica para investigar a relação entre esses campos. Na análise exploratória das 8.849 linhas do semestre, antes da retirada das repetições, o dedo apareceu em 26,60% dos registros de acidentes típicos e em 3,39% dos registros de trajeto. Essa diferença motivou a pergunta do estudo. Quanto o contexto do acidente permite saber sobre a região atingida em um novo registro? [Análise exploratória das CATs](relatorio_analise_exploratoria.md)
+Uma Comunicação de Acidente de Trabalho (CAT) registra as circunstâncias do acidente, a parte do corpo atingida, a natureza aparente da lesão e a indicação de óbito. Nas CATs do Ceará referentes ao primeiro semestre de 2026 (7.201 registros únicos após remoção de duplicatas exatas), apenas **27 ocorrências indicam óbito (0,37%)**. Apesar de raro, o desfecho fatal concentra-se fortemente em perfis específicos de gravidade — por exemplo, lesões no crânio apresentam taxa de óbito de **16,22%** (6 em 37) e lesões múltiplas atingem **7,14%** (9 em 126), enquanto ocorrências em dedos, mãos e pés têm taxa próxima de zero.
 
-## Objetivo
+Este estudo conecta diretamente a preparação e a redução de dimensionalidade realizadas em [02_pre_processamento.ipynb](02_pre_processamento.ipynb) ao treinamento e à avaliação de quatro famílias de classificadores em [03_modelos_supervisionados.ipynb](03_modelos_supervisionados.ipynb).
 
-Prever qual categoria será registrada no campo **Parte Corpo Atingida** de uma CAT a partir das informações disponíveis no primeiro relato. Escolhemos esse alvo porque ele registra uma consequência concreta do acidente, tem resposta preenchida para todas as CATs analisadas e permite conferir cada previsão com o registro observado. A questão prática é saber se tipo de acidente, agente e setor econômico sustentariam uma sugestão de preenchimento. Para avaliá-la, comparamos quatro classificadores com a estratégia de sempre sugerir a parte mais frequente e verificamos quais regiões cada modelo consegue distinguir, inclusive as raras.
+---
+
+## Objetivo e pergunta central
+
+Construir, ajustar e comparar classificadores supervisionados para estimar o risco de **Indica Óbito Acidente** (`Sim = 1`, `Não = 0`) em um cenário de **triagem e avaliação de gravidade no registro do acidente**.
+
+- **Pergunta central:** qual combinação de família de modelos (KNN, Árvore de Decisão, Random Forest e MLP) e representação da etapa de redução de dimensionalidade oferece melhor capacidade de ranqueamento e triagem de óbitos — e como calibrar o ponto de corte priorizando **Recall** para reduzir falsos negativos?
+
+---
 
 ## Metodologia
 
-### População e validação temporal
+### População e partição treino/teste
 
-Selecionamos as CATs com Ceará informado na UF do acidente e ocorrência entre janeiro e junho de 2026. Como os arquivos não trazem um identificador único da CAT, a unidade de análise é cada combinação distinta dos 27 campos brutos. Das 7.201 combinações, as 5.988 de janeiro a maio formaram o conjunto de desenvolvimento e as 1.213 de junho ficaram reservadas para o teste. No desenvolvimento, havia 42 categorias de parte atingida, seis delas com menos de dez registros. Cada CAT recebeu um único rótulo, inclusive quando o texto indicava partes múltiplas. Preservamos também as descrições truncadas, para avaliar o campo como foi registrado. [Preparação da população](relatorio_pre_processamento_reducao.md)
+Os dados utilizados no treinamento são importados diretamente dos arquivos CSV exportados pelo notebook [02_pre_processamento.ipynb](02_pre_processamento.ipynb):
 
-| Mês do acidente avaliado | CATs no treino | CATs avaliadas | Classes no treino | Classes avaliadas | CATs de classes inéditas no treino |
-| ------------------------- | -------------: | -------------: | ----------------: | ----------------: | ----------------------------------: |
-| Março                    |          1.816 |          1.264 |                39 |                38 |                                   0 |
-| Abril                     |          3.004 |          1.202 |                39 |                41 |                                   3 |
-| Maio                      |          4.203 |          1.305 |                41 |                40 |                                   1 |
+- [`datasets/processados/treino.csv`](datasets/processados/treino.csv): **5.760 registros** (80%), com **5.738** sem óbito e **22** com óbito (**0,38%**).
+- [`datasets/processados/teste.csv`](datasets/processados/teste.csv): **1.441 registros** (20%), com **1.436** sem óbito e **5** com óbito (**0,35%**).
 
-Cada treino utiliza acidentes anteriores ao mês avaliado, com emissão entre a data do acidente e a véspera do corte. Conferimos a separação pelos identificadores dos registros e pelas datas de ocorrência e emissão. Assim, o treino de cada rodada usa somente informações já registradas antes do mês avaliado.
+O recorte considera CATs com `UF  Munic.  Acidente == "Ceará"` e `Data Acidente` entre 1º de janeiro e 30 de junho de 2026, após remoção de duplicatas exatas (de 8.849 para 7.201 registros), padronização de `{ñ class}` e ausências como `"Desconhecido"` e associação das descrições truncadas de agente causador ao dicionário oficial (`scripts/agente_causador.py`). A partição utiliza holdout estratificado com `random_state=42`, e o conjunto de teste permanece intocado até a avaliação final.
 
-### Atributos utilizados
+### Atributos de entrada (cenário de triagem)
 
-| Atributo do modelo escolhido | O que representa | Por que pode ajudar na previsão |
-| --- | --- | --- |
-| Tipo do acidente (`tipo`) | Classificação da CAT como acidente típico, de trajeto ou doença. | Distingue contextos em que a frequência das partes atingidas varia, como mostra o exemplo do dedo na introdução. |
-| Agente causador (`agente`) | Objeto, substância ou outro agente informado na ocorrência, como uma ferramenta manual ou um produto biológico. | Informa com o que ocorreu o contato. Seu uso pressupõe que o agente já seja conhecido no primeiro relato. Nos 119 registros de desenvolvimento sem esse dado, usamos a categoria `[desconhecido]`. |
-| Divisão da CNAE (`cnae_divisao`) | Setor do empregador, derivado da Classificação Nacional de Atividades Econômicas (CNAE). | Representa o contexto de trabalho. O agrupamento de 288 códigos informados em 69 divisões no desenvolvimento permite reunir atividades afins, embora a tarefa executada por cada pessoa continue desconhecida. |
+Os modelos utilizam **cinco entradas categóricas** disponíveis no registro inicial da gravidade do acidente:
 
-As sete representações comparadas também permitiram avaliar os códigos detalhados de atividade e de ocupação (Classificação Brasileira de Ocupações, CBO), a família ocupacional e uma versão sem agente. Convertemos as categorias em indicadores binários (*one-hot encoding*). Nas versões com redução de dimensionalidade, selecionamos indicadores por informação mútua ou aplicamos análise de componentes principais (PCA). Ajustamos cada transformação apenas com os registros de treino da respectiva rodada. Excluímos o próprio alvo, suas derivações, a natureza da lesão e o diagnóstico (CID-10), pois poderiam revelar a região atingida. As datas serviram para separar treino e avaliação. [Preparação e comparação dos atributos](relatorio_pre_processamento_reducao.md)
+| Atributo | Papel na triagem |
+| :--- | :--- |
+| `Tipo do Acidente` | Distingue acidente típico, de trajeto e doença (trajeto concentra maior proporção de óbitos). |
+| `Agente  Causador  Acidente` | Código oficial do agente causador (veículos, vias, eletricidade, agentes biológicos etc.). |
+| `Parte Corpo Atingida` | Região anatômica atingida; lesões em crânio, tórax, abdome e partes múltiplas elevam fortemente o risco. |
+| `Natureza da Lesão` | Tipo de lesão registrada (lesões múltiplas, concussão cerebral, asfixia, fratura etc.). |
+| `Sexo` | Perfil demográfico do trabalhador (taxa observada de 0,62% no sexo masculino vs. 0,09% no feminino). |
 
-### Configurações e critério de escolha
+**Exclusões metodológicas relevantes:**
+- **`Tipo de Empregador`:** descartado por ser praticamente constante na base (`Cnpj/Cgc` representa **99,90%** das linhas — 7.194 de 7.201 — e todos os 27 óbitos).
+- **`CID-10` e `CID-10.1`:** excluídos por representarem diagnóstico médico consolidado posteriormente ao relato inicial (risco de vazamento temporal) e por possuírem **922 códigos distintos** muito pulverizados (8 dos 27 óbitos ocorrem em códigos que aparecem uma única vez na base inteira).
 
-| Família            | Parâmetros comparados                                                                                          |
-| ------------------- | --------------------------------------------------------------------------------------------------------------- |
-| KNN                 | 5 ou 15 vizinhos, com voto uniforme ou ponderado pelo inverso da distância                                     |
-| Árvore de decisão | Profundidade máxima 10 ou livre, mínimo de 1 ou 5 registros por folha                                         |
-| Random Forest       | 200 árvores, profundidade máxima 15 ou livre, mínimo de 1 ou 5 registros por folha                           |
-| MLP                 | 64 unidades ocultas ou duas camadas de 64 e 32, regularização de 0,0001 ou 0,01, Adam e limite de 300 épocas |
+### Validação cruzada, representações da etapa 2 e prevenção de vazamento
 
-Cada família foi combinada com as sete representações do manifesto da etapa 2. São 112 configurações, cada uma avaliada nos mesmos três meses. A referência prevê a classe majoritária de cada treino e atribui probabilidades iguais às proporções das classes nesse treino. A semente das etapas aleatórias é 42. A tabela mensal identifica os parâmetros efetivos, as iterações da MLP e os avisos de convergência. [Resultados mensais](resultados/atividade_03/validacao_mensal.parquet)
+Os arquivos CSV são exportados em formato categórico **antes** do *one-hot encoding*. Dentro do conjunto de treino, aplicamos **validação cruzada estratificada em 5 folds (`StratifiedKFold`, `n_splits=5`, `random_state=42`)**, garantindo 4 ou 5 casos de óbito em cada partição de validação.
 
-A previsão é a classe de maior pontuação. Em cada mês, calculamos precisão, recall e F1 por classe e tiramos a média simples entre as classes presentes. Se uma classe presente nunca é prevista, a precisão é indefinida e entra como zero na média. Seu recall e F1 também são zero. As classes inéditas permanecem nos denominadores. Para ROC-AUC, avaliamos cada classe contra as demais quando há positivos, negativos e uma coluna de probabilidades no classificador. Cada classe avaliável tem peso igual na AUC macro.
+Em cada fold, o `OneHotEncoder(handle_unknown="ignore")`, o filtro de variância zero e cada redutor investigado em [02_pre_processamento.ipynb](02_pre_processamento.ipynb) são ajustados **exclusivamente no treino do fold** e apenas aplicados à validação:
 
-Cada mês tem peso igual no F1 de seleção. Entre as configurações até 0,005 abaixo do maior F1 macro médio, preferimos menos campos de entrada, depois o menor desvio-padrão amostral do F1 mensal e, por último, o maior F1 médio. Aplicamos a regra dentro de cada família para apresentar seus resultados e sobre as 112 configurações para escolher o vencedor geral. [Comparação das configurações](resultados/atividade_03/comparacao.parquet)
+| Representação (etapa 2) | Descrição | Colunas médias por fold | Mín.–Máx. |
+| :--- | :--- | ---: | :---: |
+| `One-hot completo` | Indicadores binários após filtro de variância zero | 220,4 | 218–224 |
+| `Qui-quadrado (k=50)` | `SelectKBest(chi2, k=50)` | 50,0 | 50–50 |
+| `Informação mútua (k=50)` | `SelectKBest(mutual_info_classif, discrete_features=True, k=50)` | 50,0 | 50–50 |
+| `Embutido (Árvore)` | Indicadores com importância positiva em `DecisionTreeClassifier(max_depth=5, min_samples_leaf=8, class_weight="balanced")` | 10,8 | 10–12 |
+| `PCA (90%)` | `StandardScaler` + `PCA(n_components=0.90)` | 179,4 | 178–182 |
 
-### Reprodução e uso do modelo
+*(A interseção dos filtros produziu 47 de 50 indicadores — quase equivalente aos filtros individuais — e o Wrapper sequencial não entrou na grade por exigir validação cruzada aninhada em cada fold.)*
 
-A partir da raiz do projeto e dos Parquets da atividade 2, execute o notebook com Python 3.12. As versões exatas das dependências usadas no treino estão registradas no arquivo da configuração vencedora. [Configuração e ambiente](resultados/atividade_03/escolha.json)
+### Protocolo em duas etapas e modelos comparados
 
-```sh
-python -m pip install jupyterlab nbconvert ipykernel numpy==2.3.5 pandas==3.0.1 scipy==1.18.1 scikit-learn==1.9.1 pyarrow==26.0.1 matplotlib==3.11.2 threadpoolctl==3.8.0 joblib==1.6.0
-python -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=-1 03_modelos_supervisionados.ipynb
+Cada família de classificadores é encapsulada em um módulo próprio na pasta `scripts/`:
+- [`scripts/knn.py`](scripts/knn.py) (`KNeighborsClassifier`): `n_neighbors ∈ {3, 5, 11, 21}`, `weights ∈ {"uniform", "distance"}`, distância euclidiana.
+- [`scripts/arvore_decisao.py`](scripts/arvore_decisao.py) (`DecisionTreeClassifier`): `max_depth ∈ {4, 8, None}`, `min_samples_leaf ∈ {1, 8}`, `class_weight ∈ {None, "balanced"}`.
+- [`scripts/random_forest.py`](scripts/random_forest.py) (`RandomForestClassifier`): 200 árvores, `max_depth ∈ {6, 15, None}`, `min_samples_leaf ∈ {1, 5}`, `class_weight ∈ {None, "balanced"}`.
+- [`scripts/mlp.py`](scripts/mlp.py) (`MLPClassifier`): `hidden_layer_sizes ∈ {(32,), (64,), (64, 32)}`, `alpha ∈ {0.0001, 0.01}`, ativação `relu`, otimizador `adam`, `max_iter=300`.
+- **Referência majoritária:** `DummyClassifier(strategy="prior")`.
+
+O experimento segue duas etapas na validação cruzada:
+1. **Seleção da representação por família:** compara as 5 representações com os parâmetros padrão de cada script e escolhe a melhor por família segundo **Average Precision (PR-AUC)**, com desempate por **ROC-AUC** e **F1-score**.
+2. **Ajuste de hiperparâmetros:** executa a grade completa de hiperparâmetros de cada família sobre a sua representação selecionada.
+
+### Critérios de avaliação e calibração de limiar orientada a Recall
+
+Com prevalência de 0,38%, a **acurácia isolada é enganosa** (prever sempre *Não* rende 99,62% de acurácia com 0% de Recall). Por isso, separamos a avaliação em duas decisões:
+
+1. **Escolha do modelo (qualidade do ranqueamento):** prioriza **Average Precision (PR-AUC)** e **ROC-AUC**, que avaliam a capacidade de ordenar os óbitos no topo das probabilidades em todos os limiares possíveis.
+2. **Escolha do ponto de corte (triagem operacional):** como **falsos negativos (FN)** são mais graves que **falsos positivos (FP)**, calibramos limiares **exclusivamente nas probabilidades *out-of-fold* da validação cruzada** sob quatro estratégias: padrão (`0,50`), **Máximo `F1`**, **Máximo `F2`** (dá peso 2× maior ao Recall que à Precisão) e **Triagem `Recall ≥ 80%`** (maior limiar que mantém ao menos 80% de sensibilidade na CV).
+
+### Reprodução do ambiente
+
+A partir da raiz do projeto (`CD_CAT_2026`), utilizando o ambiente virtual configurado em `.venv` e as dependências fixadas em [`requirements.txt`](requirements.txt) (Python `3.12.3`, `numpy 2.5.5`, `pandas 3.1.1`, `scikit-learn 1.9.1`, `matplotlib 3.11.2`):
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+jupyter nbconvert --to notebook --execute --inplace 02_pre_processamento.ipynb
+jupyter nbconvert --to notebook --execute --inplace 03_modelos_supervisionados.ipynb
 ```
 
-Para obter uma previsão, forneça uma linha com os campos categóricos preparados conforme a etapa 2. O pipeline salvo inclui a transformação e o classificador. O exemplo usa um registro de desenvolvimento e associa cada probabilidade ao seu rótulo.
-
-```python
-import json
-from pathlib import Path
-
-import joblib
-import pandas as pd
-
-pasta = Path("resultados/atividade_03")
-campos = json.loads((pasta / "escolha.json").read_text(encoding="utf-8"))["entradas"]
-modelo = joblib.load(pasta / "vencedor.joblib")
-entrada = pd.read_parquet("datasets/preparados_02/desenvolvimento.parquet", columns=campos).head(1)
-probabilidades = pd.Series(modelo.predict_proba(entrada)[0], index=modelo.classes_)
-print(probabilidades.nlargest(3))
-```
+---
 
 ## Resultados
 
-### Validação de março a maio
+### 1. Impacto das representações da etapa 2 por família (validação cruzada)
 
-As quatro configurações selecionadas pelas regras da atividade usaram tipo, agente e divisão da CNAE. A MLP liderou nos três meses e apresentou a menor variação mensal de F1 entre os quatro classificadores. Os percentuais abaixo são as médias simples entre meses. A última coluna mostra o desvio-padrão do F1 em pontos percentuais.
+Comparando as cinco representações com os parâmetros padrão de cada família na validação cruzada (5 folds):
 
-| Família              | Configuração selecionada                                          | Acurácia | Precisão macro | Recall macro |         F1 macro | Desvio do F1 (p.p.) |
-| --------------------- | ------------------------------------------------------------------- | --------: | --------------: | -----------: | ---------------: | ------------------: |
-| MLP                   | 64 unidades, `alpha=0.0001`                                       |    26,16% |          11,01% |       11,11% | **10,36%** |                0,28 |
-| Random Forest         | 200 árvores, profundidade livre, 1 registro por folha como mínimo |    25,49% |           9,97% |       10,01% |            9,29% |                0,51 |
-| Árvore de decisão   | Profundidade livre, 1 registro por folha como mínimo               |    24,36% |           9,80% |       10,08% |            9,26% |                0,54 |
-| KNN                   | 15 vizinhos, voto por distância                                    |    25,03% |           9,89% |        9,59% |            8,65% |                1,03 |
-| Classe mais frequente | Proporções do treino                                              |    19,29% |           0,49% |        2,52% |            0,81% |                0,03 |
+| Família | One-hot completo (AP / AUC) | Qui-quadrado `k=50` (AP / AUC) | Informação mútua `k=50` (AP / AUC) | Embutido Árvore (AP / AUC) | PCA 90% (AP / AUC) | Representação escolhida |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **KNN** | 0,1030 / 0,6104 | 0,0793 / 0,5866 | 0,0881 / 0,5862 | **0,1633** / 0,6052 | 0,1345 / 0,6459 | **Embutido (Árvore)** |
+| **Árvore de decisão** | **0,0621** / 0,6691 | 0,0610 / 0,7134 | 0,0604 / 0,7130 | 0,0621 / 0,6691 | 0,0192 / 0,6362 | **One-hot completo** |
+| **Random Forest** | 0,2106 / 0,9017 | 0,2103 / 0,9007 | **0,2166** / **0,9030** | 0,1572 / 0,7743 | 0,1693 / 0,8936 | **Informação mútua (`k=50`)** |
+| **MLP** | **0,2867** / 0,9200 | 0,2743 / 0,9168 | 0,2394 / 0,9202 | 0,2301 / 0,8195 | 0,1885 / 0,8750 | **One-hot completo** |
 
-![F1 macro em março, abril e maio por classificador](figuras/atividade_03/validacao_mensal.png)
+![Comparação das representações por família na validação cruzada](figuras/atividade_03/comparacao_representacoes_cv.png)
 
-**Disponibilidade do agente.** Mantendo a configuração da MLP e exatamente as mesmas CATs, a retirada do agente reduziu o F1 macro médio de 10,36% para 5,19%. Em março, abril e maio, o F1 sem agente foi 5,78%, 5,01% e 4,78%, respectivamente. O resultado principal pressupõe que o agente já possa ser informado no primeiro relato. Os 119 registros de desenvolvimento sem esse valor receberam a categoria de ausência da etapa 2. [Comparações pareadas por mês e configuração](resultados/atividade_03/comparacao_agente.parquet)
+A redução de dimensionalidade trouxe benefício direto onde faz mais sentido teoricamente:
+- No **KNN**, reduzir de ~220 para ~11 colunas via **Embutido (Árvore)** aumentou o Average Precision em **+58,5%** (`0,1030` → `0,1633`), mitigando a diluição das distâncias euclidianas.
+- Na **Random Forest**, a **Informação mútua (`k=50`)** superou o one-hot completo reduzindo a dimensão em 77%.
+- Na **MLP**, o **One-hot completo** preservou melhor o sinal fino de combinações raras, enquanto o **PCA (90%)** reduziu pouco a dimensão (~179 componentes) e apresentou pior Average Precision em todas as famílias mais fortes.
 
-**Classes raras e convergência.** Nos meses em que apareceram, nenhuma das seis categorias com menos de dez registros no desenvolvimento teve acerto pelos quatro finalistas. A MLP atingiu o limite de 300 épocas em 79 dos 84 ajustes de validação e também no ajuste final. A configuração escolhida atingiu o limite nos três meses. Os resultados descrevem o modelo obtido nesse orçamento de treino. [Métricas mensais por classe](resultados/atividade_03/validacao_por_classe.parquet)
+### 2. Comparação dos finalistas após ajuste de hiperparâmetros (validação cruzada)
 
-### Teste de junho
+| Família | Representação | Melhor configuração | AP (CV) | ROC-AUC (CV) | F1 (limiar 0,50) | Precisão (0,50) | Recall (0,50) | Acurácia (0,50) |
+| :--- | :--- | :--- | ---: | ---: | ---: | ---: | ---: | ---: |
+| **MLP** | One-hot completo | `hidden_layer_sizes=(32,), alpha=0.0001` | **0,2970** | 0,9212 | 0,0571 | 0,0667 | 0,05 | 0,9960 |
+| **Random Forest** | Informação mútua (`k=50`) | `n_estimators=200, max_depth=6, min_samples_leaf=5, class_weight=None` | 0,2417 | **0,9310** | 0,0000 | 0,0000 | 0,00 | 0,9962 |
+| **KNN** | Embutido (Árvore) | `n_neighbors=21, weights=uniform` | 0,1786 | 0,6241 | 0,0000 | 0,0000 | 0,00 | 0,9962 |
+| **Árvore de decisão** | One-hot completo | `max_depth=8, min_samples_leaf=1, class_weight=None` | 0,1276 | 0,6034 | **0,2887** | **0,3200** | **0,27** | 0,9951 |
+| **Referência** | One-hot completo | Majoritário (`strategy="prior"`) | 0,0038 | 0,5000 | 0,0000 | 0,0000 | 0,00 | 0,9962 |
 
-Fixamos a MLP antes de avaliar junho e a reajustamos com as 5.565 CATs elegíveis para treino até 31 de maio. Das 1.213 CATs com acidente em junho, todas tinham alvo informado e 262 foram emitidas após 30 de junho. Todas as 38 classes observadas no teste tinham exemplos no treino final. [Contagens por classe e população](resultados/atividade_03/populacao.parquet)
+Todas as 6 configurações da **MLP** convergiram sem nenhum aviso (`avisos_convergencia = 0`) dentro do orçamento de 300 épocas.
 
-| Métrica da MLP | Média de março a maio |  Junho |
-| --------------- | ----------------------: | -----: |
-| Acurácia       |                  26,16% | 25,64% |
-| Precisão macro |                  11,01% |  8,47% |
-| Recall macro    |                  11,11% |  9,67% |
-| F1 macro        |                  10,36% |  8,25% |
-| ROC-AUC macro   |                   0,649 |  0,655 |
+![Curvas ROC e Precisão-Recall na validação cruzada](figuras/atividade_03/roc_pr_validacao.png)
 
-O F1 macro caiu 2,11 pontos percentuais em junho, enquanto a acurácia caiu 0,52 ponto. A classe `dedo` respondeu por 163 dos 311 acertos. Os rótulos truncados `ouvido (externo, med` e `sistema musculo-esqu` tiveram um registro cada e nenhuma previsão. Foram as duas classes presentes com precisão indefinida, contabilizada como zero na média. Outras 19 classes receberam previsões, mas nenhuma correta. [Resultados completos por classe em junho](resultados/atividade_03/junho_por_classe.parquet)
+### 3. Diagnóstico de overfitting (treino vs. validação)
 
-**Dedo contra as demais classes.** Das 229 CATs registradas como dedo, a rede identificou 163 (VP) e atribuiu outra classe a 66 (FN). Entre as 984 CATs das demais categorias, classificou 210 como dedo (FP) e 774 como outra categoria (VN). Assim, recuperou 71,18% dos casos de dedo, mas apenas 43,70% das suas 373 previsões de dedo estavam corretas. A confusão mais frequente foi atribuir dedo a 37 dos 79 registros de mão (46,84%). Também houve 20 registros de olho classificados como dedo, metade dos registros dessa classe.
+| Família | ROC-AUC (treino) | ROC-AUC (validação) | Gap ROC-AUC | AP (treino) | AP (validação) | Gap AP |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: |
+| **MLP** | 0,9924 | 0,9212 | 0,0712 | 0,6824 | **0,2970** | 0,3854 |
+| **Random Forest** | 0,9878 | **0,9310** | **0,0568** | 0,3711 | 0,2417 | 0,1294 |
+| **KNN** | 0,8523 | 0,6241 | 0,2282 | 0,2143 | 0,1786 | **0,0357** |
+| **Árvore de decisão** | 0,9930 | 0,6034 | 0,3896 | 0,8801 | 0,1276 | 0,7525 |
 
-![Contagem das dez confusões mais frequentes em junho](figuras/atividade_03/confusoes_junho.png)
+A **Árvore de decisão** individual sofreu forte overfitting (gap de `0,39` em ROC-AUC e `0,75` em AP). Já **MLP** e **Random Forest** mantiveram excelente generalização no ranqueamento (ROC-AUC acima de `0,92` na validação), com a **MLP** liderando em Average Precision (`0,2970` vs. `0,2417`) e sendo escolhida como modelo final antes da inspeção do teste.
 
-As matrizes completas trazem as contagens e as proporções por classe registrada em cada mês, para os quatro finalistas e a referência no desenvolvimento e para a MLP em junho. A ROC-AUC de junho usa as 38 classes com positivos, negativos e pontuação disponível. Três classes do treino final tiveram zero positivos no teste e ficaram fora da média. Uma curva baseada em um único positivo é particularmente sensível à posição desse registro na ordenação. [Matrizes de confusão](resultados/atividade_03/matrizes_confusao.parquet) · [Painel de curvas ROC de junho](figuras/atividade_03/roc_junho.png) · [AUC e denominadores por classe](resultados/atividade_03/auc_por_classe.parquet) · [Pontos das curvas por mês](resultados/atividade_03/curvas_roc.parquet)
+### 4. Calibração de limiar orientada a Recall (validação cruzada — MLP)
 
-## Discussões
+| Estratégia (calibrada na CV) | Limiar | Recall | Precisão | F2 | F1 | CATs alertadas (%) | VP | FN | FP |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Padrão (`0,50`) | 0,5000 | 4,55% | 33,33% | 0,0549 | 0,0800 | 0,05% | 1 | 21 | 2 |
+| Máximo `F1` (CV) | 0,2228 | 27,27% | 46,15% | 0,2970 | **0,3429** | 0,23% | 6 | 16 | 7 |
+| **Máximo `F2` (CV)** | **0,0752** | **40,91%** | 19,15% | **0,3333** | 0,2609 | **0,82%** | **9** | 13 | 38 |
+| **Triagem `Recall ≥ 80%` (CV)** | **0,0018** | **81,82%** | 2,40% | 0,1075 | 0,0467 | **13,00%** | **18** | **4** | 731 |
 
-**O mesmo contexto pode levar a diferentes partes atingidas.** No treino final, 76 CATs de acidentes típicos tinham o mesmo agente registrado (`agente infeccioso ou`, texto truncado) e o mesmo código de atividade econômica (CNAE 8610, atendimento hospitalar). Mesmo nesse grupo específico, apareceram sete categorias de parte atingida, entre elas dedo (51 registros), olho (13) e mão (6). Como as três entradas da rede são idênticas para essas 76 CATs, ela atribui as mesmas pontuações a todas. Mesmo que escolhesse a resposta mais frequente do grupo, erraria 25 desses registros. O agente ajuda a estimar quais regiões são mais prováveis, mas os atributos não descrevem onde ocorreu o contato em cada caso. [Registros de desenvolvimento](datasets/preparados_02/desenvolvimento.parquet)
+### 5. Avaliação final no conjunto de teste holdout (`1.441` registros, `5` óbitos)
 
-**A concentração dos acertos explica a distância entre acurácia e F1 macro.** Em junho, a rede sugeriu dedo 373 vezes e acertou 163. Essa única categoria respondeu por mais da metade dos 311 acertos e ajudou a sustentar a acurácia de 25,64%. Já o F1 macro dá o mesmo peso a cada parte do corpo e considera tanto as previsões incorretas quanto os casos perdidos. As 21 categorias sem acerto contribuíram com zero para a média de 38 classes, que ficou em 8,25%. As seis classes raras do desenvolvimento já haviam ficado sem acertos na validação. Todas as classes de junho estavam representadas no treino final. A dificuldade persistiu, portanto, mesmo para rótulos já conhecidos.
+A **MLP** (`hidden_layer_sizes=(32,)`, `alpha=0.0001`, One-hot completo com 228 colunas) foi reajustada nos 5.760 registros de treino e avaliada uma única vez nos 1.441 registros de teste, atingindo **ROC-AUC = `0,9446`** e **Average Precision = `0,3520`** (~100× acima da referência aleatória de `0,0035`):
 
-**A escolha da MLP se sustenta na comparação entre os modelos.** Com os três atributos, ela teve o maior F1 macro médio na validação (10,36%, ante 0,81% da referência) e o menor desvio mensal entre os quatro classificadores finalistas. Retirar o agente nas mesmas CATs reduziu seu F1 macro para 5,19%, o que mostra quanto a previsão depende dessa informação. A rede atingiu o limite de 300 épocas, mas o experimento não mediu se treinar por mais tempo melhoraria o desempenho em novos registros.
+| Cenário no teste (limiar vindo da CV) | Limiar | Recall | Precisão | F2 | F1 | CATs alertadas (%) | VP | FN | FP | VN |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Padrão (`0,50`) | 0,5000 | 0,00% | 0,00% | 0,0000 | 0,0000 | 0,00% | 0 | 5 | 0 | 1.436 |
+| Máximo `F1` (CV) | 0,2228 | 20,00% | 100,00% | 0,2381 | **0,3333** | 0,07% | 1 | 4 | 0 | 1.436 |
+| **Máximo `F2` (CV)** | **0,0752** | **40,00%** | **20,00%** | **0,3333** | 0,2667 | **0,69%** | **2** | 3 | 8 | 1.428 |
+| **Triagem `Recall ≥ 80%` (CV)** | **0,0018** | **80,00%** | 2,37% | 0,1058 | 0,0460 | **11,73%** | **4** | **1** | 165 | 1.271 |
 
-O teste cobre um único mês e depende dos registros disponíveis nos seis arquivos. Atrasos de emissão e divergências entre a UF do acidente e a do empregador limitam a generalização para outros períodos e populações. No recorte estudado, as circunstâncias do acidente ajudam a identificar padrões como a frequência de lesões no dedo. Diante de 902 previsões incorretas em 1.213 CATs de junho, o desempenho é insuficiente para justificar o preenchimento automático da parte atingida em uma CAT individual.
+![Matrizes de confusão no teste sob três pontos de corte](figuras/atividade_03/matriz_confusao_teste.png)
+
+![Curvas ROC e Precisão-Recall no conjunto de teste](figuras/atividade_03/roc_pr_teste.png)
+
+Os resultados do teste confirmaram com notável estabilidade os valores observados na validação cruzada:
+- No corte **`F2` (`0,0752`)**, menos de **1% das CATs** (`10` de `1.441`) são sinalizadas, capturando **40% dos óbitos** (`2` de `5`) com 1 acerto a cada 5 alertas (`F2 = 0,3333` tanto na CV quanto no teste).
+- No corte de **triagem (`0,0018`)**, encaminhar apenas **11,73% das CATs** (`169` de `1.441`) para revisão prioritária captura **80% dos óbitos** (`4` de `5`), replicando o comportamento da validação cruzada (`81,82%` de recall com `13,00%` de alertas).
+
+---
+
+## Discussões, limitações e próximos passos
+
+- **Valor prático da seleção de atributos de domínio:** a substituição de `Tipo de Empregador` (quase constante) pelos atributos de triagem (`Parte Corpo Atingida`, `Natureza da Lesão` e `Sexo`) elevou o Average Precision na validação cruzada de `0,0130` para **`0,2970`** e o ROC-AUC no teste de `0,6835` para **`0,9446`**.
+- **Consistência da redução de dimensionalidade:** aplicar os métodos do [02_pre_processamento.ipynb](02_pre_processamento.ipynb) dentro de cada fold evitou vazamento de dados e permitiu medir o ganho real por família (decisivo para KNN e benéfico para Random Forest, dispensável para MLP com arquitetura enxuta).
+- **Limiar padrão vs. custo assimétrico dos erros:** manter o limiar fixo em `0,50` resultaria em `0` alertas no teste apesar de um modelo com `ROC-AUC = 0,9446`. Calibrar o ponto de corte na CV conforme a prioridade de Recall (`F2` ou meta de `80%`) traduz o bom ranqueamento probabilístico em ganho operacional real.
+- **Limitações:** a classe positiva possui apenas **27 casos no semestre** (22 no treino e 5 no teste), de modo que cada acerto ou erro no teste altera o recall em 20 pontos percentuais. Além disso, **663 registros** receberam `"Desconhecido"` no agente causador devido a ausências, ambiguidades ou descrições truncadas sem correspondência única, e o uso de holdout aleatório estratificado não testa mudanças temporais ao longo do ano.
+- **Próximos passos:** ampliar o recorte temporal (múltiplos anos de CATs) para aumentar o volume de óbitos, avaliar validação temporal (treino em meses anteriores e teste em meses futuros), incorporar atributos complementares como faixa etária e divisão da CNAE e testar técnicas de calibração de probabilidades (Platt scaling / isotônica).
